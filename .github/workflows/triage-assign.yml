@@ -1,0 +1,13 @@
+name: Triage
+
+on:
+  pull_request:
+    types: [ opened, reopened, ready_for_review ]
+    branches: [ main ]
+
+jobs:
+  assign:
+    name: Assign
+    runs-on: ubuntu-latest
+    steps:
+      - uses: kentaro-m/auto-assign-action@v1.1.2

@@ -1,0 +1,21 @@
+name: Triage
+
+on:
+  pull_request:
+    types: [ opened, labeled, unlabeled, synchronize, ready_for_review ]
+    branches: [ main ]
+
+jobs:
+  label:
+    name: Label
+    runs-on: ubuntu-latest
+    steps:
+      - uses: TimonVS/pr-labeler-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: mheap/github-action-required-labels@v1
+        with:
+          mode: exactly
+          count: 1
+          labels: "fix, feat, docs, chore"
