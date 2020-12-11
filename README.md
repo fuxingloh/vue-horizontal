@@ -1,1 +1,1 @@
-# vue-horizontal-items
+# Vue Horizontal
