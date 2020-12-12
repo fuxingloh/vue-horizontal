@@ -1,7 +1,24 @@
 {
   "name": "vue-horizontal",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.0",
+  "description": "An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.",
+  "author": "Fuxing Loh",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fuxingloh/vue-horizontal.git"
+  },
+  "bugs": "https://github.com/fuxingloh/vue-horizontal/issues",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "nuxt",
+    "horizontal",
+    "list view",
+    "scroll view",
+    "airbnb list"
+  ],
+  "license": "MIT",
+  "private": false,
   "main": "dist/vue-horizontal.ssr.js",
   "browser": "dist/vue-horizontal.esm.js",
   "module": "dist/vue-horizontal.esm.js",

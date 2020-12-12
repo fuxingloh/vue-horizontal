@@ -1,0 +1,32 @@
+name: Publish
+
+on:
+  release:
+    types: [ published ]
+
+jobs:
+  npm:
+    name: NPM
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Check package version
+        uses: technote-space/package-version-check-action@v1
+        with:
+          COMMIT_DISABLED: 1
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Publish
+        run: |
+          npm config set //registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN
+          npm publish
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
