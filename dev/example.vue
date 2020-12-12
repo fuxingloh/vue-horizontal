@@ -1,6 +1,6 @@
 <template>
   <vue-horizontal>
-    <div v-for="item in items" class="item">
+    <div v-for="item in items" class="item" :key="item.i">
       <h3>{{ item.title }}</h3>
       <p>{{ item.content }}</p>
     </div>
@@ -19,7 +19,7 @@ export default Vue.extend({
   data() {
     return {
       items: [...Array(20).keys()].map((i) => {
-        return {title: `Item ${i}`, content: `🚀 Simple content ${i}`};
+        return {i, title: `Item ${i}`, content: `🚀 Simple content ${i}`};
       }),
     }
   }
@@ -31,7 +31,6 @@ export default Vue.extend({
   padding: 16px 24px;
   border-radius: 4px;
   background: #f5f5f5;
-
   margin-left: 12px;
   margin-right: 12px;
   box-sizing: border-box;

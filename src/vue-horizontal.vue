@@ -1,21 +1,19 @@
 <template>
   <div class="vue-horizontal">
-    <div class="vue-horizontal-btn" :class="{'no-button': !button}">
-      <div class="vue-horizontal-btn-left" v-if="hasPrev" @click="prev">
-        <slot name="btn-left">
-          <svg viewBox="0 0 24 24">
-            <path d="m9.8 12 5 5a1 1 0 1 1-1.4 1.4l-5.7-5.7a1 1 0 0 1 0-1.4l5.7-5.7a1 1 0 0 1 1.4 1.4l-5 5z"/>
-          </svg>
-        </slot>
-      </div>
+    <div class="vue-horizontal-btn-left" v-if="button && hasPrev" @click="prev">
+      <slot name="btn-left">
+        <svg viewBox="0 0 24 24">
+          <path d="m9.8 12 5 5a1 1 0 1 1-1.4 1.4l-5.7-5.7a1 1 0 0 1 0-1.4l5.7-5.7a1 1 0 0 1 1.4 1.4l-5 5z"/>
+        </svg>
+      </slot>
+    </div>
 
-      <div class="vue-horizontal-btn-right" v-if="hasNext" @click="next">
-        <slot name="btn-right">
-          <svg viewBox="0 0 24 24">
-            <path d="m14.3 12.1-5-5a1 1 0 0 1 1.4-1.4l5.7 5.7a1 1 0 0 1 0 1.4l-5.7 5.7a1 1 0 0 1-1.4-1.4l5-5z"/>
-          </svg>
-        </slot>
-      </div>
+    <div class="vue-horizontal-btn-right" v-if="button && hasNext" @click="next">
+      <slot name="btn-right">
+        <svg viewBox="0 0 24 24">
+          <path d="m14.3 12.1-5-5a1 1 0 0 1 1.4-1.4l5.7 5.7a1 1 0 0 1 0 1.4l-5.7 5.7a1 1 0 0 1-1.4-1.4l5-5z"/>
+        </svg>
+      </slot>
     </div>
 
     <div class="vue-horizontal-container" ref="container"
@@ -103,8 +101,6 @@ export default Vue.extend({
 
       const slotted = (this.$slots.default[0] as VNode).elm as Element
       this.slotted.absoluteLeft = slotted.getBoundingClientRect().left
-
-      console.log(this.container.scrollLeft)
     },
   },
 });
@@ -113,25 +109,18 @@ export default Vue.extend({
 <style scoped>
 .vue-horizontal {
   position: relative;
-}
-
-.vue-horizontal-btn {
   display: flex;
   align-items: center;
-  /*position: absolute;*/
-
-  width: 100%;
-  height: 100%;
 }
 
 .vue-horizontal-btn-left {
-  margin-left: -24px;
-  margin-right: auto;
+  position: absolute;
+  left: -24px;
 }
 
 .vue-horizontal-btn-right {
-  margin-left: auto;
-  margin-right: -24px;
+  position: absolute;
+  right: -24px;
 }
 
 svg {
@@ -140,7 +129,6 @@ svg {
   padding: 6px;
   border-radius: 21px;
   box-sizing: border-box;
-
   background: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
@@ -152,7 +140,6 @@ svg:hover {
 .vue-horizontal-container {
   display: flex;
   box-sizing: content-box;
-
   overflow-x: scroll;
   overflow-y: hidden;
   scroll-behavior: smooth;
@@ -163,10 +150,6 @@ svg:hover {
 .vue-horizontal-container > * {
   scroll-snap-align: start;
   flex-shrink: 0;
-}
-
-.vue-horizontal-btn.no-button {
-  display: none;
 }
 
 .vue-horizontal-container.no-scroll {

@@ -17,12 +17,17 @@ export default Vue.extend({
 
 <style>
 body {
-  font-family: "-apple-system", "system-ui", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif";
+  font-family: "-apple-system", "system-ui", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0 0 8px;
 }
 
@@ -39,10 +44,8 @@ p {
 <style scoped>
 #app {
   max-width: 1400px;
-
   margin-left: auto;
   margin-right: auto;
-
   padding: 64px;
 }
 
