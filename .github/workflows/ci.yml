@@ -2,11 +2,11 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+
   pull_request:
-    branches:
-      - main
+    types: [opened, reopened, synchronize, ready_for_review]
+    branches: [ main ]
 
 jobs:
   build:
