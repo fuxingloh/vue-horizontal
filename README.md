@@ -41,12 +41,16 @@ yarn add vue-horizontal
 
 <details>
 <summary><b>All Features</b></summary>
-- [ ] TODO
+```vue
+TODO
+```
 </details>
 
 <details>
 <summary><b>More Examples</b></summary>
-- [ ] TODO
+```vue
+// TODO
+```
 </details>
 
 ## Features and Design Philosophy
