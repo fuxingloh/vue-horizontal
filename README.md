@@ -1,16 +1,22 @@
-# Vue Horizontal
+# Vue Horizontal [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal)
+
+> An early POC for another way to do horizontal layout in vue.
+ 
+### TODO
+- [ ] Added relevant shields.io badges
+- [ ] Onboarding banner images of the features
+- [ ] All features
+- [ ] More examples
+- [ ] Documentation + examples github.io page
+- [ ] CI Testing
+- [ ] Wrappers
 
 An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.
 
-- [ ] TODO all badges
-
-[![Latest Release](https://img.shields.io/github/v/release/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/releases)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
-[![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ACI)
-
+[![CI Main](https://img.shields.io/github/workflow/status/fuxingloh/vue-horizontal/CI/main)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ACI+branch%3Amain)
 ---
 
-- [ ] TODO layout image
 > SVG here of the different layout and supported features.
 
 ## Installation
@@ -25,32 +31,71 @@ yarn add vue-horizontal
 ```vue
 <template>
   <vue-horizontal>
-    <div>
-    </div>
+    <section v-for="item in items">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.content }}</p>
+    </section>
   </vue-horizontal>
 </template>
 
 <script>
-
+export default {
+  data() {
+    return {
+      items: [...Array(20).keys()].map((i) => {
+        return {title: `Item ${i}`, content: `🚀 Content ${i}`};
+      }),
+    }
+  }
+}
 </script>
 
 <style scoped>
-
+section {
+  padding: 16px 24px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  margin-left: 12px;
+  margin-right: 12px;
+  box-sizing: border-box;
+  flex-basis: calc((100% - (3 * 24px)) / 4);
+}
 </style>
 ```
 
 <details>
 <summary><b>All Features</b></summary>
+
 ```vue
-TODO
+```vue
+<template>
+  <vue-horizontal>
+    <section v-for="item in items">
+      {{item}}
+    </section>
+  </vue-horizontal>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+    }
+  }
+}
+</script>
+
+<style scoped>
+section {
+}
+</style>
 ```
 </details>
 
 <details>
 <summary><b>More Examples</b></summary>
-```vue
-// TODO
-```
+
+- [ ] Link to examples/documentations?
 </details>
 
 ## Features and Design Philosophy
@@ -66,7 +111,7 @@ TODO
 Setup & develop.
 
 ```shell
-npm i
+npm install
 npm run serve
 ```
 
