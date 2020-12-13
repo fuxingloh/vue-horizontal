@@ -18,6 +18,13 @@ describe('simple', () => {
       .should('have.length', 20)
   });
 
+  it('container: should start from 0', function () {
+    cy.get('.v-hl-container > :nth-child(1)').then($el => {
+      const left = $el[0].getBoundingClientRect().left
+      expect(left, 'absolute left').to.equal(80)
+    });
+  });
+
   it('navigation: next next prev prev', function () {
     cy.get('.v-hl-btn-prev').should('not.exist');
     cy.get('.v-hl-btn-next').should('exist');

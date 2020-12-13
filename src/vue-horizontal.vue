@@ -79,7 +79,7 @@ export default Vue.extend({
       if (container.scrollLeft === 0) {
         return false;
       }
-      return container.absoluteLeft !== slotted.absoluteLeft;
+      return Math.abs(container.absoluteLeft - slotted.absoluteLeft) >= 0.5;
 
     },
     hasNext(): boolean {

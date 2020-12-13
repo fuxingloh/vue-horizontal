@@ -41,7 +41,7 @@
     }
   ],
   "scripts": {
-    "serve": "vue-cli-service serve --open dev/serve.ts",
+    "serve": "vue-cli-service serve dev/serve.ts",
     "size": "size-limit",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",

@@ -30,7 +30,7 @@ section {
   padding: 16px 24px;
   border-radius: 4px;
   background: #f5f5f5;
-  margin: 0 12px;
+  margin-right: 24px;
   box-sizing: border-box;
   width: calc((100% - (3 * 24px)) / 4);
 }
