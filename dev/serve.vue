@@ -38,7 +38,8 @@ a {
   color: initial;
 }
 
-a:hover, a:hover > * {
+a:hover,
+a:hover > * {
   color: #0000db;
 }
 </style>
