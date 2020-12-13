@@ -30,11 +30,6 @@ jobs:
 
       - run: npm run build
 
-      - uses: andresz1/size-limit-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          skip_step: install
-
   lint:
     name: Lint
     runs-on: ubuntu-latest
@@ -55,3 +50,13 @@ jobs:
       - run: npm ci
 
       - run: npm run lint
+
+  size:
+    name: Size
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: andresz1/size-limit-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
