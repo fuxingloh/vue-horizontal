@@ -21,14 +21,10 @@ jobs:
     name: End-to-end
     runs-on: ubuntu-latest
     container:
-      image: cypress/browsers:node12.16.1-chrome80-ff73
+      image: cypress/browsers:node14.15.0-chrome86-ff82
       options: --user 1001
     steps:
       - uses: actions/checkout@v2
-
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '14'
 
       - name: Cypress run
         uses: cypress-io/github-action@v2

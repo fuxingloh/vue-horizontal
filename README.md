@@ -1,5 +1,9 @@
 # Vue Horizontal [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
 
+![chrome](https://github.com/fuxingloh/vue-horizontal/workflows/chrome/badge.svg)
+![firefox](https://github.com/fuxingloh/vue-horizontal/workflows/firefox/badge.svg)
+![edge](https://github.com/fuxingloh/vue-horizontal/workflows/edge/badge.svg)
+
 > This is a beta early release POC, use it at your own risk.
  
 ### TODO
@@ -12,8 +16,10 @@
 
 An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.
 
+
+![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
-[![CI Main](https://img.shields.io/github/workflow/status/fuxingloh/vue-horizontal/CI/main)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ACI+branch%3Amain)
+
 ---
 
 > SVG here of the different layout and supported features.
