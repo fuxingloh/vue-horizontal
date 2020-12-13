@@ -31,7 +31,13 @@
   ],
   "size-limit": [
     {
+      "path": "dist/vue-horizontal.esm.js"
+    },
+    {
       "path": "dist/vue-horizontal.min.js"
+    },
+    {
+      "path": "dist/vue-horizontal.ssr.js"
     }
   ],
   "scripts": {
