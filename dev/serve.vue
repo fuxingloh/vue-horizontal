@@ -1,19 +1,12 @@
 <template>
   <div id="app">
-    <h1>Vue Horizontal</h1>
+    <router-link to="/">
+      <h1>🏠 Vue Horizontal</h1>
+    </router-link>
 
-    <example/>
+    <router-view></router-view>
   </div>
 </template>
-
-<script lang="ts">
-import Vue from "vue";
-import Example from "./example";
-
-export default Vue.extend({
-  components: {Example},
-});
-</script>
 
 <style>
 body {
@@ -29,6 +22,11 @@ h4,
 h5,
 h6 {
   margin: 0 0 8px;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
 }
 
 p {
