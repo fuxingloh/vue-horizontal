@@ -1,6 +1,6 @@
 <template>
   <div class="vue-horizontal">
-    <div class="vue-horizontal-btn-left" v-if="button && hasPrev" @click="prev">
+    <div class="btn-prev" v-if="button && hasPrev" @click="prev">
       <slot name="btn-left">
         <svg viewBox="0 0 24 24">
           <path d="m9.8 12 5 5a1 1 0 1 1-1.4 1.4l-5.7-5.7a1 1 0 0 1 0-1.4l5.7-5.7a1 1 0 0 1 1.4 1.4l-5 5z"/>
@@ -8,7 +8,7 @@
       </slot>
     </div>
 
-    <div class="vue-horizontal-btn-right" v-if="button && hasNext" @click="next">
+    <div class="btn-next" v-if="button && hasNext" @click="next">
       <slot name="btn-right">
         <svg viewBox="0 0 24 24">
           <path d="m14.3 12.1-5-5a1 1 0 0 1 1.4-1.4l5.7 5.7a1 1 0 0 1 0 1.4l-5.7 5.7a1 1 0 0 1-1.4-1.4l5-5z"/>
@@ -16,8 +16,8 @@
       </slot>
     </div>
 
-    <div class="vue-horizontal-container" ref="container"
-         :class="{'no-scroll': !scroll}" @scroll.passive="onScrollDebounced">
+    <div class="vue-horizontal-container" :class="{scroll,snap}"
+         ref="container" @scroll.passive="onScrollDebounced">
       <slot></slot>
     </div>
   </div>
@@ -57,12 +57,16 @@ export default Vue.extend({
   props: {
     button: {
       type: Boolean,
-      default: () => true
+      default: () => true,
     },
     scroll: {
       type: Boolean,
-      default: () => false
+      default: () => false,
     },
+    snap: {
+      type: Boolean,
+      default: () => true,
+    }
   },
   mounted() {
     this.onScroll();
@@ -70,7 +74,11 @@ export default Vue.extend({
   computed: {
     hasPrev(): boolean {
       const {container, slotted} = this as VueHorizontalData
-      return container.absoluteLeft !== slotted.absoluteLeft
+      if (container.scrollLeft === 0) {
+        return false;
+      }
+      return container.absoluteLeft !== slotted.absoluteLeft;
+
     },
     hasNext(): boolean {
       const {scrollLeft, scrollWidth, clientWidth} = this.container
@@ -90,7 +98,7 @@ export default Vue.extend({
     },
     onScrollDebounced(): void {
       clearTimeout(this.timeoutId);
-      this.timeoutId = window.setTimeout(this.onScroll, 100);
+      this.timeoutId = window.setTimeout(this.onScroll, 250);
     },
     onScroll(): void {
       const container = this.$refs.container as Element
@@ -101,6 +109,9 @@ export default Vue.extend({
 
       const slotted = (this.$slots.default[0] as VNode).elm as Element
       this.slotted.absoluteLeft = slotted.getBoundingClientRect().left
+
+      console.log(`container: ${JSON.stringify(this.container)}`)
+      console.log(`slotted: ${JSON.stringify(this.slotted)}`)
     },
   },
 });
@@ -110,16 +121,19 @@ export default Vue.extend({
 .vue-horizontal {
   position: relative;
   display: flex;
-  align-items: center;
 }
 
-.vue-horizontal-btn-left {
+.btn-next,
+.btn-prev {
   position: absolute;
+  align-self: center;
+}
+
+.btn-prev {
   left: -24px;
 }
 
-.vue-horizontal-btn-right {
-  position: absolute;
+.btn-next {
   right: -24px;
 }
 
@@ -148,16 +162,19 @@ svg:hover {
 }
 
 .vue-horizontal-container > * {
-  scroll-snap-align: start;
   flex-shrink: 0;
 }
 
-.vue-horizontal-container.no-scroll {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
+.vue-horizontal-container.snap > * {
+  scroll-snap-align: start;
 }
 
-.vue-horizontal-container.no-scroll::-webkit-scrollbar {
+.vue-horizontal-container:not(.scroll) {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.vue-horizontal-container:not(.scroll)::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
