@@ -74,9 +74,9 @@ jobs:
           restore-keys: |
             npm-
 
-      - run: npm ci
-
-      - run: npm run serve &
-
       - name: Cypress run
         uses: cypress-io/github-action@v2
+        with:
+          build: npm ci
+          start: npm run serve
+
