@@ -1,6 +1,6 @@
 # Vue Horizontal [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal)
 
-> An early POC for another way to do horizontal layout in vue.
+> An early **Beta POC** for another way to do horizontal layout in vue. Use it at your own risk.
  
 ### TODO
 - [ ] Added relevant shields.io badges
@@ -66,7 +66,6 @@ section {
 <details>
 <summary><b>All Features</b></summary>
 
-```vue
 ```vue
 <template>
   <vue-horizontal>

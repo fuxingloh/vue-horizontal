@@ -11,9 +11,6 @@ categories:
     labels:
       - 'chore'
       - 'docs'
-replacers:
-  - search: '/^(feat|fix|chore|docs)(\(.+\))?: */i'
-    replace: ''
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'
 version-resolver:
