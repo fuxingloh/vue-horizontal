@@ -12,7 +12,6 @@ import Vue from 'vue';
 import VueHorizontal from '@/vue-horizontal.vue';
 
 export default Vue.extend({
-  name: 'example',
   components: {
     VueHorizontal
   },

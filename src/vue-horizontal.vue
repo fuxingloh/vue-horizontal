@@ -1,6 +1,6 @@
 <template>
   <div class="vue-horizontal">
-    <div class="btn-prev" v-if="button && hasPrev" @click="prev">
+    <div class="v-hl-btn-prev" v-if="button && hasPrev" @click="prev">
       <slot name="btn-left">
         <svg viewBox="0 0 24 24">
           <path d="m9.8 12 5 5a1 1 0 1 1-1.4 1.4l-5.7-5.7a1 1 0 0 1 0-1.4l5.7-5.7a1 1 0 0 1 1.4 1.4l-5 5z"/>
@@ -8,7 +8,7 @@
       </slot>
     </div>
 
-    <div class="btn-next" v-if="button && hasNext" @click="next">
+    <div class="v-hl-btn-next" v-if="button && hasNext" @click="next">
       <slot name="btn-right">
         <svg viewBox="0 0 24 24">
           <path d="m14.3 12.1-5-5a1 1 0 0 1 1.4-1.4l5.7 5.7a1 1 0 0 1 0 1.4l-5.7 5.7a1 1 0 0 1-1.4-1.4l5-5z"/>
@@ -16,15 +16,14 @@
       </slot>
     </div>
 
-    <div class="vue-horizontal-container" :class="{scroll,snap}"
-         ref="container" @scroll.passive="onScrollDebounced">
+    <div class="v-hl-container" :class="{scroll,snap}" ref="container" @scroll.passive="onScrollDebounced">
       <slot></slot>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue, {VNode} from 'vue'
+import Vue from 'vue'
 
 interface VueHorizontalData {
   container: {
@@ -37,6 +36,8 @@ interface VueHorizontalData {
   slotted: {
     absoluteLeft: number;
   };
+
+  debouceId: number | null;
 }
 
 export default Vue.extend({
@@ -52,6 +53,7 @@ export default Vue.extend({
       slotted: {
         absoluteLeft: 0,
       },
+      debouceId: null
     }
   },
   props: {
@@ -66,7 +68,7 @@ export default Vue.extend({
     snap: {
       type: Boolean,
       default: () => true,
-    }
+    },
   },
   mounted() {
     this.onScroll();
@@ -87,18 +89,22 @@ export default Vue.extend({
   },
   methods: {
     prev(): void {
-      const element = this.$refs.container as Element
-      const left = element.scrollLeft - element.clientWidth
-      element.scrollTo({left: left, behavior: "smooth"});
+      const {scrollLeft, clientWidth} = this.container
+      this.scrollTo(scrollLeft - clientWidth)
     },
     next(): void {
+      const {scrollLeft, clientWidth} = this.container
+      this.scrollTo(scrollLeft + clientWidth)
+    },
+    scrollTo(left: number): void {
       const element = this.$refs.container as Element
-      const left = element.scrollLeft + element.clientWidth
       element.scrollTo({left: left, behavior: "smooth"});
     },
     onScrollDebounced(): void {
-      clearTimeout(this.timeoutId);
-      this.timeoutId = window.setTimeout(this.onScroll, 250);
+      if (this.debouceId) {
+        clearTimeout(this.debouceId);
+      }
+      this.debouceId = window.setTimeout(this.onScroll, 250);
     },
     onScroll(): void {
       const container = this.$refs.container as Element
@@ -107,8 +113,8 @@ export default Vue.extend({
       this.container.scrollWidth = container.scrollWidth;
       this.container.absoluteLeft = container.getBoundingClientRect().left
 
-      const slotted = (this.$slots.default[0] as VNode).elm as Element
-      this.slotted.absoluteLeft = slotted.getBoundingClientRect().left
+      const slotted = this.$slots?.default?.[0]?.elm as Element
+      this.slotted.absoluteLeft = slotted?.getBoundingClientRect()?.left ?? 0
 
       console.log(`container: ${JSON.stringify(this.container)}`)
       console.log(`slotted: ${JSON.stringify(this.slotted)}`)
@@ -123,17 +129,17 @@ export default Vue.extend({
   display: flex;
 }
 
-.btn-next,
-.btn-prev {
+.v-hl-btn-prev,
+.v-hl-btn-next {
   position: absolute;
   align-self: center;
 }
 
-.btn-prev {
+.v-hl-btn-prev {
   left: -24px;
 }
 
-.btn-next {
+.v-hl-btn-next {
   right: -24px;
 }
 
@@ -151,7 +157,7 @@ svg:hover {
   cursor: pointer;
 }
 
-.vue-horizontal-container {
+.v-hl-container {
   display: flex;
   box-sizing: content-box;
   overflow-x: scroll;
@@ -161,20 +167,20 @@ svg:hover {
   scroll-snap-type: x mandatory;
 }
 
-.vue-horizontal-container > * {
+.v-hl-container > * {
   flex-shrink: 0;
 }
 
-.vue-horizontal-container.snap > * {
+.v-hl-container.snap > * {
   scroll-snap-align: start;
 }
 
-.vue-horizontal-container:not(.scroll) {
+.v-hl-container:not(.scroll) {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-.vue-horizontal-container:not(.scroll)::-webkit-scrollbar {
+.v-hl-container:not(.scroll)::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
