@@ -79,7 +79,7 @@ export default Vue.extend({
       if (container.scrollLeft === 0) {
         return false;
       }
-      return container.absoluteLeft !== slotted.absoluteLeft;
+      return Math.abs(container.absoluteLeft - slotted.absoluteLeft) >= 0.5;
 
     },
     hasNext(): boolean {
@@ -163,8 +163,8 @@ svg:hover {
   overflow-x: scroll;
   overflow-y: hidden;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .v-hl-container > * {

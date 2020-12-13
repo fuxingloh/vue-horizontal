@@ -24,11 +24,6 @@ h6 {
   margin: 0 0 8px;
 }
 
-a {
-  text-decoration: none;
-  color: initial;
-}
-
 p {
   margin: 0;
   font-size: 17px;
@@ -36,6 +31,16 @@ p {
   font-weight: 500;
   color: #333;
   word-break: break-word;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+a:hover,
+a:hover > * {
+  color: #0000db;
 }
 </style>
 

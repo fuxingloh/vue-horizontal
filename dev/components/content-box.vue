@@ -1,8 +1,10 @@
 <template>
-  <vue-horizontal>
+  <vue-horizontal class="vhl">
     <section v-for="item in items" :key="item.i">
-      <h3>{{ item.title }}</h3>
-      <p>{{ item.content }}</p>
+      <div class="item">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.content }}</p>
+      </div>
     </section>
   </vue-horizontal>
 </template>
@@ -27,11 +29,18 @@ export default Vue.extend({
 
 <style scoped>
 section {
+  box-sizing: content-box;
+  width: calc(100% / 4);
+  margin: 0 12px;
+}
+
+.item {
   padding: 16px 24px;
   border-radius: 4px;
   background: #f5f5f5;
-  margin-right: 24px;
-  box-sizing: border-box;
-  width: calc((100% - (3 * 24px)) / 4);
+}
+
+.vhl {
+  background: red;
 }
 </style>
