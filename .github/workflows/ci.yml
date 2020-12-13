@@ -57,8 +57,8 @@ jobs:
 
       - run: npm run lint
 
-  cypress:
-    name: End-to-end Test
+  e2e-chrome:
+    name: E2E (Chrome)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -79,4 +79,55 @@ jobs:
         with:
           build: npm ci
           start: npm run serve
+          browser: chrome
 
+  e2e-firefox:
+    name: E2E (Firefox)
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:node12.16.1-chrome80-ff73
+      options: --user 1001
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            npm-
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm ci
+          start: npm run serve
+          browser: firefox
+
+  e2e-edge:
+    name: E2E (Edge)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            npm-
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm ci
+          start: npm run serve
+          browser: edge
