@@ -1,0 +1,35 @@
+name: edge
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'cypress/**'
+      - 'src/**'
+      - 'dev/**'
+
+  pull_request:
+    types: [ opened, reopened, synchronize, ready_for_review ]
+    branches: [ main ]
+    paths:
+      - 'cypress/**'
+      - 'src/**'
+      - 'dev/**'
+
+jobs:
+  main:
+    name: End-to-end
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm ci
+          start: npm run serve
+          browser: edge
