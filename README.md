@@ -1,6 +1,6 @@
-# Vue Horizontal [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal)
+# Vue Horizontal [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
 
-> An early **Beta POC** for another way to do horizontal layout in vue. Use it at your own risk.
+> This is a beta early release POC, use it at your own risk.
  
 ### TODO
 - [ ] Added relevant shields.io badges
@@ -8,7 +8,6 @@
 - [ ] All features
 - [ ] More examples
 - [ ] Documentation + examples github.io page
-- [ ] CI Testing
 - [ ] Wrappers
 
 An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.
@@ -110,9 +109,15 @@ section {
 Setup & develop.
 
 ```shell
-npm install
-npm run serve
+npm install # install
+npm run serve # dev
+npm run cypress # e2e testing
 ```
+
+### Writing test?
+
+End-to-end test cases are written because of the UI nature of this framework. 
+[Cypress](https://www.cypress.io/) is used under the hood.
 
 ## Contributions
 
