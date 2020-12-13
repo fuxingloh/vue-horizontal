@@ -163,8 +163,8 @@ svg:hover {
   overflow-x: scroll;
   overflow-y: hidden;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .v-hl-container > * {

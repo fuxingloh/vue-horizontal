@@ -1,8 +1,10 @@
 <template>
   <div>
     <section v-for="component in components" :key="component.name">
-      <h2>{{component.name}}</h2>
-      <p>{{component.description}}</p>
+      <router-link :to="component.path">
+        <h2>{{ component.name }}</h2>
+        <p>{{ component.description }}</p>
+      </router-link>
       <component :is="component.name"/>
     </section>
   </div>

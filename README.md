@@ -63,10 +63,9 @@ section {
   padding: 16px 24px;
   border-radius: 4px;
   background: #f5f5f5;
-  margin: 12px;
+  margin: 0 12px;
   box-sizing: border-box;
   width: calc((100% - (3 * 24px)) / 4);
-  flex-basis: calc((100% - (3 * 24px)) / 4);
 }
 </style>
 ```
