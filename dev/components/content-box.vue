@@ -40,11 +40,6 @@ section {
   background: #f5f5f5;
 }
 
-/*section {*/
-/*  margin-left: -12px;*/
-/*  margin-right: 12px;*/
-/*}*/
-
 .vhl {
   background: red;
 }
