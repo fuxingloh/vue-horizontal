@@ -1,6 +1,10 @@
-# Vue Horizontal [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal)
+# Vue Horizontal [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
 
-> An early **Beta POC** for another way to do horizontal layout in vue. Use it at your own risk.
+![chrome](https://github.com/fuxingloh/vue-horizontal/workflows/chrome/badge.svg)
+![firefox](https://github.com/fuxingloh/vue-horizontal/workflows/firefox/badge.svg)
+![edge](https://github.com/fuxingloh/vue-horizontal/workflows/edge/badge.svg)
+
+> This is a beta early release POC, use it at your own risk.
  
 ### TODO
 - [ ] Added relevant shields.io badges
@@ -8,13 +12,14 @@
 - [ ] All features
 - [ ] More examples
 - [ ] Documentation + examples github.io page
-- [ ] CI Testing
 - [ ] Wrappers
 
 An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.
 
+
+![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
-[![CI Main](https://img.shields.io/github/workflow/status/fuxingloh/vue-horizontal/CI/main)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ACI+branch%3Amain)
+
 ---
 
 > SVG here of the different layout and supported features.
@@ -110,9 +115,15 @@ section {
 Setup & develop.
 
 ```shell
-npm install
-npm run serve
+npm install # install
+npm run serve # dev
+npm run cypress # e2e testing
 ```
+
+### Writing test?
+
+End-to-end test cases are written because of the UI nature of this framework. 
+[Cypress](https://www.cypress.io/) is used under the hood.
 
 ## Contributions
 
