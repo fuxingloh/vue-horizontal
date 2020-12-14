@@ -2,8 +2,8 @@
   "title": "Vue Horizontal",
   "url": "https://vue-horizontal.fuxing.dev",
   "logo": {
-    "light": "/logo-light.svg",
-    "dark": "/logo-dark.svg"
+    "light": "/logo.svg",
+    "dark": "/logo.svg"
   },
   "github": "fuxingloh/vue-horizontal"
 }

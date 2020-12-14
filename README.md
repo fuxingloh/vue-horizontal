@@ -1,8 +1,8 @@
 # Vue Horizontal [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
 
-### BETA TODO
+⚠️ This library is still a work in progress, please be careful.
 
-> This is a beta early release POC, use it at your own risk.
+### BETA TODO
 
 - [ ] Added relevant shields.io badges
 - [ ] Onboarding banner images of the features
