@@ -155,7 +155,8 @@ npm run cypress # e2e testing
 ### Writing test?
 
 End-to-end test cases are written because of the UI nature of this framework.
-[Cypress](https://www.cypress.io/) is used under the hood.
+[Cypress](https://www.cypress.io/) is used under the hood. 
+There are also additional lifecycle testing done to ensure SPA/SSR/SSG works.
 
 ## Contributions
 
@@ -168,6 +169,7 @@ End-to-end test cases are written because of the UI nature of this framework.
 
 - Airbnb.com
 - [vue-horizontal-list](https://github.com/fuxingloh/vue-horizontal-list)
+- [Motivation](https://vue-horizontal.fuxing.dev/#motivation)
 
 Originally, this project started out as another project
 called [vue-horizontal-list](https://github.com/fuxingloh/vue-horizontal-list). I created the origin project because I

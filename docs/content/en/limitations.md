@@ -25,6 +25,7 @@ The feature is shipped in Safari 14 but
 - 93% = 76% + 12% (Safari) + 4% (iOS Safari) + 1% (Opera Mini)
 - < 10% Observed agony or bad user experience
 - You should polyfill
+- Polyfill should be done by you, there are no plans to incorporate this natively in the library.
 
 <caniuse feature="css-scroll-behavior"></caniuse>
 
@@ -33,7 +34,6 @@ The feature is shipped in Safari 14 but
 I recommend installing this [smoothscroll polyfill](https://github.com/iamdustan/smoothscroll) created 
 by [@iamdustan](https://github.com/iamdustan). 
 Then, have it polyfill once on the client side.
-Polyfill should be done by the user, there are no plans to incorporate this natively in the library.
 
 #### Installing
 
