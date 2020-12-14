@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "nuxt-ts",
@@ -12,10 +12,10 @@
     "lint": "npm run lint:js && npm run lint:style"
   },
   "dependencies": {
-    "@nuxt/content": "^1.9.0",
+    "@nuxt/content-theme-docs": "^0.8.0",
     "@nuxt/typescript-runtime": "^2.0.0",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.7"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.6",
@@ -24,7 +24,6 @@
     "@nuxtjs/eslint-config-typescript": "^3.0.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/stylelint-module": "^4.0.0",
-    "@nuxtjs/tailwindcss": "^3.1.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.10.0",
     "eslint-plugin-nuxt": "^1.0.0",
