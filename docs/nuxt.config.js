@@ -10,7 +10,7 @@ export default theme({
   buildModules: [
     '@nuxt/typescript-build',
     ['@nuxtjs/google-analytics', {
-      id: 'G-9F84Z4QRLF'
+      id: 'UA-9F84Z4QRLF'
     }]
   ]
 })
