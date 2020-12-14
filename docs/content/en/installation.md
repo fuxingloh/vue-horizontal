@@ -1,8 +1,8 @@
 ---
-title: Setup
+title: Installation
 description: ''
-position: 2
-category: Guide
+position: 3
+category: Getting Started
 ---
 
 Check the [Nuxt.js documentation](https://nuxtjs.org/guides/configuration-glossary/configuration-modules) for more information about installing and using modules in Nuxt.js.
@@ -40,3 +40,8 @@ Then, add `@nuxtjs/xxx` to the `modules` section of `nuxt.config.js`:
   }
 }
 ```
+
+
+### CDN Mode
+
+- jsdelivery 

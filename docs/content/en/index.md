@@ -2,7 +2,7 @@
 title: Introduction
 description: ''
 position: 1
-category: ''
+category: Getting Started
 features:
   - Feature 1
   - Feature 2
@@ -22,3 +22,6 @@ Your documentation has been created successfully!
 ## Features
 
 <list :items="features"></list>
+
+
+## Motivation

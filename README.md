@@ -5,11 +5,8 @@
 ### BETA TODO
 
 - [ ] Added relevant shields.io badges
-- [ ] Onboarding banner images of the features
-- [ ] All features
-- [ ] More examples
-- [ ] Documentation + examples github.io page
-- [ ] Wrappers
+- [ ] Preview.svg
+- [ ] Vue Horizontal Features
 
 An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.
 
@@ -35,8 +32,30 @@ yarn add vue-horizontal
 
 ## Usage
 
-```vue
+### Component registration
 
+```javascript
+import Vue from 'vue';
+import VueHorizontal from "vue-horizontal";
+
+Vue.component(VueHorizontal)
+```
+
+### Import it in a Single File Component
+
+```vue
+<script>
+import VueHorizontal from "vue-horizontal";
+
+export default {
+  components: {VueHorizontal}
+}
+</script>
+```
+
+### Using Vue Horizontal
+
+```vue
 <template>
   <vue-horizontal>
     <section v-for="item in items">
@@ -66,6 +85,7 @@ section {
   background: #f5f5f5;
   margin-right: 24px;
   box-sizing: border-box;
+  /* width: calc((100% - ((item-count - 1) * gap-size)) / item-count); */
   width: calc((100% - (3 * 24px)) / 4);
 }
 </style>
@@ -120,8 +140,7 @@ section {
 
 ### [css-scroll-behavior: smooth](https://caniuse.com/css-scroll-behavior)
 
-- [ ] Document it and how to overcome it. 
- 
+- [ ] Document it and how to overcome it.
 
 ## Development
 
