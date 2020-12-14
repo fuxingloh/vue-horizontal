@@ -1,13 +1,6 @@
 <template>
   <div>
-    <client-only>
-      <iframe width="100%" :src="src" :height="`${height}px`"></iframe>
-      <picture slot="placeholder">
-        <source type="image/webp" :srcset="`https://caniuse.bitsofco.de/image/${feature}.webp`">
-        <source type="image/png" :srcset="`https://caniuse.bitsofco.de/image/${feature}.png`">
-        <img :src="`https://caniuse.bitsofco.de/image/${feature}.jpg`" alt="feature support">
-      </picture>
-    </client-only>
+    <iframe width="100%" :src="src" :height="`${height}px`"></iframe>
   </div>
 </template>
 
@@ -48,7 +41,7 @@ export default Vue.extend({
     window.removeEventListener("message", this.onMessage);
   },
   methods: {
-    onMessage(event) {
+    onMessage(event: MessageEvent) {
       if (event.origin !== origin) {
         return;
       }

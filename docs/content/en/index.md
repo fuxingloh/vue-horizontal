@@ -17,6 +17,7 @@ features:
 <alert type="info">
 
 An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.
+With over 100 crafted recipes of design choices and control mechanisms ready for your needs. 
 
 </alert>
 
@@ -25,3 +26,16 @@ An ultra simple pure vue horizontal layout for modern responsive web with zero d
 <list :items="features"></list>
 
 ## Motivation
+
+
+- [ ] airbnb
+- [ ] legacy, shopping
+- [ ] not using dom, dom access
+- [ ] SEO needs
+- [ ] recipes
+- [ ] moves the responsibilities to the user
+- [ ] < 200 loc
+- [ ] x100 more code written in documentation
+- [ ] vue-horizontal-list
+- [ ] instead of creating... create a list of recipes and let the users take it from here
+- [ ] Added e2e to ensure compatibility with browser

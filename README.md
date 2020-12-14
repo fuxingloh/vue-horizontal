@@ -1,19 +1,13 @@
 # Vue Horizontal [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
 
-⚠️ This library is still a work in progress, please be careful.
-
-### BETA TODO
-
-- [ ] Added relevant shields.io badges
-- [ ] Preview.svg
-- [ ] Vue Horizontal Features
-- [ ] Vue Horizontal Documentation
-
-An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.
-
 ![chrome](https://github.com/fuxingloh/vue-horizontal/workflows/chrome/badge.svg)
 ![firefox](https://github.com/fuxingloh/vue-horizontal/workflows/firefox/badge.svg)
 ![edge](https://github.com/fuxingloh/vue-horizontal/workflows/edge/badge.svg)
+
+An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies. With over 100 crafted
+recipes of design choices and control mechanisms ready for your needs.
+
+⚠️ This library is still a work in progress, please be careful.
 
 ---
 
@@ -22,6 +16,13 @@ An ultra simple pure vue horizontal layout for modern responsive web with zero d
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a0be1d4c-97ed-455b-abcb-7c9e64acb0b5/deploy-status)](https://app.netlify.com/sites/vue-horizontal/deploys)
 ![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
+
+## BETA TODO
+
+- [ ] Added relevant shields.io badges
+- [ ] Preview.svg
+- [ ] Vue Horizontal Features
+- [ ] Vue Horizontal Documentation
 
 ## Installation
 
