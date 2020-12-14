@@ -21,6 +21,7 @@ An ultra simple pure vue horizontal layout for modern responsive web with zero d
 
 > SVG here of the different layout and supported features.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a0be1d4c-97ed-455b-abcb-7c9e64acb0b5/deploy-status)](https://app.netlify.com/sites/vue-horizontal/deploys)
 ![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
 
