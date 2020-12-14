@@ -138,9 +138,28 @@ section {
 
 ## Known Limitations
 
-### [css-scroll-behavior: smooth](https://caniuse.com/css-scroll-behavior)
+### [CSS Scroll Behavior: Smooth](https://vue-horizontal.fuxing.dev/limitations#css-scroll-behavior-smooth)
 
-- [ ] Document it and how to overcome it.
+In Vue Horizontal, smooth scrolling is enabled by default. 
+With scroll-behavior: smooth, it enables smooth scrolling experience when scroll event is triggered by programmatic calls. 
+Although this is not a breaking functional feature, it provides a "smooth" scrolling user experience.
+
+As of December 2020, there is only a 76% cross browser compatibility.
+Meantime you should polyfill this feature with more 
+[information here](https://vue-horizontal.fuxing.dev/limitations#smoothscroll-polyfill).
+Polyfill should be done by the user, there are no plans to incorporate this natively in the library.
+
+### [CSS Scroll Snap](https://vue-horizontal.fuxing.dev/limitations#css-scroll-snap)
+
+Scroll snap align or scroll-snapping, is a CSS technique that allows customizable scrolling experiences like pagination
+of carousels by setting defined snap positions.
+Vue Horizontal has it enabled by default to disable you can set `<vue-horizontal :snap="false">`.
+
+### [Hiding scrollbar](https://vue-horizontal.fuxing.dev/limitations#hiding-scrollbar)
+
+In Vue Horizontal, the x-axis scrollbar is hidden by default. 
+Although there isn't a shared specification, most browser has it implemented one way or another. 
+As of December 2020, there is a 97%+ cross browser compatibility.
 
 ## Development
 
