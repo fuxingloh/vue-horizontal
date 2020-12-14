@@ -1,47 +1,68 @@
 ---
 title: Installation
-description: ''
+description: 'Installing and setup vue-horizontal dependency to your project.'
 position: 3
 category: Getting Started
 ---
 
-Check the [Nuxt.js documentation](https://nuxtjs.org/guides/configuration-glossary/configuration-modules) for more information about installing and using modules in Nuxt.js.
-
-## Installation
-
-Add `@nuxtjs/xxx` dependency to your project:
+Add `vue-horizontal` dependency to your project:
 
 <code-group>
-  <code-block label="Yarn" active>
+  <code-block label="NPM" active>
 
   ```bash
-  yarn add @nuxtjs/xxx
+  npm i vue-horizontal
   ```
 
   </code-block>
-  <code-block label="NPM">
+  <code-block label="Yarn">
 
   ```bash
-  npm install @nuxtjs/xxx
+  yarn add vue-horizontal
+  ```
+
+  </code-block>
+  <code-block label="<script>">
+
+  ```html
+  <!-- without version -->
+  <script src="https://cdn.jsdelivr.net/npm/vue-horizontal/dist/vue-horizontal.esm.min.js"></script>
+  
+  <!-- with version, go https://www.jsdelivr.com/package/npm/vue-horizontal to find -->
+  <script src="https://cdn.jsdelivr.net/npm/vue-horizontal@0.x.x/dist/vue-horizontal.esm.min.js"></script>
   ```
 
   </code-block>
 </code-group>
 
-Then, add `@nuxtjs/xxx` to the `modules` section of `nuxt.config.js`:
+Then, import `vue-horizontal` and use `<vue-horizontal>`:
 
-```js[nuxt.config.js]
-{
-  modules: [
-    '@nuxtjs/xxx'
-  ],
-  xxx: {
-    // Options
-  }
+## Single File Component
+
+```vue[my-amazing-component.vue]
+<template>
+  <div>
+    <vue-horizontal>
+      <!-- ... -->
+    </vue-horizontal>
+  </div>
+</template>
+
+<script>
+import VueHorizontal from 'vue-horizontal';
+
+export default {
+  components: {VueHorizontal},
+  //...
 }
+</script>
 ```
 
+## Install Globally
 
-### CDN Mode
+```js[app.js]
+import Vue from 'vue';
+import VueHorizontal from 'vue-horizontal';
 
-- jsdelivery 
+Vue.component('vue-horizontal', VueHorizontal);
+```

@@ -7,6 +7,7 @@
 - [ ] Added relevant shields.io badges
 - [ ] Preview.svg
 - [ ] Vue Horizontal Features
+- [ ] Vue Horizontal Documentation
 
 An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.
 
@@ -24,22 +25,25 @@ An ultra simple pure vue horizontal layout for modern responsive web with zero d
 
 ## Installation
 
+### Npm
+
 ```shell
 npm i vue-horizontal
-# or
+```
+
+### Yarn
+
+```shell
 yarn add vue-horizontal
 ```
 
-## Usage
+### Or via CDN
 
-### Component registration
-
-```javascript
-import Vue from 'vue';
-import VueHorizontal from "vue-horizontal";
-
-Vue.component(VueHorizontal)
+```html
+<script src="https://cdn.jsdelivr.net/npm/vue-horizontal@0.x.x/dist/vue-horizontal.esm.min.js"></script>
 ```
+
+## Usage
 
 ### Import it in a Single File Component
 
@@ -51,6 +55,14 @@ export default {
   components: {VueHorizontal}
 }
 </script>
+```
+
+### Global registration
+```javascript
+import Vue from 'vue';
+import VueHorizontal from "vue-horizontal";
+
+Vue.component(VueHorizontal)
 ```
 
 ### Using Vue Horizontal
@@ -91,41 +103,10 @@ section {
 </style>
 ```
 
-<details>
-<summary><b>All Features</b></summary>
+### More Features/Examples
 
-```vue
-
-<template>
-  <vue-horizontal>
-    <section v-for="item in items">
-      {{item}}
-    </section>
-  </vue-horizontal>
-</template>
-
-<script>
-export default {
-  data() {
-    return {}
-  }
-}
-</script>
-
-<style scoped>
-section {
-}
-</style>
-```
-
-</details>
-
-<details>
-<summary><b>More Examples</b></summary>
-
-- [ ] Link to examples/documentations?
-
-</details>
+- [Advanced usage](https://vue-horizontal.fuxing.dev/advanced)
+- [Collection of recipes](https://vue-horizontal.fuxing.dev/recipes)
 
 ## Features and Design Philosophy
 
@@ -134,32 +115,31 @@ section {
 - Scroll bar or customizable button navigation
 - Snap to the nearest item when scrolling
 - Moves the responsibilities of the CSS to the user
-- Extensible for any use case
+- Extensible for any use case with a [collection or recipes](https://vue-horizontal.fuxing.dev/recipes).
 
 ## Known Limitations
 
 ### [CSS Scroll Behavior: Smooth](https://vue-horizontal.fuxing.dev/limitations#css-scroll-behavior-smooth)
 
-In Vue Horizontal, smooth scrolling is enabled by default. 
-With scroll-behavior: smooth, it enables smooth scrolling experience when scroll event is triggered by programmatic calls. 
-Although this is not a breaking functional feature, it provides a "smooth" scrolling user experience.
+In Vue Horizontal, smooth scrolling is enabled by default. With scroll-behavior: smooth, it enables smooth scrolling
+experience when scroll event is triggered by programmatic calls. Although this is not a breaking functional feature, it
+provides a "smooth" scrolling user experience.
 
-As of December 2020, there is only a 76% cross browser compatibility.
-Meantime you should polyfill this feature with more 
-[information here](https://vue-horizontal.fuxing.dev/limitations#smoothscroll-polyfill).
-Polyfill should be done by the user, there are no plans to incorporate this natively in the library.
+As of December 2020, there is only a 76% cross browser compatibility. Meantime you should polyfill this feature with
+more
+[information here](https://vue-horizontal.fuxing.dev/limitations#smoothscroll-polyfill). Polyfill should be done by the
+user, there are no plans to incorporate this natively in the library.
 
 ### [CSS Scroll Snap](https://vue-horizontal.fuxing.dev/limitations#css-scroll-snap)
 
 Scroll snap align or scroll-snapping, is a CSS technique that allows customizable scrolling experiences like pagination
-of carousels by setting defined snap positions.
-Vue Horizontal has it enabled by default to disable you can set `<vue-horizontal :snap="false">`.
+of carousels by setting defined snap positions. Vue Horizontal has it enabled by default to disable you can
+set `<vue-horizontal :snap="false">`.
 
 ### [Hiding scrollbar](https://vue-horizontal.fuxing.dev/limitations#hiding-scrollbar)
 
-In Vue Horizontal, the x-axis scrollbar is hidden by default. 
-Although there isn't a shared specification, most browser has it implemented one way or another. 
-As of December 2020, there is a 97%+ cross browser compatibility.
+In Vue Horizontal, the x-axis scrollbar is hidden by default. Although there isn't a shared specification, most browser
+has it implemented one way or another. As of December 2020, there is a 97%+ cross browser compatibility.
 
 ## Development
 
