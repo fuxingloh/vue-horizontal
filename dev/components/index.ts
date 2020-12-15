@@ -2,6 +2,8 @@ import Empty from './empty.vue';
 import Simple from './simple.vue';
 import ContentBox from './content-box.vue';
 import ScrollToIndex from './scroll-to-index.vue';
+import Snapping from './snapping.vue';
+import NavButton from './nav-button.vue';
 
 export interface ComponentMeta {
   path: string;
@@ -34,6 +36,18 @@ const components: ComponentMeta[] = [
     name: 'scroll-to-index',
     description: 'Scroll to index $horizontal.scrollToIndex(0)',
     component: ScrollToIndex,
+  },
+  {
+    path: '/snapping',
+    name: 'snapping',
+    description: 'Snapping on/off testing',
+    component: Snapping,
+  },
+  {
+    path: '/nav-button',
+    name: 'nav-button',
+    description: 'Multiple nav button testing scenario',
+    component: NavButton,
   },
 ]
 

@@ -19,34 +19,24 @@ describe('scroll-to-index', () => {
     cy.viewport(1200, 800)
 
     cy.get('.btn-1').click();
-    cy.get('.v-hl-container > :nth-child(2)').should(($el) => {
-      const left = $el[0].getBoundingClientRect().left
-      expect(left, 'absolute left').to.equal(80)
-    });
+    cy.get('.v-hl-container > :nth-child(2)')
+      .should('to.be.left', 80)
 
     cy.get('.btn-3').click();
-    cy.get('.v-hl-container > :nth-child(4)').should(($el) => {
-      const left = $el[0].getBoundingClientRect().left
-      expect(left, 'absolute left').to.equal(80)
-    });
+    cy.get('.v-hl-container > :nth-child(4)')
+      .should('to.be.left', 80)
 
     cy.get('.btn-10').click();
-    cy.get('.v-hl-container > :nth-child(11)').should(($el) => {
-      const left = $el[0].getBoundingClientRect().left
-      expect(left, 'absolute left').to.equal(80)
-    });
+    cy.get('.v-hl-container > :nth-child(11)')
+      .should('to.be.left', 80)
 
     cy.get('.btn-19').click();
     // Go to 19 should not be possible.
-    cy.get('.v-hl-container > :nth-child(20)').should(($el) => {
-      const left = $el[0].getBoundingClientRect().left
-      expect(left, 'absolute left').to.not.equal(80)
-    });
+    cy.get('.v-hl-container > :nth-child(20)')
+      .should('to.not.be.left', 80)
 
-    cy.get('.v-hl-container > :nth-child(17)').should(($el) => {
-      const left = $el[0].getBoundingClientRect().left
-      expect(left, 'absolute left').to.equal(80)
-    });
+    cy.get('.v-hl-container > :nth-child(17)')
+      .should('to.be.left', 80)
   });
 
   it('should not scroll to index', function () {
@@ -54,24 +44,18 @@ describe('scroll-to-index', () => {
 
     cy.get('.btn-100').click();
     cy.wait(1000);
-    cy.get('.v-hl-container > :nth-child(1)').should(($el) => {
-      const left = $el[0].getBoundingClientRect().left
-      expect(left, 'absolute left').to.equal(80)
-    });
+    cy.get('.v-hl-container > :nth-child(1)')
+      .should('to.be.left', 80)
 
     cy.get('.btn--1').click();
     cy.wait(1000);
-    cy.get('.v-hl-container > :nth-child(1)').should(($el) => {
-      const left = $el[0].getBoundingClientRect().left
-      expect(left, 'absolute left').to.equal(80)
-    });
+    cy.get('.v-hl-container > :nth-child(1)')
+      .should('to.be.left', 80)
 
     cy.get('.btn-0').click();
     cy.wait(1000);
-    cy.get('.v-hl-container > :nth-child(1)').should(($el) => {
-      const left = $el[0].getBoundingClientRect().left
-      expect(left, 'absolute left').to.equal(80)
-    });
+    cy.get('.v-hl-container > :nth-child(1)')
+      .should('to.be.left', 80)
   });
 
   it('navigation: button should and should not appear', function () {
