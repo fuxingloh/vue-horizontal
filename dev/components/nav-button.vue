@@ -11,7 +11,7 @@
       </section>
     </vue-horizontal>
 
-    <vue-horizontal :button="false" style="margin-top: 24px" class="button-false">
+    <vue-horizontal :button="false" class="button-false">
       <section v-for="item in items" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
@@ -22,7 +22,7 @@
       </section>
     </vue-horizontal>
 
-    <vue-horizontal style="margin-top: 24px" class="button-replaced">
+    <vue-horizontal class="button-replaced">
       <template v-slot:btn-prev>
         <button>
           PREV
@@ -81,6 +81,11 @@ section {
 
 .header {
   display: flex;
+}
+
+.button-false,
+.button-replaced {
+  margin-top: 24px;
 }
 
 .header h6 {

@@ -11,7 +11,7 @@
       </section>
     </vue-horizontal>
 
-    <vue-horizontal class="snap-false" :snap="false" style="margin-top: 24px" ref="snapFalse">
+    <vue-horizontal class="snap-false" :snap="false" ref="snapFalse">
       <section v-for="item in items" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
@@ -22,7 +22,7 @@
       </section>
     </vue-horizontal>
 
-    <div style="margin-top: 24px">
+    <div>
       <button @click="() => scrollTo(i)" v-for="i in [0,100,200,400,600,800]" :key="i" :class="`btn-${i}`">
         Go {{ i }}px
       </button>
@@ -92,5 +92,10 @@ section {
 
 button {
   margin-right: 12px;
+}
+
+.snap-false,
+.snap-true {
+  margin-bottom: 24px;
 }
 </style>
