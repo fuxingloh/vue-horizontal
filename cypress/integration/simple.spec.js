@@ -49,4 +49,42 @@ describe('simple', () => {
     cy.get('.v-hl-btn-prev').should('not.exist');
     cy.get('.v-hl-btn-next').should('exist');
   });
+
+  it('should match screenshot', function () {
+    cy.viewport(1200, 800)
+    cy.get('.vue-horizontal').toMatchImageSnapshot({
+      threshold: 0.001,
+    })
+
+    cy.viewport(800, 800)
+    cy.get('.vue-horizontal').toMatchImageSnapshot({
+      threshold: 0.001,
+    })
+
+    cy.viewport(600, 600)
+    cy.get('.vue-horizontal').toMatchImageSnapshot({
+      threshold: 0.001,
+    })
+
+    cy.viewport(1200, 800)
+    cy.get('.v-hl-btn-next').click()
+    cy.wait(3000)
+    cy.get('.vue-horizontal').toMatchImageSnapshot({
+      threshold: 0.001,
+    })
+  });
+
+  it('should match document', function () {
+    cy.viewport(1200, 800)
+    cy.document().toMatchImageSnapshot({
+      threshold: 0.001,
+    })
+
+    cy.get('.v-hl-btn-next').click()
+    cy.wait(3000)
+
+    cy.document().toMatchImageSnapshot({
+      threshold: 0.001,
+    })
+  });
 })

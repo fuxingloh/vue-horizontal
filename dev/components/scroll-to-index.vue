@@ -2,7 +2,10 @@
   <div>
     <vue-horizontal ref="horizontal">
       <section v-for="item in items" :key="item.i">
-        <h3>{{ item.title }}</h3>
+        <div class="header">
+          <h6>{{ item.i }}</h6>
+          <h3>{{ item.title }}</h3>
+        </div>
         <p>{{ item.content }}</p>
       </section>
     </vue-horizontal>
@@ -18,15 +21,21 @@
 <script lang="ts">
 import Vue from 'vue';
 import VueHorizontal from '@/vue-horizontal.vue';
+import {Lorem} from './utils'
 
 export default Vue.extend({
   components: {
     VueHorizontal
   },
   data() {
+    const lorem = Lorem()
     return {
       items: [...Array(20).keys()].map((i) => {
-        return {i, title: `Item ${i}`, content: `🚀 Simple content ${i}`};
+        return {
+          i,
+          title: lorem.generateWords(2),
+          content: lorem.generateSentences(1),
+        };
       }),
     }
   },
@@ -49,9 +58,26 @@ section {
   width: calc((100% - (3 * 24px)) / 4);
 }
 
+.header {
+  display: flex;
+}
+
+.header h6 {
+  background: #0000db;
+  font-size: 14px;
+  color: white;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 24px;
+  border-radius: 12px;
+  margin-right: 12px;
+}
+
 .buttons {
   margin-top: 24px;
 }
+
 button {
   margin-right: 12px;
 }

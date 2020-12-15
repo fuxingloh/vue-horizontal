@@ -18,7 +18,7 @@ export default Vue.extend({
   data() {
     return {
       items: [...Array(20).keys()].map((i) => {
-        return {i, title: `Item ${i}`, content: `🚀 Simple content ${i}`};
+        return {i, title: `Item ${i}`, content: `Border box ${i}`};
       }),
     }
   }

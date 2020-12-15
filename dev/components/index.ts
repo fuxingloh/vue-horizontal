@@ -3,24 +3,24 @@ import Simple from './simple.vue';
 import ContentBox from './content-box.vue';
 import ScrollToIndex from './scroll-to-index.vue';
 
-interface Component {
+export interface ComponentMeta {
   path: string;
   name: string;
   description: string;
   component: any;
 }
 
-const components: Component[] = [
+const components: ComponentMeta[] = [
   {
     path: '/empty',
     name: 'empty',
-    description: 'No content, for testing',
+    description: 'No content, for testing. Below should be empty.',
     component: Empty,
   },
   {
     path: '/simple',
     name: 'simple',
-    description: 'Simple implementation with margin and flex-basis.',
+    description: 'Simple implementation with margin and flex-basis. CSS: border-sizing.',
     component: Simple,
   },
   {
@@ -32,7 +32,7 @@ const components: Component[] = [
   {
     path: '/scroll-to-index',
     name: 'scroll-to-index',
-    description: 'Scroll to index',
+    description: 'Scroll to index $horizontal.scrollToIndex(0)',
     component: ScrollToIndex,
   },
 ]

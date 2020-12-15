@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <router-link to="/">
-      <h1>🏠 Vue Horizontal</h1>
+      <h1>Vue Horizontal</h1>
     </router-link>
 
     <router-view></router-view>
@@ -10,7 +10,7 @@
 
 <style>
 body {
-  font-family: "-apple-system", "system-ui", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif;
+  font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
 }
