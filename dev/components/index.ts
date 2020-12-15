@@ -1,6 +1,7 @@
 import Empty from './empty.vue';
 import Simple from './simple.vue';
 import ContentBox from './content-box.vue';
+import ScrollToIndex from './scroll-to-index.vue';
 
 interface Component {
   path: string;
@@ -27,6 +28,12 @@ const components: Component[] = [
     name: 'content-box',
     description: 'CSS: box-sizing: content-box testing.',
     component: ContentBox,
+  },
+  {
+    path: '/scroll-to-index',
+    name: 'scroll-to-index',
+    description: 'Scroll to index',
+    component: ScrollToIndex,
   },
 ]
 

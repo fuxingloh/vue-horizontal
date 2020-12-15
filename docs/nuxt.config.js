@@ -1,4 +1,5 @@
 import theme from '@nuxt/content-theme-docs'
+import path from "path";
 
 export default theme({
   docs: {
@@ -7,10 +8,10 @@ export default theme({
   css: [
     'assets/css/main.css',
   ],
+  plugins: [
+    path.resolve(__dirname, 'plugins/gtag.client'),
+  ],
   buildModules: [
     '@nuxt/typescript-build',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-9F84Z4QRLF',
-    }],
-  ]
+  ],
 })
