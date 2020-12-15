@@ -30,6 +30,7 @@ jobs:
           build: npm ci
           start: npm run serve
           browser: edge
+          spec: cypress/integration/functional/*
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

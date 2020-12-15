@@ -14,6 +14,7 @@ recipes of design choices and control mechanisms ready for your needs.
 > SVG here of the different layout and supported features.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a0be1d4c-97ed-455b-abcb-7c9e64acb0b5/deploy-status)](https://app.netlify.com/sites/vue-horizontal/deploys)
+[![vue-horizontal](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/biiu4m&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/biiu4m/runs)
 ![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
 

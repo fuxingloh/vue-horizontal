@@ -6,13 +6,6 @@ describe('scroll-to-index', () => {
     cy.viewport(1600, 800)
   })
 
-  it('should match screenshot', function () {
-    cy.get('.btn-2').click();
-    cy.wait(4000);
-
-    cy.get('.vue-horizontal').matchImageSnapshot()
-  });
-
   it('should scroll to index', function () {
     cy.viewport(1200, 800)
 
