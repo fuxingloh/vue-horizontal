@@ -1,5 +1,6 @@
 {
   "projectId": "biiu4m",
+  "reporter": "cypress-image-snapshot/reporter",
   "ignoreTestFiles": [
     "**/__snapshots__/*",
     "**/__image_snapshots__/*"

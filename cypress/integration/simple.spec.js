@@ -51,38 +51,50 @@ describe('simple', () => {
   it('should match screenshot', function () {
     cy.viewport(1200, 800)
     cy.get('.vue-horizontal').toMatchImageSnapshot({
-      threshold: 0.001,
+      createDiffImage: true,
+      thresholdType: "percent",
+      threshold: 0.01,
     })
 
     cy.viewport(800, 800)
     cy.get('.vue-horizontal').toMatchImageSnapshot({
-      threshold: 0.001,
+      createDiffImage: true,
+      thresholdType: "percent",
+      threshold: 0.01,
     })
 
     cy.viewport(600, 600)
     cy.get('.vue-horizontal').toMatchImageSnapshot({
-      threshold: 0.001,
+      createDiffImage: true,
+      thresholdType: "percent",
+      threshold: 0.01,
     })
 
     cy.viewport(1200, 800)
     cy.get('.v-hl-btn-next').click()
     cy.wait(3000)
     cy.get('.vue-horizontal').toMatchImageSnapshot({
-      threshold: 0.001,
+      createDiffImage: true,
+      thresholdType: "percent",
+      threshold: 0.01,
     })
   });
 
   it('should match document', function () {
     cy.viewport(1200, 800)
     cy.document().toMatchImageSnapshot({
-      threshold: 0.001,
+      createDiffImage: true,
+      thresholdType: "percent",
+      threshold: 0.01,
     })
 
     cy.get('.v-hl-btn-next').click()
     cy.wait(3000)
 
     cy.document().toMatchImageSnapshot({
-      threshold: 0.001,
+      createDiffImage: true,
+      thresholdType: "percent",
+      threshold: 0.01,
     })
   });
 })

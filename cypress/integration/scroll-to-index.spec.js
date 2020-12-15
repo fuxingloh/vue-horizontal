@@ -11,7 +11,9 @@ describe('scroll-to-index', () => {
     cy.wait(4000);
 
     cy.get('.vue-horizontal').toMatchImageSnapshot({
-      threshold: 0.001,
+      createDiffImage: true,
+      thresholdType: "percent",
+      threshold: 0.01,
     })
   });
 
