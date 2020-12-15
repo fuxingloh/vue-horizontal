@@ -1,6 +1,6 @@
 <template>
   <div>
-    <vue-horizontal snap>
+    <vue-horizontal button class="button-true">
       <section v-for="item in items" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
@@ -11,7 +11,7 @@
       </section>
     </vue-horizontal>
 
-    <vue-horizontal :button="false" style="margin-top: 24px">
+    <vue-horizontal :button="false" style="margin-top: 24px" class="button-false">
       <section v-for="item in items" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
@@ -22,7 +22,7 @@
       </section>
     </vue-horizontal>
 
-    <vue-horizontal snap style="margin-top: 24px">
+    <vue-horizontal style="margin-top: 24px" class="button-replaced">
       <template v-slot:btn-prev>
         <button>
           PREV
