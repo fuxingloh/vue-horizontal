@@ -13,26 +13,20 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 
-import 'cypress-plugin-snapshots/commands';
+import {addMatchImageSnapshotCommand} from 'cypress-image-snapshot/command';
 
-/**
- * Example that shows how to write a custom Chai assertion.
- *
- * @see https://www.chaijs.com/guide/helpers/
- * @example
- ```
- expect('foo').to.be.foo()
- expect('bar').to.not.be.foo()
- cy.wrap('foo').should('be.foo')
- cy.wrap('bar').should('not.be.foo')
- ```
- * */
+addMatchImageSnapshotCommand({
+  failureThreshold: 0.03,
+  failureThresholdType: 'percent',
+});
+
 const left = (_chai, utils) => {
   _chai.Assertion.addMethod('left', function (left) {
     const $el = utils.flag(this, 'object');
     const elLeft = $el[0].getBoundingClientRect().left
+
     this.assert(
-      elLeft === left
+      Math.abs(elLeft - left) < 0.5
       , 'expected #{exp} to have left #{act}'
       , 'expected #{exp} not to have left #{act}'
       , elLeft, left

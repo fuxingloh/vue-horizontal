@@ -10,11 +10,7 @@ describe('scroll-to-index', () => {
     cy.get('.btn-2').click();
     cy.wait(4000);
 
-    cy.get('.vue-horizontal').toMatchImageSnapshot({
-      createDiffImage: true,
-      thresholdType: "percent",
-      threshold: 0.01,
-    })
+    cy.get('.vue-horizontal').matchImageSnapshot()
   });
 
   it('should scroll to index', function () {

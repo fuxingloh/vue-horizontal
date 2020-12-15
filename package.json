@@ -71,7 +71,7 @@
     "babel-plugin-transform-remove-console": "^6.9.4",
     "cross-env": "^7.0.2",
     "cypress": "^6.1.0",
-    "cypress-plugin-snapshots": "^1.4.4",
+    "cypress-image-snapshot": "^4.0.0",
     "eslint": "^7.15.0",
     "eslint-plugin-vue": "^7.2.0",
     "lodash": "^4.17.20",

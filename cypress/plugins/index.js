@@ -9,15 +9,14 @@
 // https://on.cypress.io/plugins-guide
 // ***********************************************************
 
-// This function is called when a project is opened or re-opened (e.g. due to
-// the project's config changing)
-
-const { initPlugin } = require('cypress-plugin-snapshots/plugin');
+const {
+  addMatchImageSnapshotPlugin,
+} = require('cypress-image-snapshot/plugin');
 
 /**
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
-  initPlugin(on, config);
+  addMatchImageSnapshotPlugin(on, config);
   return config;
 };
