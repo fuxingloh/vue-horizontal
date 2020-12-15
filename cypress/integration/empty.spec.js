@@ -10,22 +10,4 @@ describe('empty', () => {
       .should('have.length', 1)
       .should('have.class', 'v-hl-container');
   })
-
-
-  it('should match screenshot', function () {
-    cy.viewport(1200, 800)
-    cy.get('.should-be-empty').toMatchImageSnapshot({
-      threshold: 0.001,
-    })
-
-    cy.viewport(800, 800)
-    cy.get('.should-be-empty').toMatchImageSnapshot({
-      threshold: 0.001,
-    })
-
-    cy.viewport(600, 600)
-    cy.get('.should-be-empty').toMatchImageSnapshot({
-      threshold: 0.001,
-    })
-  });
 })
