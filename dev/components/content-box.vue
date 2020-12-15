@@ -20,7 +20,7 @@ export default Vue.extend({
   data() {
     return {
       items: [...Array(20).keys()].map((i) => {
-        return {i, title: `Item ${i}`, content: `🚀 Simple content ${i}`};
+        return {i, title: `Item ${i}`, content: `Content box ${i}`};
       }),
     }
   }
@@ -30,17 +30,13 @@ export default Vue.extend({
 <style scoped>
 section {
   box-sizing: content-box;
-  width: calc(100% / 4);
-  margin: 0 12px;
+  width: calc((100% - (3 * 24px)) / 4);
+  margin-right: 24px;
 }
 
 .item {
   padding: 16px 24px;
   border-radius: 4px;
   background: #f5f5f5;
-}
-
-.vhl {
-  background: red;
 }
 </style>

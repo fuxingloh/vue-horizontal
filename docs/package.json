@@ -12,11 +12,11 @@
     "@nuxt/content-theme-docs": "^0.8.0",
     "@nuxt/typescript-runtime": "^2.0.0",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.7"
+    "nuxt": "^2.14.7",
+    "vue-gtag": "^1.10.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.6",
-    "@nuxt/typescript-build": "^2.0.3",
-    "@nuxtjs/google-analytics": "^2.4.0"
+    "@nuxt/typescript-build": "^2.0.3"
   }
 }

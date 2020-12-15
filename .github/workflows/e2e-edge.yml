@@ -26,6 +26,17 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
+          record: true
           build: npm ci
           start: npm run serve
           browser: edge
+          spec: cypress/integration/functional/*
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots

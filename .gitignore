@@ -21,3 +21,5 @@ yarn-error.log*
 *.sw?
 
 gh-pages
+cypress/videos/
+cypress/screenshots/

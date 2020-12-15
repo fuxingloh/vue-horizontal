@@ -1,4 +1,4 @@
-# Vue Horizontal [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
+# [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
 
 ![chrome](https://github.com/fuxingloh/vue-horizontal/workflows/chrome/badge.svg)
 ![firefox](https://github.com/fuxingloh/vue-horizontal/workflows/firefox/badge.svg)
@@ -14,6 +14,7 @@ recipes of design choices and control mechanisms ready for your needs.
 > SVG here of the different layout and supported features.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a0be1d4c-97ed-455b-abcb-7c9e64acb0b5/deploy-status)](https://app.netlify.com/sites/vue-horizontal/deploys)
+[![vue-horizontal](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/biiu4m&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/biiu4m/runs)
 ![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
 
@@ -134,8 +135,8 @@ user, there are no plans to incorporate this natively in the library.
 ### [CSS Scroll Snap](https://vue-horizontal.fuxing.dev/limitations#css-scroll-snap)
 
 Scroll snap align or scroll-snapping, is a CSS technique that allows customizable scrolling experiences like pagination
-of carousels by setting defined snap positions. Vue Horizontal has it enabled by default to disable you can
-set `<vue-horizontal :snap="false">`.
+of carousels by setting defined snap positions. Vue Horizontal has it enabled by default, to disable you can set 
+`<vue-horizontal :snap="false">`.
 
 ### [Hiding scrollbar](https://vue-horizontal.fuxing.dev/limitations#hiding-scrollbar)
 

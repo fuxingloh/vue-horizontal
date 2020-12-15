@@ -1,7 +1,7 @@
 <template>
   <div class="vue-horizontal">
     <div class="v-hl-btn-prev" v-if="button && hasPrev" @click="prev">
-      <slot name="btn-left">
+      <slot name="btn-prev">
         <svg viewBox="0 0 24 24">
           <path d="m9.8 12 5 5a1 1 0 1 1-1.4 1.4l-5.7-5.7a1 1 0 0 1 0-1.4l5.7-5.7a1 1 0 0 1 1.4 1.4l-5 5z"/>
         </svg>
@@ -9,7 +9,7 @@
     </div>
 
     <div class="v-hl-btn-next" v-if="button && hasNext" @click="next">
-      <slot name="btn-right">
+      <slot name="btn-next">
         <svg viewBox="0 0 24 24">
           <path d="m14.3 12.1-5-5a1 1 0 0 1 1.4-1.4l5.7 5.7a1 1 0 0 1 0 1.4l-5.7 5.7a1 1 0 0 1-1.4-1.4l5-5z"/>
         </svg>
@@ -24,6 +24,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import {VNode} from "vue/types/vnode";
 
 interface VueHorizontalData {
   container: {
@@ -53,7 +54,7 @@ export default Vue.extend({
       slotted: {
         absoluteLeft: 0,
       },
-      debouceId: null
+      debouceId: null,
     }
   },
   props: {
@@ -79,8 +80,8 @@ export default Vue.extend({
       if (container.scrollLeft === 0) {
         return false;
       }
+      // Firefox compatibility issue
       return Math.abs(container.absoluteLeft - slotted.absoluteLeft) >= 0.5;
-
     },
     hasNext(): boolean {
       const {scrollLeft, scrollWidth, clientWidth} = this.container
@@ -89,14 +90,27 @@ export default Vue.extend({
   },
   methods: {
     prev(): void {
-      const {scrollLeft, clientWidth} = this.container
-      this.scrollTo(scrollLeft - clientWidth)
+      const container = this.$refs.container as Element
+      const {scrollLeft, clientWidth} = container
+      this.scrollToLeft(scrollLeft - clientWidth)
     },
     next(): void {
-      const {scrollLeft, clientWidth} = this.container
-      this.scrollTo(scrollLeft + clientWidth)
+      const container = this.$refs.container as Element
+      const {scrollLeft, clientWidth} = container
+      this.scrollToLeft(scrollLeft + clientWidth)
     },
-    scrollTo(left: number): void {
+    scrollToIndex(index: number): void {
+      const slots = this.$slots?.default as VNode[]
+      if (slots[index]) {
+        const container = this.$refs.container as Element
+        const element = slots[index].elm as Element
+
+        const eleLeft = element.getBoundingClientRect().left
+        console.log(element.getBoundingClientRect().left)
+        this.scrollToLeft(container.scrollLeft + eleLeft)
+      }
+    },
+    scrollToLeft(left: number): void {
       const element = this.$refs.container as Element
       element.scrollTo({left: left, behavior: "smooth"});
     },
@@ -113,11 +127,11 @@ export default Vue.extend({
       this.container.scrollWidth = container.scrollWidth;
       this.container.absoluteLeft = container.getBoundingClientRect().left
 
-      const slotted = this.$slots?.default?.[0]?.elm as Element
-      this.slotted.absoluteLeft = slotted?.getBoundingClientRect()?.left ?? 0
+      const slot0 = this.$slots?.default?.[0]?.elm as Element
+      this.slotted.absoluteLeft = slot0?.getBoundingClientRect()?.left ?? 0
 
       console.log(`container: ${JSON.stringify(this.container)}`)
-      console.log(`slotted: ${JSON.stringify(this.slotted)}`)
+      console.log(`slot0: ${JSON.stringify(this.slotted)}`)
     },
   },
 });
@@ -127,6 +141,7 @@ export default Vue.extend({
 .vue-horizontal {
   position: relative;
   display: flex;
+  padding: 0;
 }
 
 .v-hl-btn-prev,
@@ -146,6 +161,7 @@ export default Vue.extend({
 svg {
   width: 42px;
   height: 42px;
+  margin: 0;
   padding: 6px;
   border-radius: 21px;
   box-sizing: border-box;
@@ -159,6 +175,9 @@ svg:hover {
 
 .v-hl-container {
   display: flex;
+  margin: 0;
+  padding: 0;
+  border: none;
   box-sizing: content-box;
   overflow-x: scroll;
   overflow-y: hidden;
