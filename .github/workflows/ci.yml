@@ -3,10 +3,24 @@ name: CI
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'dev/**'
+      - 'build/**'
+      - '*.json'
+      - '*.js'
+      - '*.ts'
 
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
     branches: [ main ]
+    paths:
+      - 'src/**'
+      - 'dev/**'
+      - 'build/**'
+      - '*.json'
+      - '*.js'
+      - '*.ts'
 
 jobs:
   build:
