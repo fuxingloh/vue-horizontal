@@ -1,0 +1,1 @@
+../../../src/vue-horizontal.vue
