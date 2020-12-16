@@ -27,27 +27,18 @@ recipes of design choices and control mechanisms ready for your needs.
 
 ## Installation
 
-### Npm
-
 ```shell
 npm i vue-horizontal
-```
-
-### Yarn
-
-```shell
+# or
 yarn add vue-horizontal
-```
-
-### Or via CDN
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/vue-horizontal@0.x.x/dist/vue-horizontal.esm.min.js"></script>
+# or via <script>
+# https://cdn.jsdelivr.net/npm/vue-horizontal@0.x.x/dist/vue-horizontal.esm.min.js
 ```
 
 ## Usage
 
-### Import it in a Single File Component
+<details>
+<summary><b>Import Locally</b></summary>
 
 ```vue
 <script>
@@ -59,13 +50,19 @@ export default {
 </script>
 ```
 
-### Global registration
+</details>
+
+<details>
+<summary><b>Import Globally</b></summary>
+
 ```javascript
 import Vue from 'vue';
 import VueHorizontal from "vue-horizontal";
 
 Vue.component(VueHorizontal)
 ```
+
+</details>
 
 ### Using Vue Horizontal
 
@@ -80,10 +77,13 @@ Vue.component(VueHorizontal)
 </template>
 
 <script>
+import VueHorizontal from "vue-horizontal";
+
 export default {
+  components: {VueHorizontal},
   data() {
     return {
-      // Creates 20 array items...
+      // E.g: creates 20 array items...
       items: [...Array(20).keys()].map((i) => {
         return {title: `Item ${i}`, content: `🚀 Content ${i}`};
       }),
@@ -95,10 +95,8 @@ export default {
 <style scoped>
 section {
   padding: 16px 24px;
-  border-radius: 4px;
-  background: #f5f5f5;
   margin-right: 24px;
-  box-sizing: border-box;
+  background: #f5f5f5;
   /* width: calc((100% - ((item-count - 1) * gap-size)) / item-count); */
   width: calc((100% - (3 * 24px)) / 4);
 }
@@ -150,14 +148,8 @@ Setup, develop & test.
 ```shell
 npm install # install
 npm run serve # dev
-npm run cypress # e2e testing
+npm run cypress:run # e2e testing
 ```
-
-### Writing test?
-
-End-to-end test cases are written because of the UI nature of this framework.
-[Cypress](https://www.cypress.io/) is used under the hood. 
-There are also additional lifecycle testing done to ensure SPA/SSR/SSG works.
 
 ## Contributions
 
@@ -165,12 +157,16 @@ There are also additional lifecycle testing done to ensure SPA/SSR/SSG works.
   an [issue](https://github.com/fuxingloh/vue-horizontal/issues/new)
   or [pull request](https://github.com/fuxingloh/vue-horizontal/pulls).
 - For feature request, do check out the examples as some of them might have been implemented.
+- End-to-end test cases are also written because of the UI nature of this framework.
+  [Cypress](https://www.cypress.io/) is used under the hood.
+- There are also additional integration testing done to ensure SSR and SSG works.
 
 ## Prior art
 
-- Airbnb.com
-- [vue-horizontal-list](https://github.com/fuxingloh/vue-horizontal-list)
 - [Motivation](https://vue-horizontal.fuxing.dev/#motivation)
+- [vue-horizontal-list](https://github.com/fuxingloh/vue-horizontal-list)
+- Airbnb.com
+- kenwheeler/slick
 
 Originally, this project started out as another project
 called [vue-horizontal-list](https://github.com/fuxingloh/vue-horizontal-list). I created the origin project because I
