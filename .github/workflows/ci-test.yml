@@ -45,13 +45,7 @@ jobs:
 
       - run: npm ci
       - run: npm run build
-      - run: npm run start &
-
-      - uses: nev7n/wait_for_response@v1
-        with:
-          url: 'http://localhost:3000'
-          timeout: 10000
-          responseCode: 200
-          interval: 1000
-
-      - run: npm run test
+      - run: |
+          npm run start &
+          sleep 10
+          npm run test
