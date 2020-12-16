@@ -2,8 +2,8 @@
 
 describe('scroll-to-index', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/scroll-to-index')
     cy.viewport(1600, 800)
+    cy.visit('http://localhost:8080/scroll-to-index')
   })
 
   it('should scroll to index', function () {
@@ -31,22 +31,20 @@ describe('scroll-to-index', () => {
   });
 
   it('should not scroll to index', function () {
-    cy.viewport(1200, 800)
-
     cy.get('.btn-100').click();
     cy.wait(1000);
     cy.get('.v-hl-container > :nth-child(1)')
-      .should('to.be.left', 80)
+      .should('to.be.left', 100)
 
     cy.get('.btn--1').click();
     cy.wait(1000);
     cy.get('.v-hl-container > :nth-child(1)')
-      .should('to.be.left', 80)
+      .should('to.be.left', 100)
 
     cy.get('.btn-0').click();
     cy.wait(1000);
     cy.get('.v-hl-container > :nth-child(1)')
-      .should('to.be.left', 80)
+      .should('to.be.left', 100)
   });
 
   it('navigation: button should and should not appear', function () {
@@ -54,7 +52,6 @@ describe('scroll-to-index', () => {
     cy.get('.v-hl-btn-next').should('exist');
 
     cy.get('.btn-1').click();
-    cy.wait(1000);
     cy.get('.v-hl-btn-prev').should('exist');
     cy.get('.v-hl-btn-next').should('exist');
 
@@ -65,7 +62,6 @@ describe('scroll-to-index', () => {
 
   it('navigation: next then scroll to index', function () {
     cy.get('.v-hl-btn-next').click();
-    cy.wait(1000);
     cy.get('.v-hl-btn-prev').should('exist');
     cy.get('.v-hl-btn-next').should('exist');
 

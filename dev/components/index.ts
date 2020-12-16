@@ -4,6 +4,7 @@ import ContentBox from './content-box.vue';
 import ScrollToIndex from './scroll-to-index.vue';
 import Snapping from './snapping.vue';
 import NavButton from './nav-button.vue';
+import Event from './event.vue';
 
 export interface ComponentMeta {
   path: string;
@@ -48,6 +49,12 @@ const components: ComponentMeta[] = [
     name: 'nav-button',
     description: 'Multiple nav button testing scenario',
     component: NavButton,
+  },
+  {
+    path: '/event',
+    name: 'event',
+    description: 'Emit event bubbling',
+    component: Event,
   },
 ]
 

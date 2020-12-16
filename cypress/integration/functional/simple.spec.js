@@ -3,8 +3,8 @@
 
 describe('simple', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/simple')
     cy.viewport(1200, 800)
+    cy.visit('http://localhost:8080/simple')
   })
 
   it('root: should contain container and next', () => {
@@ -20,7 +20,6 @@ describe('simple', () => {
   });
 
   it('container: should start from 0', function () {
-    cy.viewport(1200, 800)
     cy.get('.v-hl-container > :nth-child(1)')
       .should('to.be.left', 80)
   });
@@ -30,7 +29,6 @@ describe('simple', () => {
     cy.get('.v-hl-btn-next').should('exist');
 
     cy.get('.v-hl-btn-next').click()
-    cy.wait(500)
     cy.get('.v-hl-btn-prev').should('exist');
     cy.get('.v-hl-btn-next').should('exist');
 
