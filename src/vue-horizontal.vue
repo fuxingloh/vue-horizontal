@@ -16,7 +16,8 @@
       </slot>
     </div>
 
-    <div class="v-hl-container" :class="{scroll,snap}" ref="container" @scroll.passive="onScrollDebounced">
+    <div class="v-hl-container" ref="container" @scroll.passive="onScrollDebounce"
+         :class="{'v-hl-scroll': scroll, 'v-hl-snap': snap}">
       <slot></slot>
     </div>
   </div>
@@ -27,16 +28,12 @@ import Vue from 'vue'
 import {VNode} from "vue/types/vnode";
 
 interface VueHorizontalData {
-  container: {
-    absoluteLeft: number;
-    scrollLeft: number;
-    clientWidth: number;
-    scrollWidth: number;
-  };
+  left: number,
+  containerWidth: number;
+  scrollWidth: number;
 
-  slotted: {
-    absoluteLeft: number;
-  };
+  hasPrev: boolean,
+  hasNext: boolean,
 
   debouceId: number | null;
 }
@@ -45,15 +42,13 @@ export default Vue.extend({
   name: 'VueHorizontal',
   data(): VueHorizontalData {
     return {
-      container: {
-        absoluteLeft: 0,
-        scrollLeft: 0,
-        clientWidth: 0,
-        scrollWidth: 0,
-      },
-      slotted: {
-        absoluteLeft: 0,
-      },
+      left: 0,
+      containerWidth: 0,
+      scrollWidth: 0,
+
+      hasPrev: false,
+      hasNext: false,
+
       debouceId: null,
     }
   },
@@ -74,64 +69,62 @@ export default Vue.extend({
   mounted() {
     this.onScroll();
   },
-  computed: {
-    hasPrev(): boolean {
-      const {container, slotted} = this as VueHorizontalData
-      if (container.scrollLeft === 0) {
-        return false;
-      }
-      // Firefox compatibility issue
-      return Math.abs(container.absoluteLeft - slotted.absoluteLeft) >= 0.5;
-    },
-    hasNext(): boolean {
-      const {scrollLeft, scrollWidth, clientWidth} = this.container
-      return scrollWidth !== scrollLeft + clientWidth
-    }
-  },
   methods: {
     prev(): void {
-      const container = this.$refs.container as Element
-      const {scrollLeft, clientWidth} = container
+      const {scrollLeft, clientWidth} = this.$refs.container as Element
       this.scrollToLeft(scrollLeft - clientWidth)
     },
     next(): void {
-      const container = this.$refs.container as Element
-      const {scrollLeft, clientWidth} = container
+      const {scrollLeft, clientWidth} = this.$refs.container as Element
       this.scrollToLeft(scrollLeft + clientWidth)
     },
     scrollToIndex(index: number): void {
       const slots = this.$slots?.default as VNode[]
       if (slots[index]) {
-        const container = this.$refs.container as Element
         const element = slots[index].elm as Element
+        const {scrollLeft} = this.$refs.container as Element
 
-        const eleLeft = element.getBoundingClientRect().left
-        console.log(element.getBoundingClientRect().left)
-        this.scrollToLeft(container.scrollLeft + eleLeft)
+        const left = element.getBoundingClientRect().left
+        this.scrollToLeft(scrollLeft + left)
       }
     },
     scrollToLeft(left: number): void {
       const element = this.$refs.container as Element
       element.scrollTo({left: left, behavior: "smooth"});
     },
-    onScrollDebounced(): void {
+    onScrollDebounce(): void {
       if (this.debouceId) {
         clearTimeout(this.debouceId);
       }
       this.debouceId = window.setTimeout(this.onScroll, 250);
     },
     onScroll(): void {
+      // Firefox compatibility issue
+      const delta = 2.0
+
       const container = this.$refs.container as Element
-      this.container.scrollLeft = container.scrollLeft;
-      this.container.clientWidth = container.clientWidth;
-      this.container.scrollWidth = container.scrollWidth;
-      this.container.absoluteLeft = container.getBoundingClientRect().left
-
       const slot0 = this.$slots?.default?.[0]?.elm as Element
-      this.slotted.absoluteLeft = slot0?.getBoundingClientRect()?.left ?? 0
 
-      console.log(`container: ${JSON.stringify(this.container)}`)
-      console.log(`slot0: ${JSON.stringify(this.slotted)}`)
+      this.left = container.scrollLeft
+      this.containerWidth = container.clientWidth
+      this.scrollWidth = container.scrollWidth
+
+      function hasNext(): boolean {
+        return container.scrollWidth > container.scrollLeft + container.clientWidth + delta
+      }
+
+      function hasPrev(): boolean {
+        if (container.scrollLeft === 0) {
+          return false;
+        }
+
+        const containerVWLeft = container.getBoundingClientRect().left
+        const slot0VWLeft = slot0?.getBoundingClientRect()?.left ?? 0
+        return Math.abs(containerVWLeft - slot0VWLeft) >= delta;
+      }
+
+      this.hasNext = hasNext()
+      this.hasPrev = hasPrev()
     },
   },
 });
@@ -144,18 +137,16 @@ export default Vue.extend({
   padding: 0;
 }
 
-.v-hl-btn-prev,
-.v-hl-btn-next {
+.v-hl-btn-prev {
+  left: -24px;
   position: absolute;
   align-self: center;
 }
 
-.v-hl-btn-prev {
-  left: -24px;
-}
-
 .v-hl-btn-next {
   right: -24px;
+  position: absolute;
+  align-self: center;
 }
 
 svg {
@@ -190,16 +181,16 @@ svg:hover {
   flex-shrink: 0;
 }
 
-.v-hl-container.snap > * {
+.v-hl-snap > * {
   scroll-snap-align: start;
 }
 
-.v-hl-container:not(.scroll) {
+.v-hl-container:not(.v-hl-scroll) {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
 
-.v-hl-container:not(.scroll)::-webkit-scrollbar {
+.v-hl-container:not(.v-hl-scroll)::-webkit-scrollbar {
   width: 0;
   height: 0;
 }

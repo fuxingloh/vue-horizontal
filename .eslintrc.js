@@ -12,5 +12,6 @@ module.exports = {
   ignorePatterns: [
     "cypress/**",
     "docs/**",
+    "test/**",
   ],
 }
