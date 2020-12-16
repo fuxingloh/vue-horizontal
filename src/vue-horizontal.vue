@@ -16,7 +16,7 @@
       </slot>
     </div>
 
-    <div class="v-hl-container" ref="container" @scroll.passive="onScrollDebounce"
+    <div class="v-hl-container" ref="container" @scroll.passive="onScroll"
          :class="{'v-hl-scroll': scroll, 'v-hl-snap': snap}">
       <slot></slot>
     </div>
@@ -28,12 +28,12 @@ import Vue from 'vue'
 import {VNode} from "vue/types/vnode";
 
 interface VueHorizontalData {
-  left: number,
+  left: number;
   containerWidth: number;
   scrollWidth: number;
 
-  hasPrev: boolean,
-  hasNext: boolean,
+  hasPrev: boolean;
+  hasNext: boolean;
 
   debouceId: number | null;
 }
@@ -67,16 +67,18 @@ export default Vue.extend({
     },
   },
   mounted() {
-    this.onScroll();
+    this.onScrollDebounce();
   },
   methods: {
     prev(): void {
       const {scrollLeft, clientWidth} = this.$refs.container as Element
       this.scrollToLeft(scrollLeft - clientWidth)
+      this.$emit('prev')
     },
     next(): void {
       const {scrollLeft, clientWidth} = this.$refs.container as Element
       this.scrollToLeft(scrollLeft + clientWidth)
+      this.$emit('next')
     },
     scrollToIndex(index: number): void {
       const slots = this.$slots?.default as VNode[]
@@ -92,13 +94,18 @@ export default Vue.extend({
       const element = this.$refs.container as Element
       element.scrollTo({left: left, behavior: "smooth"});
     },
-    onScrollDebounce(): void {
+    onScroll(): void {
+      const container = this.$refs.container as Element
+      this.$emit('scroll', {
+        left: container.scrollLeft,
+      })
+
       if (this.debouceId) {
         clearTimeout(this.debouceId);
       }
-      this.debouceId = window.setTimeout(this.onScroll, 250);
+      this.debouceId = window.setTimeout(this.onScrollDebounce, 250);
     },
-    onScroll(): void {
+    onScrollDebounce(): void {
       // Firefox compatibility issue
       const delta = 2.0
 
@@ -125,6 +132,11 @@ export default Vue.extend({
 
       this.hasNext = hasNext()
       this.hasPrev = hasPrev()
+
+      this.$emit('scroll-debounce', {
+        left: this.left, containerWidth: this.containerWidth, scrollWidth: this.scrollWidth,
+        hasPrev: this.hasPrev, hasNext: this.hasNext,
+      })
     },
   },
 });
