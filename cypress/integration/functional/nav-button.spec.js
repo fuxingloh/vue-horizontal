@@ -2,8 +2,8 @@
 
 describe('nav-button', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/nav-button')
     cy.viewport(1200, 800)
+    cy.visit('http://localhost:8080/nav-button')
   })
 
   it('button-true: should have next but not prev but later have next', () => {
@@ -25,7 +25,6 @@ describe('nav-button', () => {
     cy.get('.button-replaced .v-hl-btn-next').should('exist');
 
     cy.get('.button-replaced .v-hl-btn-next').click()
-    cy.wait(500)
     cy.get('.button-replaced .v-hl-btn-prev').should('exist');
     cy.get('.button-replaced .v-hl-btn-next').should('exist');
 

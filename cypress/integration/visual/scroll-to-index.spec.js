@@ -2,8 +2,8 @@
 
 describe('scroll-to-index', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/scroll-to-index')
     cy.viewport(1600, 800)
+    cy.visit('http://localhost:8080/scroll-to-index')
   })
 
   it('should match screenshot', function () {
