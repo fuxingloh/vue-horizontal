@@ -32,7 +32,7 @@ npm i vue-horizontal
 # or
 yarn add vue-horizontal
 # or via <script>
-# https://cdn.jsdelivr.net/npm/vue-horizontal@0.x.x/dist/vue-horizontal.esm.min.js
+https://cdn.jsdelivr.net/npm/vue-horizontal@0.x.x/dist/vue-horizontal.esm.min.js
 ```
 
 ## Usage
