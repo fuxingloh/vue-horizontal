@@ -5,6 +5,7 @@ import ScrollToIndex from './scroll-to-index.vue';
 import Snapping from './snapping.vue';
 import NavButton from './nav-button.vue';
 import Event from './event.vue';
+import Responsive from './responsive.vue';
 
 export interface ComponentMeta {
   path: string;
@@ -55,6 +56,12 @@ const components: ComponentMeta[] = [
     name: 'event',
     description: 'Emit event bubbling',
     component: Event,
+  },
+  {
+    path: '/responsive',
+    name: 'responsive',
+    description: 'Build-in opinionated responsive classes for users to get responsiveness at the get-go.',
+    component: Responsive,
   },
 ]
 
