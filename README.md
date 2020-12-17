@@ -3,27 +3,13 @@
 ![chrome](https://github.com/fuxingloh/vue-horizontal/workflows/chrome/badge.svg)
 ![firefox](https://github.com/fuxingloh/vue-horizontal/workflows/firefox/badge.svg)
 ![edge](https://github.com/fuxingloh/vue-horizontal/workflows/edge/badge.svg)
+![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)
+[![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
 
 An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies. With over 100 crafted
 recipes of design choices and control mechanisms ready for your needs.
 
-⚠️ This library is still a work in progress, please be careful.
-
 ---
-
-> SVG here of the different layout and supported features.
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/a0be1d4c-97ed-455b-abcb-7c9e64acb0b5/deploy-status)](https://app.netlify.com/sites/vue-horizontal/deploys)
-[![vue-horizontal](https://img.shields.io/endpoint?url=https://dashboard.cypress.io/badge/simple/biiu4m&style=flat&logo=cypress)](https://dashboard.cypress.io/projects/biiu4m/runs)
-![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)
-[![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
-
-## BETA TODO
-
-- [ ] Added relevant shields.io badges
-- [ ] Preview.svg
-- [ ] Vue Horizontal Features
-- [ ] Vue Horizontal Documentation
 
 ## Installation
 
@@ -103,10 +89,14 @@ section {
 </style>
 ```
 
-### More Features/Examples
+### More features and examples
 
-- [Advanced usage](https://vue-horizontal.fuxing.dev/advanced)
-- [Collection of recipes](https://vue-horizontal.fuxing.dev/recipes)
+- [Advanced Usage](https://vue-horizontal.fuxing.dev/advanced)
+- [Design Recipe: Responsive](https://vue-horizontal.fuxing.dev/recipes-design/responsive)
+- [Design Recipe: Cards/Grids](https://vue-horizontal.fuxing.dev/recipes-design/cards)
+- [Design Recipe: Avatar](https://vue-horizontal.fuxing.dev/recipes-design/avatar)
+- [Control Recipe: Button](https://vue-horizontal.fuxing.dev/recipes-control/navigation)
+- [Control Recipe: Carousel](https://vue-horizontal.fuxing.dev/recipes-control/carousel)
 
 ## Features and Design Philosophy
 
@@ -115,7 +105,7 @@ section {
 - Scroll bar or customizable button navigation
 - Snap to the nearest item when scrolling
 - Moves the responsibilities of the CSS to the user
-- Extensible for any use case with a [collection or recipes](https://vue-horizontal.fuxing.dev/recipes).
+- Extensible for any use case with [documented recipes](https://vue-horizontal.fuxing.dev/recipes-design/responsive).
 
 ## Known Limitations
 
@@ -165,8 +155,8 @@ npm run cypress:run # e2e testing
 
 - [Motivation](https://vue-horizontal.fuxing.dev/#motivation)
 - [vue-horizontal-list](https://github.com/fuxingloh/vue-horizontal-list)
+- [kenwheeler/slick](https://github.com/kenwheeler/slick)
 - Airbnb.com
-- kenwheeler/slick
 
 Originally, this project started out as another project
 called [vue-horizontal-list](https://github.com/fuxingloh/vue-horizontal-list). I created the origin project because I

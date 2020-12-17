@@ -1,4 +1,4 @@
-name: CI
+name: "CI - SSG/SSR"
 
 on:
   push:
