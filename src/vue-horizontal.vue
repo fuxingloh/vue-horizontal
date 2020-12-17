@@ -17,7 +17,7 @@
     </div>
 
     <div class="v-hl-container" ref="container" @scroll.passive="onScroll"
-         :class="{'v-hl-scroll': scroll, 'v-hl-snap': snap}">
+         :class="{'v-hl-scroll': scroll, 'v-hl-snap': snap, 'v-hl-responsive': responsive}">
       <slot></slot>
     </div>
   </div>
@@ -64,6 +64,10 @@ export default Vue.extend({
     snap: {
       type: Boolean,
       default: () => true,
+    },
+    responsive: {
+      type: Boolean,
+      default: () => false,
     },
   },
   mounted() {
@@ -205,5 +209,37 @@ svg:hover {
 .v-hl-container:not(.v-hl-scroll)::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+/* Using https://tailwindcss.com/docs/responsive-design breakpoints. */
+
+.v-hl-responsive > * {
+  width: 100%;
+  margin-right: 24px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .v-hl-responsive > * {
+    width: calc((100% - (24px)) / 2);
+  }
+}
+
+@media (min-width: 768px) {
+  .v-hl-responsive > * {
+    width: calc((100% - (2 * 24px)) / 3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .v-hl-responsive > * {
+    width: calc((100% - (3 * 24px)) / 4);
+  }
+}
+
+@media (min-width: 1280px) {
+  .v-hl-responsive > * {
+    width: calc((100% - (4 * 24px)) / 5);
+  }
 }
 </style>
