@@ -196,7 +196,7 @@ svg:hover {
 
 .v-hl-container > * {
   flex-shrink: 0;
-  /* TODO(fuxing): FORCE BORDER BOX */
+  box-sizing: border-box;
 }
 
 .v-hl-snap > * {
@@ -218,7 +218,6 @@ svg:hover {
 .v-hl-responsive > * {
   width: 100%;
   margin-right: 24px;
-  box-sizing: border-box;
 }
 
 @media (min-width: 640px) {
