@@ -7,6 +7,7 @@ import Snapping from './snapping.vue';
 import NavButton from './nav-button.vue';
 import Event from './event.vue';
 import Responsive from './responsive.vue';
+import RegressionCSS from './regression-css.vue';
 
 export interface ComponentMeta {
   path: string;
@@ -69,6 +70,12 @@ const components: ComponentMeta[] = [
     name: 'responsive',
     description: 'Build-in opinionated responsive classes for users to get responsiveness at the get-go.',
     component: Responsive,
+  },
+  {
+    path: '/regression-css',
+    name: 'regression-css',
+    description: 'Regression testing to make sure outer css does not influence internal css.',
+    component: RegressionCSS,
   },
 ]
 
