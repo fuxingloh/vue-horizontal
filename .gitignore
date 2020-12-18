@@ -23,3 +23,5 @@ yarn-error.log*
 gh-pages
 cypress/videos/
 cypress/screenshots/
+cypress/snapshots/All Integration Specs/
+cypress/fixtures/

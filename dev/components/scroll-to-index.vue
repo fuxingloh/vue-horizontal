@@ -74,10 +74,6 @@ section {
   margin-right: 12px;
 }
 
-.buttons {
-  margin-top: 24px;
-}
-
 button {
   margin-right: 12px;
 }

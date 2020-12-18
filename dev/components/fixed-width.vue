@@ -1,45 +1,47 @@
 <template>
   <div>
-    <vue-horizontal button class="button-true">
+    <vue-horizontal class="20-items">
       <section v-for="item in items" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
           <h3>{{ item.title }}</h3>
         </div>
-        <h6>BUTTON: TRUE</h6>
         <p>{{ item.content }}</p>
       </section>
     </vue-horizontal>
 
-    <vue-horizontal :button="false" class="button-false">
-      <section v-for="item in items" :key="item.i">
+    <vue-horizontal class="2-items">
+      <section v-for="item in items.slice(0, 2)" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
           <h3>{{ item.title }}</h3>
         </div>
-        <h6>BUTTON: FALSE</h6>
+        <h6>COUNT: 2</h6>
         <p>{{ item.content }}</p>
       </section>
     </vue-horizontal>
 
-    <vue-horizontal class="button-replaced">
-      <template v-slot:btn-prev>
-        <button>
-          PREV
-        </button>
-      </template>
-
-      <button slot="btn-next">
-        NEXT
-      </button>
-
-      <section v-for="item in items" :key="item.i">
+    <vue-horizontal class="fixed-content">
+      <section>
         <div class="header">
-          <h6>{{ item.i }}</h6>
-          <h3>{{ item.title }}</h3>
+          <h6>0</h6>
+          <h3>fixed content</h3>
         </div>
-        <h6>BUTTON: REPLACED</h6>
-        <p>{{ item.content }}</p>
+        <p>Created without v-for fixed width item 0</p>
+      </section>
+      <section>
+        <div class="header">
+          <h6>1</h6>
+          <h3>fixed content</h3>
+        </div>
+        <p>Created without v-for fixed width item 11</p>
+      </section>
+      <section>
+        <div class="header">
+          <h6>2</h6>
+          <h3>fixed content</h3>
+        </div>
+        <p>Created without v-for fixed width item 222</p>
       </section>
     </vue-horizontal>
   </div>
@@ -55,13 +57,13 @@ export default Vue.extend({
     VueHorizontal
   },
   data() {
-    const lorem = Lorem("nav-button")
+    const lorem = Lorem("fixed-width")
     return {
       items: [...Array(20).keys()].map((i) => {
         return {
           i,
-          title: lorem.generateWords(2),
-          content: lorem.generateWords(3),
+          title: lorem.generateWords(1),
+          content: lorem.generateWords(6),
         };
       }),
     }
