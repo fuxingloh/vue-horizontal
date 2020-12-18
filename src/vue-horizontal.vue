@@ -182,6 +182,7 @@ svg:hover {
 
 .v-hl-container {
   display: flex;
+  width: 100%;
   margin: 0;
   padding: 0;
   border: none;
@@ -195,6 +196,7 @@ svg:hover {
 
 .v-hl-container > * {
   flex-shrink: 0;
+  /* TODO(fuxing): FORCE BORDER BOX */
 }
 
 .v-hl-snap > * {
