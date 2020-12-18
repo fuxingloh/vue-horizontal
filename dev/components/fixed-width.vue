@@ -77,7 +77,6 @@ section {
   border-radius: 4px;
   background: #f5f5f5;
   margin-right: 24px;
-
   box-sizing: border-box;
   width: calc((100% - (3 * 24px)) / 4);
 }
