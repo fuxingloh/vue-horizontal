@@ -1,7 +1,8 @@
 import Empty from './empty.vue';
 import Simple from './simple.vue';
 import ContentBox from './content-box.vue';
-import VariousWidth from './various-width.vue';
+import ContentWidth from './content-width.vue';
+import FixedWidth from './fixed-width.vue';
 import ScrollToIndex from './scroll-to-index.vue';
 import Snapping from './snapping.vue';
 import NavButton from './nav-button.vue';
@@ -36,10 +37,16 @@ const components: ComponentMeta[] = [
     component: ContentBox,
   },
   {
-    path: '/various-width',
-    name: 'various-width',
+    path: '/content-width',
+    name: 'content-width',
     description: 'Various width testing, non-standard width, content influence width.',
-    component: VariousWidth,
+    component: ContentWidth,
+  },
+  {
+    path: '/fixed-width',
+    name: 'fixed-width',
+    description: 'Fixed width testing.',
+    component: FixedWidth,
   },
   {
     path: '/scroll-to-index',

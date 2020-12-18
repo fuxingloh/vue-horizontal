@@ -1,6 +1,6 @@
 <template>
   <div>
-    <vue-horizontal>
+    <vue-horizontal class="20-items">
       <section v-for="item in items" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
@@ -10,7 +10,7 @@
       </section>
     </vue-horizontal>
 
-    <vue-horizontal>
+    <vue-horizontal class="2-items">
       <section v-for="item in items.slice(0, 2)" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
@@ -21,27 +21,27 @@
       </section>
     </vue-horizontal>
 
-    <vue-horizontal>
+    <vue-horizontal class="fixed-content">
       <section>
         <div class="header">
           <h6>0</h6>
-          <h3>fixed width</h3>
+          <h3>fixed content</h3>
         </div>
         <p>Created without v-for fixed width item 0</p>
       </section>
       <section>
         <div class="header">
           <h6>1</h6>
-          <h3>fixed width</h3>
+          <h3>fixed content</h3>
         </div>
-        <p>Created without v-for fixed width item 1</p>
+        <p>Created without v-for fixed width item 11</p>
       </section>
       <section>
         <div class="header">
           <h6>2</h6>
-          <h3>fixed width</h3>
+          <h3>fixed content</h3>
         </div>
-        <p>Created without v-for fixed width item 2</p>
+        <p>Created without v-for fixed width item 222</p>
       </section>
     </vue-horizontal>
   </div>
@@ -57,7 +57,7 @@ export default Vue.extend({
     VueHorizontal
   },
   data() {
-    const lorem = Lorem("various-width")
+    const lorem = Lorem("fixed-width")
     return {
       items: [...Array(20).keys()].map((i) => {
         return {
@@ -77,6 +77,9 @@ section {
   border-radius: 4px;
   background: #f5f5f5;
   margin-right: 24px;
+
+  box-sizing: border-box;
+  width: calc((100% - (3 * 24px)) / 4);
 }
 
 .header {
