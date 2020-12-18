@@ -14,4 +14,19 @@ export default theme({
   buildModules: [
     '@nuxt/typescript-build',
   ],
+  content: {
+    markdown: {
+      remarkPlugins: [
+        path.resolve(__dirname, 'plugins/remark-snippet.ts'),
+      ],
+    },
+  },
+  hooks: {
+    'components:dirs': async (dirs) => {
+      dirs.push({
+        path: path.resolve(__dirname, 'content/snippets'),
+        global: true
+      })
+    }
+  }
 })
