@@ -1,6 +1,6 @@
 <template>
-  <div class="mock-browser border border-gray-200">
-    <div class="bg-gray-100 p-3 border-b border-gray-200">
+  <div class="mock-browser overflow-hidden rounded-md border border-pre-color">
+    <div class="bg-pre-color p-3 border-b border-gray-200">
       <div class="flex items-center justify-between">
         <div class="flex -m-1">
           <div v-for="color in ['red','yellow','green']" :key="color"
@@ -28,33 +28,39 @@ export default {
 }
 </script>
 
-<style scoped>
-.mock-browser {
-  border-radius: 0.375rem;
-}
+<style lang="less" scoped>
+@pre-color: #2d3748;
 
-.snippet pre {
+.snippet /deep/ pre {
   margin: 0 !important;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-</style>
 
-<style lang="less">
+.bg-pre-color {
+  background: @pre-color;
+}
+
+.border-pre-color {
+  border-color: @pre-color;
+}
+
 .viewport {
   font-family: "-apple-system", "system-ui", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", 'sans-serif';
 
-  p, h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-  }
+  /deep/ & {
+    p, h1, h2, h3, h4, h5, h6 {
+      margin: 0;
+      padding: 0;
+    }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-  }
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+    }
 
-  p {
-    font-weight: 500;
+    p {
+      font-weight: 500;
+    }
   }
 }
 </style>
