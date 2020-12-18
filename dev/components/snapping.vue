@@ -93,9 +93,4 @@ section {
 button {
   margin-right: 12px;
 }
-
-.snap-false,
-.snap-true {
-  margin-bottom: 24px;
-}
 </style>

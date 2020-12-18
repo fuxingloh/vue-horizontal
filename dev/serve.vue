@@ -63,3 +63,9 @@ a:hover > * {
   margin: 48px 0;
 }
 </style>
+
+<style>
+.vue-horizontal {
+  margin-bottom: 24px;
+}
+</style>
