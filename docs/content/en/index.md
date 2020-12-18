@@ -23,6 +23,18 @@ With over 100 crafted recipes of design choices and control mechanisms ready for
 
 <list :items="features"></list>
 
+## Getting started
+
+You can display horizontal content like you would do with just any other html content vertically.
+
+* Any HTML structure works, you can mix and match them up.
+* Use `v-for` and/or `v-if` with any `div` or `component`
+* Navigation left, right button will automatically appear if there are any items overflowing
+* Trackpad and touch scrolling will work as expected.
+
+```vue[snippets/index-getting-started.vue]
+```
+
 ## Motivation
 
 > TLDR: In 2017, I liked how AirBnb does their design. Couldn't find a library for Vue.  

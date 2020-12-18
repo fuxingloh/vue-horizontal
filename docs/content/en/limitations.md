@@ -1,7 +1,7 @@
 ---
 title: Limitations
 description: 'Vue Horizontal implementation has over 99% cross browser compatibility with 3 known non-breaking limitations.'
-position: 4
+position: 6
 category: Getting Started
 ---
 

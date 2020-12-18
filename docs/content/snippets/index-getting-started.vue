@@ -1,12 +1,12 @@
 <template>
   <vue-horizontal>
-    <section>
-      <h3>HTML Tag</h3>
-      <p>As you can see these are just html elements.</p>
-    </section>
-    <section>
-      <h4>Don't have to be the same tag</h4>
-      <p>I used a h4 instead of a h3</p>
+    <div class="item">
+      <h3>HTML</h3>
+      <p>Can be just any HTML declaration</p>
+    </div>
+    <section v-for="i in items" :key="i">
+      <h3>{{ i }}</h3>
+      <p>v-for</p>
     </section>
     <section>
       <h3>Navigation Button</h3>
@@ -23,10 +23,24 @@
   </vue-horizontal>
 </template>
 
+<script>
+// Depending on how you installed it, import it if required.
+// import VueHorizontal from 'vue-horizontal';
+
+export default {
+  // components: {VueHorizontal},
+  data() {
+    return {items: [1, 2, 3]}
+  },
+}
+</script>
+
 <style scoped>
-section {
+section,
+.item {
   background: #f3f3f3;
   padding: 16px 24px;
   margin-right: 24px;
+  border-radius: 4px;
 }
 </style>

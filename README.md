@@ -91,7 +91,7 @@ section {
 
 ### More features and examples
 
-- [Advanced Usage](https://vue-horizontal.fuxing.dev/advanced)
+- [All features](https://vue-horizontal.fuxing.dev/features)
 - [Design Recipe: Responsive](https://vue-horizontal.fuxing.dev/recipes-design/responsive)
 - [Design Recipe: Cards/Grids](https://vue-horizontal.fuxing.dev/recipes-design/cards)
 - [Design Recipe: Avatar](https://vue-horizontal.fuxing.dev/recipes-design/avatar)

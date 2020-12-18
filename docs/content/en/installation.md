@@ -64,5 +64,13 @@ export default {
 import Vue from 'vue';
 import VueHorizontal from 'vue-horizontal';
 
-Vue.component('vue-horizontal', VueHorizontal);
+Vue.use(VueHorizontal);
 ```
+
+## Install as Nuxt Module
+
+<alert type="warning">
+
+Work in progress. 🚧
+
+</alert>
