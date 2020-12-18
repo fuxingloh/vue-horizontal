@@ -151,6 +151,7 @@ export default Vue.extend({
   position: relative;
   display: flex;
   padding: 0;
+  width: 100%;
 }
 
 .v-hl-btn-prev {
@@ -184,6 +185,7 @@ svg:hover {
   display: flex;
   margin: 0;
   padding: 0;
+  width: 100%;
   border: none;
   box-sizing: content-box;
   overflow-x: scroll;
