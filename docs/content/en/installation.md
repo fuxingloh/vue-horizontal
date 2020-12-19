@@ -66,11 +66,3 @@ import VueHorizontal from 'vue-horizontal';
 
 Vue.use(VueHorizontal);
 ```
-
-## Install as Nuxt Module
-
-<alert type="warning">
-
-Work in progress. 🚧
-
-</alert>

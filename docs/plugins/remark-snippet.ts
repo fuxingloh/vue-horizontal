@@ -13,7 +13,7 @@ function importSnippet(): Transformer {
         return
       }
 
-      const match = /vue\[(snippets\/(.+)(\.vue))]/.exec(node.lang)
+      const match = /vue\[(snippets\/([a-z-]+\/)*(.+)(\.vue))]/.exec(node.lang)
       if (!match) {
         return;
       }
@@ -25,10 +25,10 @@ function importSnippet(): Transformer {
       const component = u('div', [
         u('html', {value: `<snippet-mock-browser>`}),
         u('html', {
-          value: `<${match[2]}>`
+          value: `<${match[3]}>`
         }),
         u('html', {
-          value: `</${match[2]}>`
+          value: `</${match[3]}>`
         }),
         u('html', {value: `<template v-slot:snippet>`}),
         node,

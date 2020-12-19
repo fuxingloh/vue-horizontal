@@ -1,6 +1,6 @@
 <template>
   <vue-horizontal responsive>
-    <section v-for="item in items" :key="i">
+    <section v-for="item in items" :key="item.i">
       <h4>{{ item.title }}</h4>
       <p>{{ item.content }}</p>
     </section>

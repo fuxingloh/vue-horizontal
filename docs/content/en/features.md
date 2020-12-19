@@ -15,7 +15,7 @@ Naturally, that would allow you to use `v-for` for a consistent design template.
 * Navigation left, right button will automatically appear if there are any items overflowing
 * Trackpad and touch scrolling will work as expected. 
 
-```vue[snippets/features-using.vue]
+```vue[snippets/features/features-using.vue]
 ```
 
 ## Options
@@ -37,13 +37,13 @@ Check out [responsive 101](/recipes-design/responsive) for a detailed write-up a
 * `< 1280px` 4 item in container
 * `> 1280px` 5 item in container
 
-```vue[snippets/features-responsive.vue]
+```vue[snippets/features/features-responsive.vue]
 ```
 
 ### Scroll snapping
-### Scrollbar
+### Scroll bar
 
-## Navigation button (Left/Right)
+## Navigation button
 ### Disable button
 ### Override with slots
 
