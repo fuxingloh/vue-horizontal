@@ -6,10 +6,10 @@ describe('scroll-to-index', () => {
     cy.visit('http://localhost:8080/scroll-to-index')
   })
 
-  it('should match screenshot', function () {
+  it('should match document', function () {
     cy.get('.btn-2').click();
     cy.wait(4000);
 
-    cy.get('.vue-horizontal').matchImageSnapshot()
+    cy.document().matchImageSnapshot()
   });
 })

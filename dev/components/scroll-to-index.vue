@@ -1,6 +1,6 @@
 <template>
   <div>
-    <vue-horizontal ref="horizontal">
+    <vue-horizontal ref="normal" class="normal">
       <section v-for="item in items" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
@@ -9,6 +9,18 @@
         <p>{{ item.content }}</p>
       </section>
     </vue-horizontal>
+
+    <div class="padded">
+      <vue-horizontal ref="padded">
+        <section v-for="item in items" :key="item.i">
+          <div class="header">
+            <h6>{{ item.i }}</h6>
+            <h4>{{ item.title }}</h4>
+          </div>
+          <p>{{ item.content }}</p>
+        </section>
+      </vue-horizontal>
+    </div>
 
     <div class="buttons">
       <button @click="goIndex(i)" v-for="i in [0,1,2,3,4,10,19,20,100,-1]" :key="i" :class="`btn-${i}`">
@@ -28,7 +40,7 @@ export default Vue.extend({
     VueHorizontal
   },
   data() {
-    const lorem = Lorem()
+    const lorem = Lorem("scroll-to-index")
     return {
       items: [...Array(20).keys()].map((i) => {
         return {
@@ -41,8 +53,10 @@ export default Vue.extend({
   },
   methods: {
     goIndex(index: number) {
-      const horizontal = this.$refs.horizontal as any
-      horizontal.scrollToIndex(index)
+      const normal = this.$refs.normal as any
+      const padded = this.$refs.padded as any
+      normal.scrollToIndex(index)
+      padded.scrollToIndex(index)
     }
   }
 });
@@ -72,9 +86,14 @@ section {
   line-height: 24px;
   border-radius: 12px;
   margin-right: 12px;
+  flex-shrink: 0;
 }
 
 button {
   margin-right: 12px;
+}
+
+.padded {
+  padding: 0 240px;
 }
 </style>
