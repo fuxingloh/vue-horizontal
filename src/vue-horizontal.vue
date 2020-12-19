@@ -16,8 +16,13 @@
       </slot>
     </div>
 
-    <div class="v-hl-container" ref="container" @scroll.passive="onScroll"
-         :class="{'v-hl-scroll': scroll, 'v-hl-snap': snap, 'v-hl-responsive': responsive}">
+    <div class="v-hl-container" ref="container" @scroll.passive="onScroll" :class="{
+      'v-hl-responsive': responsive,
+      'v-hl-scroll': scroll,
+      'v-hl-snap-start': snap === 'start',
+      'v-hl-snap-center': snap === 'center',
+      'v-hl-snap-end': snap === 'end',
+    }">
       <slot></slot>
     </div>
   </div>
@@ -61,13 +66,13 @@ export default Vue.extend({
       type: Boolean,
       default: () => false,
     },
-    snap: {
-      type: Boolean,
-      default: () => true,
-    },
     responsive: {
       type: Boolean,
       default: () => false,
+    },
+    snap: {
+      type: String,
+      default: () => 'start',
     },
   },
   mounted() {
@@ -199,8 +204,16 @@ svg:hover {
   box-sizing: border-box;
 }
 
-.v-hl-snap > * {
+.v-hl-snap-start > * {
   scroll-snap-align: start;
+}
+
+.v-hl-snap-center > * {
+  scroll-snap-align: center;
+}
+
+.v-hl-snap-end > * {
+  scroll-snap-align: end;
 }
 
 .v-hl-container:not(.v-hl-scroll) {
