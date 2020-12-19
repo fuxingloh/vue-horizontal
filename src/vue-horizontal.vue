@@ -115,11 +115,11 @@ export default Vue.extend({
     scrollToIndex(index: number): void {
       const slots = this.$slots?.default as VNode[]
       if (slots[index]) {
+        const container = this.$refs.container as Element
         const element = slots[index].elm as Element
-        const {scrollLeft} = this.$refs.container as Element
 
-        const left = element.getBoundingClientRect().left
-        this.scrollToLeft(scrollLeft + left)
+        const left = element.getBoundingClientRect().left - container.getBoundingClientRect().left
+        this.scrollToLeft(container.scrollLeft + left)
       }
     },
     scrollToLeft(left: number): void {
