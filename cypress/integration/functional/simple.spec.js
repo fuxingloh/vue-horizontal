@@ -33,12 +33,12 @@ describe('simple', () => {
     cy.get('.v-hl-btn-next').should('exist');
 
     cy.get('.v-hl-btn-next').click()
-    cy.wait(500)
+    cy.wait(1000)
     cy.get('.v-hl-btn-prev').should('exist');
     cy.get('.v-hl-btn-next').should('exist');
 
     cy.get('.v-hl-btn-prev').click()
-    cy.wait(500)
+    cy.wait(1000)
     cy.get('.v-hl-btn-prev').should('exist');
     cy.get('.v-hl-btn-next').should('exist');
 

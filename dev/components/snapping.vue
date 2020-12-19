@@ -1,23 +1,13 @@
 <template>
   <div>
-    <vue-horizontal class="snap-true" :snap="true" ref="snapTrue">
+    <vue-horizontal v-for="snap in ['start', 'center', 'end', 'none']"
+                    :class="`snap-${snap}`" :snap="snap" ref="horizontal" :key="snap">
       <section v-for="item in items" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
           <h3>{{ item.title }}</h3>
         </div>
-        <h6>SNAP: TRUE</h6>
-        <p>{{ item.content }}</p>
-      </section>
-    </vue-horizontal>
-
-    <vue-horizontal class="snap-false" :snap="false" ref="snapFalse">
-      <section v-for="item in items" :key="item.i">
-        <div class="header">
-          <h6>{{ item.i }}</h6>
-          <h3>{{ item.title }}</h3>
-        </div>
-        <h6>SNAP: FALSE</h6>
+        <h6>SNAP: {{ snap }}</h6>
         <p>{{ item.content }}</p>
       </section>
     </vue-horizontal>
@@ -53,10 +43,8 @@ export default Vue.extend({
   },
   methods: {
     scrollTo(left: number): void {
-      [
-        this.$refs.snapFalse as any,
-        this.$refs.snapTrue as any,
-      ].forEach(ref => {
+      // @ts-ignore
+      this.$refs.horizontal.forEach(ref => {
         ref.scrollToLeft(left)
       })
     }
