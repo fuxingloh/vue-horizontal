@@ -11,6 +11,16 @@ recipes of design choices and control mechanisms ready for your needs.
 
 ---
 
+## Features and Design Philosophy
+
+- SSR/SSG/SPA: all modes of rendering supported
+- Mobile & responsive web friendly
+- Scroll bar or customizable button navigation
+- Snap to the nearest item when scrolling
+- Small size of 3 KB 
+- Moves the responsibilities of the CSS to the user
+- Extensible for any use case with [documented recipes](https://vue-horizontal.fuxing.dev/recipes-design/responsive).
+
 ## Installation
 
 ```shell
@@ -97,15 +107,6 @@ section {
 - [Design Recipe: Avatar](https://vue-horizontal.fuxing.dev/recipes-design/avatar)
 - [Control Recipe: Button](https://vue-horizontal.fuxing.dev/recipes-control/navigation)
 - [Control Recipe: Carousel](https://vue-horizontal.fuxing.dev/recipes-control/carousel)
-
-## Features and Design Philosophy
-
-- SSR/SSG/SPA: all modes of rendering supported
-- Mobile & responsive web friendly
-- Scroll bar or customizable button navigation
-- Snap to the nearest item when scrolling
-- Moves the responsibilities of the CSS to the user
-- Extensible for any use case with [documented recipes](https://vue-horizontal.fuxing.dev/recipes-design/responsive).
 
 ## Known Limitations
 

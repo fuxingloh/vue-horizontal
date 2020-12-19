@@ -20,6 +20,7 @@ jobs:
   main:
     name: End-to-end
     runs-on: windows-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v2
 
