@@ -39,4 +39,12 @@ describe('content-width', () => {
     cy.get('.20-items .v-hl-btn-prev').should('exist');
     cy.get('.20-items .v-hl-btn-next').should('exist');
   })
+
+  it('20-items: should not overscroll items that are not fully visible', function () {
+    [3, 6, 9, 12, 14].forEach(index => {
+      cy.get('.20-items .v-hl-btn-next').click()
+      cy.get(`.20-items .v-hl-container > :nth-child(${index + 1})`)
+        .should('to.be.left', 80)
+    });
+  });
 })

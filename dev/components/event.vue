@@ -3,8 +3,8 @@
     <vue-horizontal
       @scroll="(data) => scroll = data"
       @scroll-debounce="(data) => scrollDebounce = data"
-      @prev="(data) => prev += ' - prev'"
-      @next="(data) => next += ' - next'"
+      @prev="(data) => prev = data"
+      @next="(data) => next = data"
     >
       <section v-for="item in items" :key="item.i">
         <div class="header">

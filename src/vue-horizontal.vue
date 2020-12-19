@@ -32,6 +32,9 @@
 import Vue from 'vue'
 import {VNode} from "vue/types/vnode";
 
+// Compatibility delta due to rounding issues
+const delta = 2.5
+
 interface VueHorizontalData {
   left: number;
   containerWidth: number;
@@ -79,15 +82,35 @@ export default Vue.extend({
     this.onScrollDebounce();
   },
   methods: {
+    findIntersectElement(point: number): Element | undefined {
+      const slots = this.$slots?.default as VNode[]
+      for (const slot of slots) {
+        const element = slot.elm as Element
+        const {left: l, right: r} = element.getBoundingClientRect()
+        if (l <= point && point <= r) {
+          return element
+        }
+      }
+    },
     prev(): void {
-      const {scrollLeft, clientWidth} = this.$refs.container as Element
-      this.scrollToLeft(scrollLeft - clientWidth)
-      this.$emit('prev')
+      const container = this.$refs.container as Element
+      const {left, right} = container.getBoundingClientRect()
+
+      const elm = this.findIntersectElement(left - delta)
+      const width = elm ? right - elm.getBoundingClientRect().right : container.clientWidth
+
+      this.scrollToLeft(container.scrollLeft - width)
+      this.$emit('prev', {width})
     },
     next(): void {
-      const {scrollLeft, clientWidth} = this.$refs.container as Element
-      this.scrollToLeft(scrollLeft + clientWidth)
-      this.$emit('next')
+      const container = this.$refs.container as Element
+      const {left, right} = container.getBoundingClientRect()
+
+      const elm = this.findIntersectElement(right + delta)
+      const width = elm ? elm.getBoundingClientRect().left - left : container.clientWidth
+
+      this.scrollToLeft(container.scrollLeft + width)
+      this.$emit('next', {width})
     },
     scrollToIndex(index: number): void {
       const slots = this.$slots?.default as VNode[]
@@ -115,9 +138,6 @@ export default Vue.extend({
       this.debouceId = window.setTimeout(this.onScrollDebounce, 250);
     },
     onScrollDebounce(): void {
-      // Firefox compatibility issue
-      const delta = 2.0
-
       const container = this.$refs.container as Element
       const slot0 = this.$slots?.default?.[0]?.elm as Element
 
@@ -143,8 +163,11 @@ export default Vue.extend({
       this.hasPrev = hasPrev()
 
       this.$emit('scroll-debounce', {
-        left: this.left, containerWidth: this.containerWidth, scrollWidth: this.scrollWidth,
-        hasPrev: this.hasPrev, hasNext: this.hasNext,
+        left: this.left,
+        containerWidth: this.containerWidth,
+        scrollWidth: this.scrollWidth,
+        hasPrev: this.hasPrev,
+        hasNext: this.hasNext,
       })
     },
   },
