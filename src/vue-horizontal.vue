@@ -1,6 +1,6 @@
 <template>
   <div class="vue-horizontal">
-    <div class="v-hl-btn-prev" v-if="button && hasPrev" @click="prev">
+    <div class="v-hl-btn v-hl-btn-prev" v-if="button && hasPrev" @click="prev">
       <slot name="btn-prev">
         <svg viewBox="0 0 24 24">
           <path d="m9.8 12 5 5a1 1 0 1 1-1.4 1.4l-5.7-5.7a1 1 0 0 1 0-1.4l5.7-5.7a1 1 0 0 1 1.4 1.4l-5 5z"/>
@@ -8,7 +8,7 @@
       </slot>
     </div>
 
-    <div class="v-hl-btn-next" v-if="button && hasNext" @click="next">
+    <div class="v-hl-btn v-hl-btn-next" v-if="button && hasNext" @click="next">
       <slot name="btn-next">
         <svg viewBox="0 0 24 24">
           <path d="m14.3 12.1-5-5a1 1 0 0 1 1.4-1.4l5.7 5.7a1 1 0 0 1 0 1.4l-5.7 5.7a1 1 0 0 1-1.4-1.4l5-5z"/>
@@ -150,19 +150,19 @@ export default Vue.extend({
 .vue-horizontal {
   position: relative;
   display: flex;
-  padding: 0;
+}
+
+.v-hl-btn {
+  position: absolute;
+  align-self: center;
 }
 
 .v-hl-btn-prev {
   left: -24px;
-  position: absolute;
-  align-self: center;
 }
 
 .v-hl-btn-next {
   right: -24px;
-  position: absolute;
-  align-self: center;
 }
 
 svg {
