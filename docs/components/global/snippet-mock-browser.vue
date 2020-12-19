@@ -3,10 +3,14 @@
     <div class="bg-pre-color p-3 border-b border-gray-200">
       <div class="flex items-center justify-between">
         <div class="flex -m-1">
-          <div v-for="color in ['red','yellow','green']" :key="color"
-               class="p-1">
-            <div :class="`bg-${color}-500`" class="w-3 h-3 rounded-full bg-black">
-            </div>
+          <div class="p-1">
+            <div :class="`bg-red-500`" class="w-3 h-3 rounded-full"></div>
+          </div>
+          <div class="p-1">
+            <div :class="`bg-yellow-500`" class="w-3 h-3 rounded-full"></div>
+          </div>
+          <div class="p-1">
+            <div :class="`bg-green-500`" class="w-3 h-3 rounded-full"></div>
           </div>
         </div>
       </div>

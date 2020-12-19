@@ -97,28 +97,34 @@ Emitted when prev or next are clicked. The width travelled will be emitted as we
 
 ### `prev()` `next()`
 
+* Scroll to the next/prev set of elements.
+* Elements that are half visible, will not be scrolled past.
+
 ```vue[snippets/features/features-method-prev-next.vue]
 ```
 
 ### `scrollToIndex()`
+
+* Scroll to the index of the elements in `vue-horizontal`.
 
 ```vue[snippets/features/features-method-scroll-index.vue]
 ```
 
 ### `scrollToLeft()`
 
-Snap settings `snap="start|end|center"` will prevent the scrolling if it snaps backwards. 
+* The amount of pixel to the left you want to scroll by.
+* Snap settings `snap="start|end|center"` will prevent the scrolling if it snaps backwards. 
 
 ```vue[snippets/features/features-method-scroll-left.vue]
 ```
 
 ## CSS
  
-Overriding internal CCS with deep selector.
+Overriding internal CCS with Vue deep selector (`>>>`).
 
 ### `.v-hl-btn`
 
-* `.v-hl-btn`
+* `.v-hl-btn` for both left and right button.
 * `.v-hl-btn-prev`
 * `.v-hl-btn-next`
 
@@ -135,5 +141,5 @@ Overriding internal CCS with deep selector.
 The root div, has `.vue-horizontal` as the only class with 2 CSS attributes.
 Ensure you don't override them as they are used for nav button positioning.
 
-* position: relative;
-* display: flex;
+* `position: relative;`
+* `display: flex;`
