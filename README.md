@@ -6,20 +6,26 @@
 ![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
 
+[![Vue Horizontal](./vue-horizontal.svg)](https://vue-horizontal.fuxing.dev)
+
 An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies. With over 100 crafted
 recipes of design choices and control mechanisms ready for your needs.
 
----
+[**DOCUMENTATION**](https://vue-horizontal.fuxing.dev) 
+•
+[**LIVE DEMO**](https://vue-horizontal.fuxing.dev/responsive)
 
 ## Features and Design Philosophy
 
-- SSR/SSG/SPA: all modes of rendering supported
-- Mobile & responsive web friendly
-- Scroll bar or customizable button navigation
-- Snap to the nearest item when scrolling
-- Small size of 3 KB 
-- Moves the responsibilities of the CSS to the user
-- Extensible for any use case with [documented recipes](https://vue-horizontal.fuxing.dev/recipes-design/responsive).
+- **SSR/SSG/SPA: all modes of rendering supported**
+- Mobile first for the responsive web
+- Customizable navigation: scroll bar, buttons or programmatic
+- Content snapping, to snap to the nearest item after scrolling
+- Small size of 3 KB
+- Highly extensible for any use case with [well documented recipes](https://vue-horizontal.fuxing.dev/recipes-design/responsive).
+  - You control how to structure content with HTML
+  - You control how it looks with CSS
+  - You control how to navigate it with Vue.js
 
 ## Installation
 
@@ -64,8 +70,8 @@ Vue.component(VueHorizontal)
 
 ```vue
 <template>
-  <vue-horizontal>
-    <section v-for="item in items">
+  <vue-horizontal responsive>
+    <section v-for="item in items" :key="item.title">
       <h3>{{ item.title }}</h3>
       <p>{{ item.content }}</p>
     </section>
@@ -91,17 +97,14 @@ export default {
 <style scoped>
 section {
   padding: 16px 24px;
-  margin-right: 24px;
   background: #f5f5f5;
-  /* width: calc((100% - ((item-count - 1) * gap-size)) / item-count); */
-  width: calc((100% - (3 * 24px)) / 4);
 }
 </style>
 ```
 
-### More features and examples
+### [More features and examples](https://vue-horizontal.fuxing.dev/features)
 
-- [All features](https://vue-horizontal.fuxing.dev/features)
+- [All features examples](https://vue-horizontal.fuxing.dev/features)
 - [Design Recipe: Responsive](https://vue-horizontal.fuxing.dev/recipes-design/responsive)
 - [Design Recipe: Cards/Grids](https://vue-horizontal.fuxing.dev/recipes-design/cards)
 - [Design Recipe: Avatar](https://vue-horizontal.fuxing.dev/recipes-design/avatar)
@@ -142,15 +145,16 @@ npm run serve # dev
 npm run cypress:run # e2e testing
 ```
 
+- End-to-end test cases are also written because of the UI nature of this framework.
+  [Cypress](https://www.cypress.io/) is used under the hood.
+- There are also additional integration testing done to ensure SSR and SSG works.
+
 ## Contributions
 
 - For any question or feature request please feel free to create
   an [issue](https://github.com/fuxingloh/vue-horizontal/issues/new)
   or [pull request](https://github.com/fuxingloh/vue-horizontal/pulls).
 - For feature request, do check out the examples as some of them might have been implemented.
-- End-to-end test cases are also written because of the UI nature of this framework.
-  [Cypress](https://www.cypress.io/) is used under the hood.
-- There are also additional integration testing done to ensure SSR and SSG works.
 
 ## Prior art
 
