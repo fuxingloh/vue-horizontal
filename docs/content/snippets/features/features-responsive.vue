@@ -24,6 +24,6 @@ export default {
 section {
   padding: 16px 24px;
   margin-right: 16px;
-  background: #f8f8f8;
+  background: #f3f3f3;
 }
 </style>

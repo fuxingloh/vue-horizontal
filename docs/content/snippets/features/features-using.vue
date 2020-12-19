@@ -20,13 +20,13 @@
       <h3>Touch screen</h3>
       <p>Touch screen works too!</p>
     </section>
-    <section v-for="item in items" :key="i">
+    <section v-for="item in items" :key="item.i">
       <h3>{{ item.title }}</h3>
       <p>{{ item.content }}</p>
     </section>
     <section>
       <h3>Last item?</h3>
-      <p>Maybe you want to display somethind ifferent at the end?</p>
+      <p>Maybe you want to display something different at the end?</p>
     </section>
   </vue-horizontal>
 </template>
