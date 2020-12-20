@@ -15,7 +15,7 @@ recipes of design choices and control mechanisms ready for your needs.
 
 [**DOCUMENTATION**](https://vue-horizontal.fuxing.dev) 
 •
-[**LIVE DEMO**](https://vue-horizontal.fuxing.dev/responsive)
+[**LIVE DEMO**](https://vue-horizontal.fuxing.dev/features)
 
 ## Features and Design Philosophy
 
@@ -24,7 +24,7 @@ recipes of design choices and control mechanisms ready for your needs.
 - Customizable navigation: scroll bar, buttons or programmatic
 - Content snapping, to snap to the nearest item after scrolling
 - Small size of 3 KB
-- Highly extensible for any use case with [well documented recipes](https://vue-horizontal.fuxing.dev/recipes-design/responsive).
+- Highly extensible for any use case with [well documented recipes](https://vue-horizontal.fuxing.dev/design/taxonomy).
   - You control how to structure content with HTML
   - You control how it looks with CSS
   - You control how to navigate it with Vue.js
@@ -106,12 +106,9 @@ section {
 
 ### [More features and examples](https://vue-horizontal.fuxing.dev/features)
 
-- [All features examples](https://vue-horizontal.fuxing.dev/features)
-- [Design Recipe: Responsive](https://vue-horizontal.fuxing.dev/recipes-design/responsive)
-- [Design Recipe: Cards/Grids](https://vue-horizontal.fuxing.dev/recipes-design/cards)
-- [Design Recipe: Avatar](https://vue-horizontal.fuxing.dev/recipes-design/avatar)
-- [Control Recipe: Button](https://vue-horizontal.fuxing.dev/recipes-control/navigation)
-- [Control Recipe: Carousel](https://vue-horizontal.fuxing.dev/recipes-control/carousel)
+- [All features demo](https://vue-horizontal.fuxing.dev/features)
+- [Design: Taxonomy](https://vue-horizontal.fuxing.dev/design/taxonomy)
+- [Design: Responsive](https://vue-horizontal.fuxing.dev/design/responsive)
 
 ## Known Limitations
 
