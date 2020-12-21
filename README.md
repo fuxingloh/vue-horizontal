@@ -1,14 +1,14 @@
-# [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
-
-#### **⚠️ This library is still a work in progress, please be careful.**
-
 [![Vue Horizontal](./vue-horizontal.svg)](https://vue-horizontal.fuxing.dev)
+
+# [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
 
 ![chrome](https://github.com/fuxingloh/vue-horizontal/workflows/chrome/badge.svg)
 ![firefox](https://github.com/fuxingloh/vue-horizontal/workflows/firefox/badge.svg)
 ![edge](https://github.com/fuxingloh/vue-horizontal/workflows/edge/badge.svg)
 ![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
+
+#### **⚠️ This library is still a work in progress, please be careful.**
 
 An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies. With over 100 crafted
 recipes of design choices and control mechanisms ready for your needs.

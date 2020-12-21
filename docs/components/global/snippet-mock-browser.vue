@@ -4,19 +4,19 @@
       <div class="flex items-center justify-between">
         <div class="flex -m-1">
           <div class="p-1">
-            <div :class="`bg-red-500`" class="w-3 h-3 rounded-full"></div>
+            <div class="bg-red-500 w-3 h-3 rounded-full"></div>
           </div>
           <div class="p-1">
-            <div :class="`bg-yellow-500`" class="w-3 h-3 rounded-full"></div>
+            <div class="bg-yellow-500 w-3 h-3 rounded-full"></div>
           </div>
           <div class="p-1">
-            <div :class="`bg-green-500`" class="w-3 h-3 rounded-full"></div>
+            <div class="bg-green-500 w-3 h-3 rounded-full"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="viewport p-8 bg-white">
+    <div class="viewport bg-white">
       <slot></slot>
     </div>
 

@@ -13,6 +13,7 @@
     "@nuxt/typescript-runtime": "^2.0.0",
     "core-js": "^3.6.5",
     "nuxt": "^2.14.7",
+    "remark-code-import-replace": "^0.2.0",
     "vue-gtag": "^1.10.0"
   },
   "devDependencies": {

@@ -15,7 +15,7 @@ Naturally, that would allow you to use `v-for` for a consistent design template.
 * Navigation left, right button will automatically appear if there are any items overflowing
 * Trackpad and touch scrolling will work as expected. 
 
-```vue[snippets/features/features-using.vue]
+```vue[Component.vue] import=features/features-using.vue
 ```
 
 ## Responsive
@@ -35,7 +35,7 @@ Check out [responsive 101](/recipes-design/responsive) for a detailed write-up a
 * `< 1280px` 4 item in container
 * `> 1280px` 5 item in container
 
-```vue[snippets/features/features-responsive.vue]
+```vue[Responsive.vue] import=features/features-responsive.vue
 ```
 
 ## Scroll snapping
@@ -47,15 +47,15 @@ Check out [responsive 101](/recipes-design/responsive) for a detailed write-up a
 - end
 
 ### `<vue-horizontal snap="start">`
-```vue[snippets/features/features-scroll-snapping-start.vue]
+```vue[ScrollSnappingStart.vue] import=features/features-scroll-snapping-start.vue
 ```
 
 ### `<vue-horizontal snap="center">`
-```vue[snippets/features/features-scroll-snapping-center.vue]
+```vue[ScrollSnappingCenter.vue] import=features/features-scroll-snapping-center.vue
 ```
 
 ### `<vue-horizontal snap="end">`
-```vue[snippets/features/features-scroll-snapping-end.vue]
+```vue[ScrollSnappingEnd.vue] import=features/features-scroll-snapping-end.vue
 ```
 
 ## Scroll bar
@@ -63,18 +63,18 @@ Check out [responsive 101](/recipes-design/responsive) for a detailed write-up a
 The Scroll bar is disabled by default, you can enable it the `scroll` prop.
 
 ### `<vue-horizontal scroll>`
-```vue[snippets/features/features-scroll-bar.vue]
+```vue[Scrollbar.vue] import=features/features-scroll-bar.vue
 ```
 
 ## Navigation button
 
 ### `<vue-horizontal :button="false">`
-```vue[snippets/features/features-nav-button-disable.vue]
+```vue[NavButtonDisable.vue] import=features/features-nav-button-disable.vue
 ```
 
 ### Override with slots
 
-```vue[snippets/features/features-nav-button-slot.vue]
+```vue[NavButtonSlot.vue] import=features/features-nav-button-slot.vue
 ```
 
 ## Events
@@ -83,14 +83,14 @@ The Scroll bar is disabled by default, you can enable it the `scroll` prop.
 
 Emitted when prev or next are clicked. The width travelled will be emitted as well. 
 
-```vue[snippets/features/features-event-prev-next.vue]
+```vue[EventNavigation.vue] import=features/features-event-prev-next.vue
 ```
 
 ### @scroll
 
 > @scroll-debounce is called when mounted.
 
-```vue[snippets/features/features-event-scroll.vue]
+```vue[EventScroll.vue] import=features/features-event-scroll.vue
 ```
 
 ## Methods
@@ -100,14 +100,14 @@ Emitted when prev or next are clicked. The width travelled will be emitted as we
 * Scroll to the next/prev set of elements.
 * Elements that are half visible, will not be scrolled past.
 
-```vue[snippets/features/features-method-prev-next.vue]
+```vue[MethodNavigation.vue] import=features/features-method-prev-next.vue
 ```
 
 ### `scrollToIndex()`
 
 * Scroll to the index of the elements in `vue-horizontal`.
 
-```vue[snippets/features/features-method-scroll-index.vue]
+```vue[MethodScrollIndex.vue] import=features/features-method-scroll-index.vue
 ```
 
 ### `scrollToLeft()`
@@ -115,7 +115,7 @@ Emitted when prev or next are clicked. The width travelled will be emitted as we
 * The amount of pixel to the left you want to scroll by.
 * Snap settings `snap="start|end|center"` will prevent the scrolling if it snaps backwards. 
 
-```vue[snippets/features/features-method-scroll-left.vue]
+```vue[MethodScrollLeft.vue] import=features/features-method-scroll-left.vue
 ```
 
 ## CSS
@@ -128,12 +128,12 @@ Overriding internal CCS with Vue deep selector (`>>>`).
 * `.v-hl-btn-prev`
 * `.v-hl-btn-next`
 
-```vue[snippets/features/features-css-btn.vue]
+```vue[CSSBtn.vue] import=features/features-css-btn.vue
 ```
 
 ### `.v-hl-container`
 
-```vue[snippets/features/features-css-container.vue]
+```vue[CSSContainer.vue] import=features/features-css-container.vue
 ```
 
 ### `.vue-horizontal`
