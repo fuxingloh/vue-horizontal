@@ -1,6 +1,6 @@
 <template>
   <div class="mock-browser overflow-hidden rounded-md border border-pre-color">
-    <div class="bg-pre-color p-3 border-b border-gray-200">
+    <div class="bg-pre-color p-3">
       <div class="flex items-center justify-between">
         <div class="flex -m-1">
           <div class="p-1">
