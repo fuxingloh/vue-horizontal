@@ -139,6 +139,6 @@ set `<vue-horizontal :snap="false">`.
 ## Hiding scrollbar
 
 In Vue Horizontal, the x-axis scrollbar is hidden by default. Although there isn't a shared specification, most browser
-has it implemented one way or another. As of December 2020, there is a 97%+ cross browser compatibility.
+has it implemented one way or another. As of December 2020, there is a 99%+ cross browser compatibility.
 
 <caniuse feature="css-scrollbar"></caniuse>
