@@ -2,17 +2,21 @@
   <div class="vue-horizontal">
     <div class="v-hl-btn v-hl-btn-prev" v-if="button && hasPrev" @click="prev">
       <slot name="btn-prev">
-        <svg viewBox="0 0 24 24">
-          <path d="m9.8 12 5 5a1 1 0 1 1-1.4 1.4l-5.7-5.7a1 1 0 0 1 0-1.4l5.7-5.7a1 1 0 0 1 1.4 1.4l-5 5z"/>
-        </svg>
+        <div>
+          <svg viewBox="0 0 24 24">
+            <path d="m9.8 12 5 5a1 1 0 1 1-1.4 1.4l-5.7-5.7a1 1 0 0 1 0-1.4l5.7-5.7a1 1 0 0 1 1.4 1.4l-5 5z"/>
+          </svg>
+        </div>
       </slot>
     </div>
 
     <div class="v-hl-btn v-hl-btn-next" v-if="button && hasNext" @click="next">
       <slot name="btn-next">
-        <svg viewBox="0 0 24 24">
-          <path d="m14.3 12.1-5-5a1 1 0 0 1 1.4-1.4l5.7 5.7a1 1 0 0 1 0 1.4l-5.7 5.7a1 1 0 0 1-1.4-1.4l5-5z"/>
-        </svg>
+        <div>
+          <svg viewBox="0 0 24 24">
+            <path d="m14.3 12.1-5-5a1 1 0 0 1 1.4-1.4l5.7 5.7a1 1 0 0 1 0 1.4l-5.7 5.7a1 1 0 0 1-1.4-1.4l5-5z"/>
+          </svg>
+        </div>
       </slot>
     </div>
 
@@ -183,29 +187,39 @@ export default Vue.extend({
 .v-hl-btn {
   position: absolute;
   align-self: center;
+  line-height: 0;
+  z-index: 1;
+}
+
+.v-hl-btn:hover {
+  cursor: pointer;
 }
 
 .v-hl-btn-prev {
-  left: -24px;
+  left: 0;
 }
 
 .v-hl-btn-next {
-  right: -24px;
+  right: 0;
+}
+
+.v-hl-btn-prev > div {
+  margin-left: -26px;
+}
+
+.v-hl-btn-next > div {
+  margin-right: -26px;
 }
 
 svg {
-  width: 42px;
-  height: 42px;
-  margin: 0;
+  width: 40px;
+  height: 40px;
+  margin: 6px;
   padding: 6px;
   border-radius: 21px;
   box-sizing: border-box;
   background: white;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-svg:hover {
-  cursor: pointer;
 }
 
 .v-hl-container {

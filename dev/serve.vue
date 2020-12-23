@@ -52,6 +52,12 @@ a:hover > * {
   padding: 64px;
 }
 
+@media (max-width: 420px) {
+  #app {
+    padding: 24px;
+  }
+}
+
 @media (min-width: 1200px) {
   #app {
     padding-left: 80px;
