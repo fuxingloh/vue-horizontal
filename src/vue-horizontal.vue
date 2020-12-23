@@ -143,7 +143,7 @@ export default Vue.extend({
     },
     onScrollDebounce(): void {
       const container = this.$refs.container as Element
-      const slot0 = this.$slots?.default?.[0]?.elm as Element
+      const slot0 = this.$slots?.default?.find(s => s.tag)?.elm as Element
 
       this.left = container.scrollLeft
       this.containerWidth = container.clientWidth
