@@ -51,7 +51,6 @@ section {
   padding: 16px 24px;
   border-radius: 4px;
   background: #f5f5f5;
-
   width: calc((100% - (3 * 24px)) / 4);
   margin-right: 24px;
   margin-top: 8px;
