@@ -188,6 +188,7 @@ export default Vue.extend({
   position: absolute;
   align-self: center;
   line-height: 0;
+  z-index: 1;
 }
 
 .v-hl-btn:hover {
