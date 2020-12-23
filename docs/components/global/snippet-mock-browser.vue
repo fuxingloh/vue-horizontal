@@ -67,4 +67,13 @@ export default {
     }
   }
 }
+
+/* TODO(fuxing): Wait for https://github.com/nuxt/content/pull/691 to be fixed */
+.snippet /deep/ .filename {
+  display: none;
+}
+
+.snippet /deep/ pre {
+  padding-top: 1.25rem !important;
+}
 </style>
