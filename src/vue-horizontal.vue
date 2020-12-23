@@ -256,11 +256,17 @@ svg {
 .v-hl-container:not(.v-hl-scroll) {
   scrollbar-width: none;
   -ms-overflow-style: none;
+
+  /* To effectively hide scrollbar for iOS Safari. 10% of the users. */
+  padding-bottom: 30px;
+  margin-bottom: -30px;
+  clip-path: inset(0 0 30px 0);
 }
 
 .v-hl-container:not(.v-hl-scroll)::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+  /* !important: So that users don't accidentally show scrollbar. */
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /* Using https://tailwindcss.com/docs/responsive-design breakpoints. */
