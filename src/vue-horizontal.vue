@@ -2,7 +2,7 @@
   <div class="vue-horizontal">
     <div class="v-hl-btn v-hl-btn-prev" v-if="button && hasPrev" @click="prev">
       <slot name="btn-prev">
-        <div>
+        <div class="v-hl-btn-svg">
           <svg viewBox="0 0 24 24">
             <path d="m9.8 12 5 5a1 1 0 1 1-1.4 1.4l-5.7-5.7a1 1 0 0 1 0-1.4l5.7-5.7a1 1 0 0 1 1.4 1.4l-5 5z"/>
           </svg>
@@ -12,7 +12,7 @@
 
     <div class="v-hl-btn v-hl-btn-next" v-if="button && hasNext" @click="next">
       <slot name="btn-next">
-        <div>
+        <div class="v-hl-btn-svg">
           <svg viewBox="0 0 24 24">
             <path d="m14.3 12.1-5-5a1 1 0 0 1 1.4-1.4l5.7 5.7a1 1 0 0 1 0 1.4l-5.7 5.7a1 1 0 0 1-1.4-1.4l5-5z"/>
           </svg>
@@ -143,7 +143,7 @@ export default Vue.extend({
     },
     onScrollDebounce(): void {
       const container = this.$refs.container as Element
-      const slot0 = this.$slots?.default?.[0]?.elm as Element
+      const slot0 = this.$slots?.default?.find(s => s.tag)?.elm as Element
 
       this.left = container.scrollLeft
       this.containerWidth = container.clientWidth
@@ -203,11 +203,11 @@ export default Vue.extend({
   right: 0;
 }
 
-.v-hl-btn-prev > div {
+.v-hl-btn-prev .v-hl-btn-svg {
   margin-left: -26px;
 }
 
-.v-hl-btn-next > div {
+.v-hl-btn-next .v-hl-btn-svg {
   margin-right: -26px;
 }
 
