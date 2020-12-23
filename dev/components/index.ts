@@ -4,6 +4,7 @@ import ContentBox from './content-box.vue';
 import ContentWidth from './content-width.vue';
 import FixedWidth from './fixed-width.vue';
 import ScrollToIndex from './scroll-to-index.vue';
+import ScrollBar from './scroll-bar.vue';
 import Snapping from './snapping.vue';
 import NavButton from './nav-button.vue';
 import Event from './event.vue';
@@ -52,6 +53,12 @@ const components: ComponentMeta[] = [
     name: 'scroll-to-index',
     description: 'Scroll to index $horizontal.scrollToIndex(0)',
     component: ScrollToIndex,
+  },
+  {
+    path: '/scroll-bar',
+    name: 'scroll-bar',
+    description: 'Scroll bar visibility testing.',
+    component: ScrollBar,
   },
   {
     path: '/snapping',

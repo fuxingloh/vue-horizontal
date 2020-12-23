@@ -42,6 +42,21 @@
         <p>{{ item.content }}</p>
       </section>
     </vue-horizontal>
+
+    <vue-horizontal class="prevent-default">
+      <button slot="btn-next" @click.stop="nextPreventDefault">
+        NEXT
+      </button>
+
+      <section v-for="item in items" :key="item.i">
+        <div class="header">
+          <h6>{{ item.i }}</h6>
+          <h3>{{ item.title }}</h3>
+        </div>
+        <h6>BUTTON: PREVENT DEFAULT</h6>
+        <p>{{ item.content }}</p>
+      </section>
+    </vue-horizontal>
   </div>
 </template>
 
@@ -66,6 +81,11 @@ export default Vue.extend({
       }),
     }
   },
+  methods: {
+    nextPreventDefault() {
+
+    }
+  }
 });
 </script>
 
