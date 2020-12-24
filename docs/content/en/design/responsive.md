@@ -4,7 +4,7 @@ description: "
 In Vue Horizontal the default responsive classes are turned off by default.
 We believe that you should be in control and implement the CSS specified to your design standards.
 "
-position: 12
+position: 102
 category: Design
 ---
 

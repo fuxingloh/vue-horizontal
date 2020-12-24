@@ -1,0 +1,26 @@
+<template>
+  <div class="bg-gray-300 rounded px-4 py-4">
+    <div class="flex items-center">
+      <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-200"></div>
+      <div class="ml-3 flex-grow">
+        <p class="w-full h-6 bg-white rounded-sm"></p>
+      </div>
+    </div>
+    <div>
+      <div class="mt-3">
+        <p class="w-full h-3 bg-white rounded-sm"></p>
+      </div>
+      <div class="mt-2">
+        <p class="w-3/4 h-3 bg-white rounded-sm"></p>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {}
+</script>
+
+<style scoped>
+
+</style>

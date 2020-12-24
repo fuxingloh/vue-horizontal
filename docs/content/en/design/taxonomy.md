@@ -1,7 +1,7 @@
 ---
 title: Taxonomy
 description: 'Defining the taxonomy of a horizontal layout and what you should be concerned with.'
-position: 11
+position: 101
 category: Design
 ---
 
@@ -70,8 +70,8 @@ Defining the taxonomy of a horizontal layout and what you should be concerned wi
 * Alternative to <span style="color: green;font-weight:700;">scrollbar</span> and 
   <span style="color: red;font-weight:700;">navigation</span> to indicate to the users that the items can be 
   horizontally scrolled.
-* Indicate to users you can touch scroll to seek to the next item.
-* Should only appear on mobile devices; screen with low view port.
+* Indicate to mobile users you can touch scroll to seek to the next item.
+  * Should only appear on mobile devices; screen with <640 viewport width.
 * Peek `8px` of items on the left and right. Peeking should only appear if there are actual items on the left or right.
 * Vue Horizontal must be 100vw for a seamless edge to edge experience.
   * `scroll-padding-left: 24px` can be used to snap correctly. 
