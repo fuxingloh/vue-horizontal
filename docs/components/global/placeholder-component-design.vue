@@ -6,7 +6,7 @@
         <p class="w-full h-6 bg-white rounded-sm"></p>
       </div>
     </div>
-    <div>
+    <div v-if="!small">
       <div class="mt-3">
         <p class="w-full h-3 bg-white rounded-sm"></p>
       </div>
@@ -18,7 +18,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    small: Boolean
+  }
+}
 </script>
 
 <style scoped>
