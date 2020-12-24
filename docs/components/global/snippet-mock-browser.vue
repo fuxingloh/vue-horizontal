@@ -1,22 +1,22 @@
 <template>
   <div class="mock-browser overflow-hidden rounded-md border border-pre-color">
-    <div class="bg-pre-color p-3 border-b border-gray-200">
+    <div class="bg-pre-color p-3">
       <div class="flex items-center justify-between">
         <div class="flex -m-1">
           <div class="p-1">
-            <div :class="`bg-red-500`" class="w-3 h-3 rounded-full"></div>
+            <div class="bg-red-500 w-3 h-3 rounded-full"></div>
           </div>
           <div class="p-1">
-            <div :class="`bg-yellow-500`" class="w-3 h-3 rounded-full"></div>
+            <div class="bg-yellow-500 w-3 h-3 rounded-full"></div>
           </div>
           <div class="p-1">
-            <div :class="`bg-green-500`" class="w-3 h-3 rounded-full"></div>
+            <div class="bg-green-500 w-3 h-3 rounded-full"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="viewport p-8 bg-white">
+    <div class="viewport bg-white">
       <slot></slot>
     </div>
 
@@ -56,6 +56,11 @@ export default {
     p, h1, h2, h3, h4, h5, h6 {
       margin: 0;
       padding: 0;
+      border: 0;
+
+      &::before {
+        display: none;
+      }
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -66,5 +71,14 @@ export default {
       font-weight: 500;
     }
   }
+}
+
+/* TODO(fuxing): Wait for https://github.com/nuxt/content/pull/691 to be fixed */
+.snippet /deep/ .filename {
+  display: none;
+}
+
+.snippet /deep/ pre {
+  padding-top: 1.25rem !important;
 }
 </style>

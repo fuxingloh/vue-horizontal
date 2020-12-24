@@ -1,8 +1,6 @@
-# [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
-
-#### **⚠️ This library is still a work in progress, please be careful.**
-
 [![Vue Horizontal](./vue-horizontal.svg)](https://vue-horizontal.fuxing.dev)
+
+# [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
 
 ![chrome](https://github.com/fuxingloh/vue-horizontal/workflows/chrome/badge.svg)
 ![firefox](https://github.com/fuxingloh/vue-horizontal/workflows/firefox/badge.svg)
@@ -10,12 +8,14 @@
 ![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
 
+#### **⚠️ This library is still a work in progress, please be careful.**
+
 An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies. With over 100 crafted
 recipes of design choices and control mechanisms ready for your needs.
 
 [**DOCUMENTATION**](https://vue-horizontal.fuxing.dev) 
 •
-[**LIVE DEMO**](https://vue-horizontal.fuxing.dev/responsive)
+[**LIVE DEMO**](https://vue-horizontal.fuxing.dev/features)
 
 ## Features and Design Philosophy
 
@@ -24,7 +24,7 @@ recipes of design choices and control mechanisms ready for your needs.
 - Customizable navigation: scroll bar, buttons or programmatic
 - Content snapping, to snap to the nearest item after scrolling
 - Small size of 3 KB
-- Highly extensible for any use case with [well documented recipes](https://vue-horizontal.fuxing.dev/recipes-design/responsive).
+- Highly extensible for any use case with [well documented recipes](https://vue-horizontal.fuxing.dev/design/taxonomy).
   - You control how to structure content with HTML
   - You control how it looks with CSS
   - You control how to navigate it with Vue.js
@@ -106,12 +106,9 @@ section {
 
 ### [More features and examples](https://vue-horizontal.fuxing.dev/features)
 
-- [All features examples](https://vue-horizontal.fuxing.dev/features)
-- [Design Recipe: Responsive](https://vue-horizontal.fuxing.dev/recipes-design/responsive)
-- [Design Recipe: Cards/Grids](https://vue-horizontal.fuxing.dev/recipes-design/cards)
-- [Design Recipe: Avatar](https://vue-horizontal.fuxing.dev/recipes-design/avatar)
-- [Control Recipe: Button](https://vue-horizontal.fuxing.dev/recipes-control/navigation)
-- [Control Recipe: Carousel](https://vue-horizontal.fuxing.dev/recipes-control/carousel)
+- [All features demo](https://vue-horizontal.fuxing.dev/features)
+- [Design: Taxonomy](https://vue-horizontal.fuxing.dev/design/taxonomy)
+- [Design: Responsive](https://vue-horizontal.fuxing.dev/design/responsive)
 
 ## Known Limitations
 
@@ -135,7 +132,7 @@ of carousels by setting defined snap positions. Vue Horizontal has it enabled by
 ### [Hiding scrollbar](https://vue-horizontal.fuxing.dev/limitations#hiding-scrollbar)
 
 In Vue Horizontal, the x-axis scrollbar is hidden by default. Although there isn't a shared specification, most browser
-has it implemented one way or another. As of December 2020, there is a 97%+ cross browser compatibility.
+has it implemented one way or another. As of December 2020, there is a 99%+ cross browser compatibility.
 
 ## Development
 

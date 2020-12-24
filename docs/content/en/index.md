@@ -32,7 +32,7 @@ You can display horizontal content like you would do with just any other html co
 * Navigation left, right button will automatically appear if there are any items overflowing
 * Trackpad and touch scrolling will work as expected.
 
-```vue[snippets/index-getting-started.vue]
+```vue[GettingStarted.vue] import=index-getting-started.vue
 ```
 
 ## Motivation
