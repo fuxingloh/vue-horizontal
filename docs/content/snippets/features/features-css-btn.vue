@@ -12,10 +12,17 @@
 }
 
 .this >>> .v-hl-btn-next {
-  margin-right: 24px;
+  transform: translateX(0);
 }
 
 .this >>> .v-hl-btn-prev {
-  margin-top: 24px;
+  top: 0;
+}
+
+.this >>> .v-hl-btn-prev svg {
+  margin: 0;
+  padding: 4px;
+  height: 30px;
+  width: 30px;
 }
 </style>
