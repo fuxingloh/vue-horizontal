@@ -23,7 +23,7 @@ Naturally, that would allow you to use `v-for` for a consistent design template.
 It comes with default set of responsive breakpoints that is **disabled by default**.
 We believe that CSS should be written by the users and not controlled by a library.
 However, for the sake of convenience, you can use enable it with the `responsive` prop.
-Check out [responsive 101](/recipes-design/responsive) for a detailed write-up about responsive horizontal design.
+Check out [responsive 101](/design/responsive) for a detailed write-up about responsive horizontal design.
 
 ### Breakpoints
 

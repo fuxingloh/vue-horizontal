@@ -14,6 +14,7 @@
     "core-js": "^3.6.5",
     "nuxt": "^2.14.7",
     "remark-code-import-replace": "^0.2.0",
+    "smoothscroll-polyfill": "^0.4.4",
     "vue-gtag": "^1.10.0"
   },
   "devDependencies": {

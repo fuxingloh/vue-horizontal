@@ -1,7 +1,7 @@
 <template>
   <main>
     <vue-horizontal responsive class="horizontal" ref="container">
-      <section v-for="i in [0,1,2,3,4,5,6,7,8,9,10]" :key="i">
+      <section v-for="i in [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]" :key="i">
         <h5>ITEM</h5>
       </section>
     </vue-horizontal>
@@ -22,7 +22,7 @@ export default {
   color: white;
   animation: blink 0.2s;
   animation-direction: alternate;
-  animation-iteration-count: 3;
+  animation-iteration-count: 4;
 }
 
 @keyframes blink {
