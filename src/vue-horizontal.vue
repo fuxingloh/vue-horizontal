@@ -73,6 +73,16 @@ export default Vue.extend({
       type: Boolean,
       default: () => false,
     },
+    /**
+     * Move window, indicates the percent of width to travel when nav is triggered.
+     */
+    move: {
+      type: Number,
+      default: () => 1.0
+    },
+    /**
+     * Snap to start|center|end
+     */
     snap: {
       type: String,
       default: () => 'start',
@@ -82,36 +92,77 @@ export default Vue.extend({
     this.onScrollDebounce();
   },
   methods: {
-    findIntersectElement(point: number): Element | undefined {
-      const slots = this.$slots?.default?.filter(s => s.tag) as VNode[]
+    findPrevIndex(x: number): number | undefined {
+      const slots = this.$slots?.default as VNode[] || []
 
-      for (const slot of slots) {
-        const element = slot.elm as Element
-        const {left: l, right: r} = element.getBoundingClientRect()
-        if (l <= point && point <= r) {
-          return element
+      for (let i = 0; i < slots.length; i++) {
+        if (!slots[i].tag) {
+          continue;
+        }
+
+        const rect = (slots[i].elm as Element).getBoundingClientRect()
+
+        if (rect.left <= x && x <= rect.right) {
+          return i
+        }
+
+        if (x <= rect.left) {
+          return i
+        }
+      }
+    },
+    findNextIndex(x: number): number | undefined {
+      const slots = this.$slots?.default as VNode[] || []
+
+      for (let i = 0; i < slots.length; i++) {
+        if (!slots[i].tag) {
+          continue;
+        }
+
+        const rect = (slots[i].elm as Element).getBoundingClientRect()
+
+        if (rect.right <= x) {
+          continue;
+        } else if (rect.left <= x) {
+          return i;
+        }
+
+        if (x <= rect.left) {
+          return i;
         }
       }
     },
     prev(): void {
       const container = this.$refs.container as Element
-      const {left, right} = container.getBoundingClientRect()
+      const left = container.getBoundingClientRect().left
+      const x = left + (container.clientWidth * -this.move) - delta
 
-      const elm = this.findIntersectElement(left - delta)
-      const width = elm ? right - elm.getBoundingClientRect().right : container.clientWidth
+      const index = this.findPrevIndex(x)
 
-      this.scrollToLeft(container.scrollLeft - width)
-      this.$emit('prev', {width})
+      if (index || index === 0) {
+        this.scrollToIndex(index)
+      } else {
+        const width = container.clientWidth * this.move
+        this.scrollToLeft(container.scrollLeft - width)
+      }
+
+      this.$emit('prev')
     },
     next(): void {
       const container = this.$refs.container as Element
-      const {left, right} = container.getBoundingClientRect()
+      const left = container.getBoundingClientRect().left
+      const x = left + (container.clientWidth * this.move) + delta
 
-      const elm = this.findIntersectElement(right + delta)
-      const width = elm ? elm.getBoundingClientRect().left - left : container.clientWidth
+      const index = this.findNextIndex(x)
 
-      this.scrollToLeft(container.scrollLeft + width)
-      this.$emit('next', {width})
+      if (index) {
+        this.scrollToIndex(index)
+      } else {
+        const width = container.clientWidth * this.move
+        this.scrollToLeft(container.scrollLeft + width)
+      }
+
+      this.$emit('next')
     },
     scrollToIndex(index: number): void {
       const slots = this.$slots?.default?.filter(s => s.tag) as VNode[]

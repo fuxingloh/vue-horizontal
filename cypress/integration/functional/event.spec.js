@@ -55,8 +55,7 @@ describe('event', () => {
   it('next: should have event after click', () => {
     cy.get('.v-hl-btn-next').click()
     cy.get('.next')
-      .invoke('text')
-      .should('match', /"width": [0-9]+/)
+      .should('have.text', 'next')
   })
 
   it('prev: should have no event', () => {
@@ -69,7 +68,6 @@ describe('event', () => {
     cy.get('.v-hl-btn-prev').click()
 
     cy.get('.prev')
-      .invoke('text')
-      .should('match', /"width": [0-9]+/)
+      .should('have.text', 'prev')
   })
 })
