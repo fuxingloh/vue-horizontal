@@ -6,7 +6,7 @@ category: Design
 ---
 
 Defining the taxonomy of a horizontal layout and what you should be concerned with when designing content horizontally.
-**Here lies an opinionated design guideline.**
+**Here lies an opinionated design guideline for designing horizontal content.**
 
 ## Vue Horizontal
 
@@ -59,6 +59,7 @@ Defining the taxonomy of a horizontal layout and what you should be concerned wi
 * Should scroll smoothly to indicate to touch screen and trackpad users they can touch scroll.
 * Should not block content.
   * Thus, for the benefit of mobile users, it should be hidden if view port width is low.
+  * Should be relative to the content height, `smaller content height = smaller button`.   
   * For mobile users <span style="color: purple;font-weight:700;">peeking</span> should be used to indicate that users can touch scroll to next.
 
 ## Peeking
