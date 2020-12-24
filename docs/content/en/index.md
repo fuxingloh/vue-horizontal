@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: 'An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.'
+description: 'Vue Horizontal is an ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.'
 position: 1
 category: Getting Started
 features:
@@ -9,13 +9,14 @@ features:
 - Scroll bar or customizable button navigation
 - Snap to the nearest item when scrolling
 - Moves the responsibilities of the CSS to the user
-- Extensible for any use case with a collection or recipes.
+- Extensible for any use case with a collection of recipes.
 ---
 
 <alert type="info">
 
-An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.
-With over 100 crafted recipes of design choices and control mechanisms ready for your needs. 
+At its core, Vue Horizontal is an ultra simple pure vue horizontal layout for modern responsive web with zero 
+dependencies.
+This is also an ultra complex code snippet dossier with over 100 SPA/SSR/SSG friendly recipes for your design needs.
 
 </alert>
 
