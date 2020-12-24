@@ -10,8 +10,9 @@
 
 #### **⚠️ This library is still a work in progress, please be careful.**
 
-An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies. With over 100 crafted
-recipes of design choices and control mechanisms ready for your needs.
+At its core, [Vue Horizontal](https://vue-horizontal.fuxing.dev) is an ultra simple pure vue horizontal layout for 
+modern responsive web with zero dependencies.
+This is also an ultra complex code snippet dossier with over 100 SPA/SSR/SSG friendly recipes for your design needs.
 
 [**DOCUMENTATION**](https://vue-horizontal.fuxing.dev) 
 •
