@@ -1,24 +1,37 @@
 <template>
   <div>
-    <vue-horizontal
-      @scroll="(data) => scroll = data"
-      @scroll-debounce="(data) => scrollDebounce = data"
-      @prev="() => prev = 'prev'"
-      @next="() => next = 'next'"
-    >
+    <vue-horizontal class="move-8" :move="0.8">
       <section v-for="item in items" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
           <h3>{{ item.title }}</h3>
         </div>
+        <h6>MOVE: 0.8</h6>
         <p>{{ item.content }}</p>
       </section>
     </vue-horizontal>
 
-    <pre class="scroll"><code>{{ scroll }}</code></pre>
-    <pre class="scroll-debounce"><code>{{ scrollDebounce }}</code></pre>
-    <pre class="prev"><code>{{ prev }}</code></pre>
-    <pre class="next"><code>{{ next }}</code></pre>
+    <vue-horizontal class="move-5" :move="0.5">
+      <section v-for="item in items" :key="item.i">
+        <div class="header">
+          <h6>{{ item.i }}</h6>
+          <h3>{{ item.title }}</h3>
+        </div>
+        <h6>MOVE: 0.5</h6>
+        <p>{{ item.content }}</p>
+      </section>
+    </vue-horizontal>
+
+    <vue-horizontal class="move-3" :move="0.3">
+      <section v-for="item in items" :key="item.i">
+        <div class="header">
+          <h6>{{ item.i }}</h6>
+          <h3>{{ item.title }}</h3>
+        </div>
+        <h6>MOVE: 0.3</h6>
+        <p>{{ item.content }}</p>
+      </section>
+    </vue-horizontal>
   </div>
 </template>
 
@@ -32,21 +45,17 @@ export default Vue.extend({
     VueHorizontal
   },
   data() {
-    const lorem = Lorem("event")
+    const lorem = Lorem("move")
     return {
       items: [...Array(20).keys()].map((i) => {
         return {
           i,
-          title: lorem.generateWords(1),
-          content: lorem.generateWords(6),
+          title: lorem.generateWords(2),
+          content: lorem.generateWords(3),
         };
       }),
-      scroll: 'no-event',
-      scrollDebounce: 'no-event',
-      prev: 'no-event',
-      next: 'no-event',
     }
-  },
+  }
 });
 </script>
 
@@ -65,6 +74,7 @@ section {
 }
 
 .header h6 {
+  flex-shrink: 0;
   background: #0000db;
   font-size: 14px;
   color: white;
@@ -74,12 +84,5 @@ section {
   line-height: 24px;
   border-radius: 12px;
   margin-right: 12px;
-}
-
-pre {
-  margin-top: 24px;
-  padding: 16px;
-  background: #f8f8f8;
-  border-radius: 3px;
 }
 </style>
