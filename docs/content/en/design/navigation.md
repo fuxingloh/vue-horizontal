@@ -7,8 +7,6 @@ position: 103
 category: Design
 ---
 
-<alert type="warning">
-
-Work in progress. 🚧
-
-</alert>
+<snippet-mock-browser>
+<design-navigation></design-navigation>
+</snippet-mock-browser>
