@@ -87,7 +87,8 @@ export default Vue.extend({
   },
   methods: {
     findIntersectElement(point: number): Element | undefined {
-      const slots = this.$slots?.default as VNode[]
+      const slots = this.$slots?.default?.filter(s => s.tag) as VNode[]
+
       for (const slot of slots) {
         const element = slot.elm as Element
         const {left: l, right: r} = element.getBoundingClientRect()
@@ -117,7 +118,7 @@ export default Vue.extend({
       this.$emit('next', {width})
     },
     scrollToIndex(index: number): void {
-      const slots = this.$slots?.default as VNode[]
+      const slots = this.$slots?.default?.filter(s => s.tag) as VNode[]
       if (slots[index]) {
         const container = this.$refs.container as Element
         const element = slots[index].elm as Element
