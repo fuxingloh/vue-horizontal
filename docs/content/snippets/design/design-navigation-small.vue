@@ -7,7 +7,8 @@
 
 <style scoped>
 .horizontal >>> .v-hl-btn svg {
-  height: 32px;
-  width: 32px;
+  padding: 3px;
+  height: 28px;
+  width: 28px;
 }
 </style>
