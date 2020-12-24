@@ -20,11 +20,11 @@ export default {
     }
   },
   methods: {
-    onPrev(data) {
-      this.prev = data
+    onPrev() {
+      this.prev += '- clicked prev'
     },
-    onNext(data) {
-      this.next = data
+    onNext() {
+      this.next += '- clicked next'
     }
   }
 }
