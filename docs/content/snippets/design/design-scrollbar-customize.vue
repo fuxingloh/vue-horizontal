@@ -1,7 +1,7 @@
 <template>
   <vue-horizontal responsive scroll :button="false" class="horizontal">
-    <placeholder-component-design v-for="i in [0,1,2,3,4,5,6,7,8,9,10]" :key="i">
-    </placeholder-component-design>
+    <placeholder-component v-for="i in [0,1,2,3,4,5,6,7,8,9,10]" :key="i">
+    </placeholder-component>
   </vue-horizontal>
 </template>
 

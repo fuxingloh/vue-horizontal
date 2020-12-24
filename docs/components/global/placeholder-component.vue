@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-300 rounded px-4 py-4">
+  <div class="bg-gray-600 rounded" :class="{'p-4': !small, 'p-3': small}">
     <div class="flex items-center">
       <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-200"></div>
       <div class="ml-3 flex-grow">
