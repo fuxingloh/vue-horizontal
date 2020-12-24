@@ -76,7 +76,7 @@ export default Vue.extend({
     /**
      * Move window, indicates the percent of width to travel when nav is triggered.
      */
-    move: {
+    displacement: {
       type: Number,
       default: () => 1.0
     },
@@ -135,14 +135,14 @@ export default Vue.extend({
     prev(): void {
       const container = this.$refs.container as Element
       const left = container.getBoundingClientRect().left
-      const x = left + (container.clientWidth * -this.move) - delta
+      const x = left + (container.clientWidth * -this.displacement) - delta
 
       const index = this.findPrevIndex(x)
 
       if (index || index === 0) {
         this.scrollToIndex(index)
       } else {
-        const width = container.clientWidth * this.move
+        const width = container.clientWidth * this.displacement
         this.scrollToLeft(container.scrollLeft - width)
       }
 
@@ -151,14 +151,14 @@ export default Vue.extend({
     next(): void {
       const container = this.$refs.container as Element
       const left = container.getBoundingClientRect().left
-      const x = left + (container.clientWidth * this.move) + delta
+      const x = left + (container.clientWidth * this.displacement) + delta
 
       const index = this.findNextIndex(x)
 
       if (index) {
         this.scrollToIndex(index)
       } else {
-        const width = container.clientWidth * this.move
+        const width = container.clientWidth * this.displacement
         this.scrollToLeft(container.scrollLeft + width)
       }
 

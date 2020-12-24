@@ -1,6 +1,6 @@
 <template>
   <div>
-    <vue-horizontal class="move-8" :move="0.8">
+    <vue-horizontal class="move-8" :displacement="0.8">
       <section v-for="item in items" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
@@ -11,7 +11,7 @@
       </section>
     </vue-horizontal>
 
-    <vue-horizontal class="move-5" :move="0.5">
+    <vue-horizontal class="move-5" :displacement="0.5">
       <section v-for="item in items" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
@@ -22,7 +22,7 @@
       </section>
     </vue-horizontal>
 
-    <vue-horizontal class="move-3" :move="0.3">
+    <vue-horizontal class="move-3" :displacement="0.3">
       <section v-for="item in items" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
