@@ -9,6 +9,8 @@ import Snapping from './snapping.vue';
 import NavButton from './nav-button.vue';
 import Event from './event.vue';
 import Responsive from './responsive.vue';
+import Move from './move.vue';
+import ContentOverflow from './content-overflow.vue';
 
 export interface ComponentMeta {
   path: string;
@@ -81,8 +83,20 @@ const components: ComponentMeta[] = [
   {
     path: '/responsive',
     name: 'responsive',
-    description: 'Build-in opinionated responsive classes for users to get responsiveness at the get-go.',
+    description: 'Build-it opinionated responsive classes for users to get responsiveness at the get-go.',
     component: Responsive,
+  },
+  {
+    path: '/move',
+    name: 'move',
+    description: 'Move region navigation percentage',
+    component: Move,
+  },
+  {
+    path: '/content-overflow',
+    name: 'content-overflow',
+    description: 'Test content larger that 100vw.',
+    component: ContentOverflow,
   },
 ]
 
