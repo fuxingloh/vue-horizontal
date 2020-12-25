@@ -1,6 +1,6 @@
 <template>
   <vue-horizontal class="this">
-    <component-example v-for="i in [1,2,3,4,5,6,7,8]">
+    <component-example v-for="i in [1,2,3,4,5,6,7,8]" :key="i">
       <h3>Button {{ i }}</h3>
     </component-example>
   </vue-horizontal>
