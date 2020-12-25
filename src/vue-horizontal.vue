@@ -43,7 +43,7 @@ interface VueHorizontalData {
   hasPrev: boolean;
   hasNext: boolean;
 
-  debouceId: number | null;
+  debounceId: number | null;
 }
 
 export default Vue.extend({
@@ -57,7 +57,7 @@ export default Vue.extend({
       hasPrev: false,
       hasNext: false,
 
-      debouceId: null,
+      debounceId: null,
     }
   },
   props: {
@@ -184,10 +184,10 @@ export default Vue.extend({
         left: container.scrollLeft,
       })
 
-      if (this.debouceId) {
-        clearTimeout(this.debouceId);
+      if (this.debounceId) {
+        clearTimeout(this.debounceId);
       }
-      this.debouceId = window.setTimeout(this.onScrollDebounce, 500);
+      this.debounceId = window.setTimeout(this.onScrollDebounce, 500);
     },
     onScrollDebounce(): void {
       const container = this.$refs.container as Element
