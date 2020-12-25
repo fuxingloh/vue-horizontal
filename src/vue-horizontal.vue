@@ -128,38 +128,40 @@ export default Vue.extend({
       }
     },
     prev(): void {
+      this.$emit('prev')
+
       const container = this.$refs.container as Element
       const left = container.getBoundingClientRect().left
       const x = left + (container.clientWidth * -this.displacement) - delta
-
       const slot = this.findPrevSlot(x)
 
       if (slot) {
         const width = (slot.elm as Element).getBoundingClientRect().left - left
         this.scrollToLeft(container.scrollLeft + width)
-      } else {
-        const width = container.clientWidth * this.displacement
-        this.scrollToLeft(container.scrollLeft - width)
+        return
       }
 
-      this.$emit('prev')
+      const width = container.clientWidth * this.displacement
+      this.scrollToLeft(container.scrollLeft - width)
     },
     next(): void {
+      this.$emit('next')
+
       const container = this.$refs.container as Element
       const left = container.getBoundingClientRect().left
       const x = left + (container.clientWidth * this.displacement) + delta
-
       const slot = this.findNextSlot(x)
 
       if (slot) {
         const width = (slot.elm as Element).getBoundingClientRect().left - left
-        this.scrollToLeft(container.scrollLeft + width)
-      } else {
-        const width = container.clientWidth * this.displacement
-        this.scrollToLeft(container.scrollLeft + width)
+        if (width > delta) {
+          this.scrollToLeft(container.scrollLeft + width)
+          return
+        }
       }
 
-      this.$emit('next')
+      const width = container.clientWidth * this.displacement
+      this.scrollToLeft(container.scrollLeft + width)
     },
     scrollToIndex(i: number): void {
       const slots = this.slots()
