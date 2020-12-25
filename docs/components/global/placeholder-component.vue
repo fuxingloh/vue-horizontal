@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-600 rounded" :class="{'p-4': !small, 'p-3': small}">
+  <div class="bg-gray-500 rounded" :class="{'p-4': !small, 'p-3': small}">
     <div class="flex items-center">
       <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center">
         <div class="leading-none font-bold text-black">
@@ -28,7 +28,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>

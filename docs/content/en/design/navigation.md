@@ -24,13 +24,16 @@ category: Design
 
 ## Customizing
 
-In this example, the next/right button is replaced with slots. 
-The prev/left button style is overridden with CSS.
+In this example, the next button is replaced with slots.
+The left button style is overridden with basic CSS.
 
 ```vue[Navigation.vue] import=design/design-navigation-customize.vue
 ```
 
 ## Adaptive to content height
+
+Reduce the size of the navigation buttons and add linear gradient to blend and hide the content at the back.
+Additionally, the displacement is set to 0.7 so that it will not move beyond content that are not fully visible. 
 
 ### Tiny content height
 
@@ -39,10 +42,15 @@ The prev/left button style is overridden with CSS.
 
 ### Small content height
 
+Reduce the size of the navigation buttons for smaller content.
+
 ```vue[SmallNavigation.vue] import=design/design-navigation-small.vue
 ```
 
 ### Above content
+
+For edge to edge content, you might want to add nav button on top or below your horizontal content so that the nav 
+button doesn't block your horizontal content. This example is created with [tailwind](https://tailwindcss.com/).
 
 ```vue[AboveNavigation.vue] import=design/design-navigation-above.vue
 ```
