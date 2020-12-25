@@ -92,43 +92,38 @@ export default Vue.extend({
     this.onScrollDebounce();
   },
   methods: {
-    findPrevIndex(x: number): number | undefined {
-      const slots = this.$slots?.default as VNode[] || []
+    slots(): VNode[] {
+      return this.$slots?.default?.filter(s => s.tag) as VNode[]
+    },
+    findPrevSlot(x: number): VNode | undefined {
+      const slots = this.slots()
 
       for (let i = 0; i < slots.length; i++) {
-        if (!slots[i].tag) {
-          continue;
-        }
-
         const rect = (slots[i].elm as Element).getBoundingClientRect()
 
         if (rect.left <= x && x <= rect.right) {
-          return i
+          return slots[i]
         }
 
         if (x <= rect.left) {
-          return i
+          return slots[i]
         }
       }
     },
-    findNextIndex(x: number): number | undefined {
-      const slots = this.$slots?.default as VNode[] || []
+    findNextSlot(x: number): VNode | undefined {
+      const slots = this.slots()
 
       for (let i = 0; i < slots.length; i++) {
-        if (!slots[i].tag) {
-          continue;
-        }
-
         const rect = (slots[i].elm as Element).getBoundingClientRect()
 
         if (rect.right <= x) {
           continue;
         } else if (rect.left <= x) {
-          return i;
+          return slots[i];
         }
 
         if (x <= rect.left) {
-          return i;
+          return slots[i];
         }
       }
     },
@@ -137,10 +132,11 @@ export default Vue.extend({
       const left = container.getBoundingClientRect().left
       const x = left + (container.clientWidth * -this.displacement) - delta
 
-      const index = this.findPrevIndex(x)
+      const slot = this.findPrevSlot(x)
 
-      if (index || index === 0) {
-        this.scrollToIndex(index)
+      if (slot) {
+        const width = (slot.elm as Element).getBoundingClientRect().left - left
+        this.scrollToLeft(container.scrollLeft + width)
       } else {
         const width = container.clientWidth * this.displacement
         this.scrollToLeft(container.scrollLeft - width)
@@ -153,10 +149,11 @@ export default Vue.extend({
       const left = container.getBoundingClientRect().left
       const x = left + (container.clientWidth * this.displacement) + delta
 
-      const index = this.findNextIndex(x)
+      const slot = this.findNextSlot(x)
 
-      if (index) {
-        this.scrollToIndex(index)
+      if (slot) {
+        const width = (slot.elm as Element).getBoundingClientRect().left - left
+        this.scrollToLeft(container.scrollLeft + width)
       } else {
         const width = container.clientWidth * this.displacement
         this.scrollToLeft(container.scrollLeft + width)
@@ -164,13 +161,14 @@ export default Vue.extend({
 
       this.$emit('next')
     },
-    scrollToIndex(index: number): void {
-      const slots = this.$slots?.default?.filter(s => s.tag) as VNode[]
-      if (slots[index]) {
-        const container = this.$refs.container as Element
-        const element = slots[index].elm as Element
+    scrollToIndex(i: number): void {
+      const slots = this.slots()
 
-        const left = element.getBoundingClientRect().left - container.getBoundingClientRect().left
+      if (slots[i]) {
+        const container = this.$refs.container as Element
+        const rect = (slots[i].elm as Element).getBoundingClientRect()
+
+        const left = rect.left - container.getBoundingClientRect().left
         this.scrollToLeft(container.scrollLeft + left)
       }
     },
@@ -187,15 +185,11 @@ export default Vue.extend({
       if (this.debouceId) {
         clearTimeout(this.debouceId);
       }
-      this.debouceId = window.setTimeout(this.onScrollDebounce, 250);
+      this.debouceId = window.setTimeout(this.onScrollDebounce, 500);
     },
     onScrollDebounce(): void {
       const container = this.$refs.container as Element
       const slot0 = this.$slots?.default?.find(s => s.tag)?.elm as Element
-
-      this.left = container.scrollLeft
-      this.containerWidth = container.clientWidth
-      this.scrollWidth = container.scrollWidth
 
       function hasNext(): boolean {
         return container.scrollWidth > container.scrollLeft + container.clientWidth + delta
@@ -211,6 +205,9 @@ export default Vue.extend({
         return Math.abs(containerVWLeft - slot0VWLeft) >= delta;
       }
 
+      this.left = container.scrollLeft
+      this.containerWidth = container.clientWidth
+      this.scrollWidth = container.scrollWidth
       this.hasNext = hasNext()
       this.hasPrev = hasPrev()
 
