@@ -1,8 +1,8 @@
 <template>
   <vue-horizontal responsive class="horizontal" :displacement="0.7" snap="center">
-    <div class="border rounded py-2 px-4" v-for="i in [0,1,2,3,4,5,6,7,8,9,10,11,12]" :key="i">
-      <div class="h-4 bg-gray-300 rounded-sm flex justify-center items-center">
-        <span class="font-bold text-xs">{{i}}</span>
+    <div class="tag" v-for="i in [0,1,2,3,4,5,6,7,8,9,10,11,12]" :key="i">
+      <div>
+        <span>{{ i }}</span>
       </div>
     </div>
   </vue-horizontal>
@@ -32,5 +32,16 @@
   top: 0;
   bottom: 0;
   transform: translateX(0);
+}
+</style>
+
+<style scoped>
+/* Content styling is done with tailwind postcss @apply for brevity. */
+.tag {
+  @apply border rounded py-2 px-4;
+}
+
+.tag > div {
+  @apply h-4 bg-gray-300 rounded-sm flex justify-center items-center font-bold text-xs;
 }
 </style>
