@@ -1,7 +1,7 @@
 <template>
   <vue-horizontal responsive scroll :button="false" class="horizontal">
-    <placeholder-component-design v-for="i in [0,1,2,3,4,5,6,7,8,9,10]" :key="i">
-    </placeholder-component-design>
+    <placeholder-component v-for="i in [0,1,2,3,4,5,6,7,8,9,10]" :key="i">
+    </placeholder-component>
   </vue-horizontal>
 </template>
 
@@ -9,6 +9,10 @@
 .horizontal >>> .v-hl-container {
   /* Space between content and scrollbar */
   padding-bottom: 16px;
+
+  /* For firefox only */
+  scrollbar-width: thin;
+  scrollbar-color: orangered black;
 }
 
 .horizontal >>> .v-hl-container::-webkit-scrollbar {
@@ -26,14 +30,5 @@
   border-radius: 6px;
   border: 4px black solid;
   background: orangered;
-}
-</style>
-
-
-<style scoped>
-.horizontal >>> .v-hl-container {
-  /* For firefox only */
-  scrollbar-width: thin;
-  scrollbar-color: orangered black;
 }
 </style>

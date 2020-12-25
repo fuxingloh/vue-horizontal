@@ -110,6 +110,8 @@ section {
 - [All features demo](https://vue-horizontal.fuxing.dev/features)
 - [Design: Taxonomy](https://vue-horizontal.fuxing.dev/design/taxonomy)
 - [Design: Responsive](https://vue-horizontal.fuxing.dev/design/responsive)
+- [Design: Navigation](https://vue-horizontal.fuxing.dev/design/navigation)
+- [Design: Scrollbar](https://vue-horizontal.fuxing.dev/design/scrollbar)
 
 ## Known Limitations
 

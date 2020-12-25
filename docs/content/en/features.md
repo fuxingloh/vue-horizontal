@@ -23,7 +23,7 @@ Naturally, that would allow you to use `v-for` for a consistent design template.
 It comes with default set of responsive breakpoints that is **disabled by default**.
 We believe that CSS should be written by the users and not controlled by a library.
 However, for the sake of convenience, you can use enable it with the `responsive` prop.
-Check out [responsive 101](/recipes-design/responsive) for a detailed write-up about responsive horizontal design.
+Check out [responsive 101](/design/responsive) for a detailed write-up about responsive horizontal design.
 
 ### Breakpoints
 
@@ -68,6 +68,11 @@ The Scroll bar is disabled by default, you can enable it the `scroll` prop.
 
 ## Navigation button
 
+* Due to the varying nature of margins, padding, box-sizing and content-sizing, next/prev are done on best effort basis.
+  * Default implementation should work for 95% of the use cases.
+  * Alternatively you can use `scrollToIndex` of `scrollToLeft`.
+* Snapping might not work as expected if smoothscroll is polyfill-ed.
+
 ### `<vue-horizontal :button="false">`
 ```vue[NavButtonDisable.vue] import=features/features-nav-button-disable.vue
 ```
@@ -81,7 +86,7 @@ The Scroll bar is disabled by default, you can enable it the `scroll` prop.
 
 ### @prev @next
 
-Emitted when prev or next are clicked. The width travelled will be emitted as well. 
+Emitted when prev or next are clicked. 
 
 ```vue[EventNavigation.vue] import=features/features-event-prev-next.vue
 ```
@@ -99,6 +104,10 @@ Emitted when prev or next are clicked. The width travelled will be emitted as we
 
 * Scroll to the next/prev set of elements.
 * Elements that are half visible, will not be scrolled past.
+* Due to the varying nature of margins, padding, box-sizing and content-sizing, next/prev are done on best effort basis.
+  * Default implementation should work for 95% of the use cases.
+  * Alternatively you can use `scrollToIndex` of `scrollToLeft`.
+* Snapping might not work as expected if smoothscroll is polyfill-ed.
 
 ```vue[MethodNavigation.vue] import=features/features-method-prev-next.vue
 ```
@@ -116,6 +125,14 @@ Emitted when prev or next are clicked. The width travelled will be emitted as we
 * Snap settings `snap="start|end|center"` will prevent the scrolling if it snaps backwards. 
 
 ```vue[MethodScrollLeft.vue] import=features/features-method-scroll-left.vue
+```
+
+## Displacement
+
+Displacement is a positive float number that you can override for a custom scroll displacement. Defaults to `1.0`.
+Changing the value affects next/prev button and `.next()` `.prev()` function call as well.
+
+```vue[ScrollDisplacement.vue] import=features/features-scroll-displacement.vue
 ```
 
 ## CSS

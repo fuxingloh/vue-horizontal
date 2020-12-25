@@ -53,13 +53,13 @@ Defining the taxonomy of a horizontal layout and what you should be concerned wi
 
 <design-swatch color="red">NAV</design-swatch>
 
-* Alternative to scrollbar to seek content programmatically.
+* Alternative to scrollbar to seek content.
 * Should only appear if there are content to be scrolled.
 * Should snap to item after scrolling.
 * Should scroll smoothly to indicate to touch screen and trackpad users they can touch scroll.
 * Should not block content.
+  * Should be relative to the content height, smaller content height equals to smaller button.
   * Thus, for the benefit of mobile users, it should be hidden if view port width is low.
-  * Should be relative to the content height, `smaller content height = smaller button`.   
   * For mobile users <span style="color: purple;font-weight:700;">peeking</span> should be used to indicate that users can touch scroll to next.
 
 ## Peeking

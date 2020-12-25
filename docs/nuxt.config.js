@@ -1,6 +1,5 @@
 import theme from '@nuxt/content-theme-docs'
 import path from "path";
-import u from "unist-builder";
 
 export default theme({
   docs: {
@@ -11,6 +10,7 @@ export default theme({
   ],
   plugins: [
     path.resolve(__dirname, 'plugins/gtag.client'),
+    path.resolve(__dirname, 'plugins/smoothscroll.client'),
   ],
   buildModules: [
     '@nuxt/typescript-build',
