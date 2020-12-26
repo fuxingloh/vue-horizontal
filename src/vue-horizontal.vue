@@ -174,9 +174,9 @@ export default Vue.extend({
         this.scrollToLeft(container.scrollLeft + left)
       }
     },
-    scrollToLeft(left: number): void {
+    scrollToLeft(left: number, behavior: "smooth" | "auto" = "smooth"): void {
       const element = this.$refs.container as Element
-      element.scrollTo({left: left, behavior: "smooth"});
+      element.scrollTo({left: left, behavior: behavior});
     },
     onScroll(): void {
       const container = this.$refs.container as Element

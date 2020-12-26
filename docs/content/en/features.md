@@ -122,7 +122,11 @@ Emitted when prev or next are clicked.
 ### `scrollToLeft()`
 
 * The amount of pixel to the left you want to scroll by.
-* Snap settings `snap="start|end|center"` will prevent the scrolling if it snaps backwards. 
+* Snap settings `snap="start|end|center"` will prevent the scrolling if it snaps backwards.
+* Scroll behavior options
+  * `scrollToLeft(100)` default to 'smooth' 
+  * `scrollToLeft(100, 'smooth')` smooth scroll
+  * `scrollToLeft(100, 'auto')` without smooth scroll
 
 ```vue[MethodScrollLeft.vue] import=features/features-method-scroll-left.vue
 ```
