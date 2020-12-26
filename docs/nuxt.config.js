@@ -46,6 +46,11 @@ export default theme({
         path: path.resolve(__dirname, 'content/snippets'),
         global: true
       })
+
+      dirs.push({
+        path: path.resolve(__dirname, 'content/snippets/recipes'),
+        global: true
+      })
     }
   }
 })

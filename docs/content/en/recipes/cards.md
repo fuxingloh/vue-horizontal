@@ -16,6 +16,8 @@ Card recipes are still work in progress!
 
 ## Aspect ratio
 
+Show a certain aspect ratio, cutting off any content that isn't within that aspect ratio.
+
 ### Square 1:1
 
 ### Rectangle 8:5
@@ -23,6 +25,10 @@ Card recipes are still work in progress!
 ### Tall Rectangle 5:8
 
 ## Content height
+
+Letting your content (usually text) determine the height of your horizontal layout.
+
+### Variable text height
 
 ### Fixed Line Height
 
