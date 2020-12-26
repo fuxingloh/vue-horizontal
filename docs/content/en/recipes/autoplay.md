@@ -7,7 +7,10 @@ category: Recipes
 
 In Vue Horizontal, you can programmatically navigate horizontal content with the exposed methods. 
 Although there isn't a built-in capability for autoplay, Vue Horizontal is created to support autoplay by 
-exposing useful methods, events and props to accomplish that.
+exposing useful methods, events and props to accomplish that. 
+You could use mounted to trigger the autoplay, but a more reliable method would be to trigger them
+as it enter into the viewport. This can be achieved with IntersectionObserver but for
+simplicity, you can use [vue-observe-visibility](https://www.npmjs.com/package/vue-observe-visibility) as well.
 
 ### Vue Horizontal methods
 
@@ -29,20 +32,49 @@ exposing useful methods, events and props to accomplish that.
 
 ## Autoplay
 
-## Initial
+### Mounted
 
-A simple move to position at mounted.
+You can programmatically move to any position of the horizontal content in Vue Horizontal.
+This allows you to easily move to preset initial position at mounted.
 
-## Peeking
+```vue[Mounted.vue] import=recipes/autoplay/recipes-autoplay-initial.vue
+```
 
-Move the content slightly to the right for a few seconds to indicate there are more content on the right.
+### Peeking
 
-## Progress
+When Vue Horizontal is visible, move the content slightly to the right for a few seconds to indicate there are more 
+content on the right.
+For simplicity, you can use [vue-observe-visibility](https://www.npmjs.com/package/vue-observe-visibility).
 
-You can also use internal emitted data to track position/progress of content. 
+```vue[Peeking.vue] import=recipes/autoplay/recipes-autoplay-peeking.vue
+```
 
-<alert type="warning">
+## Sequences
 
-Recipes are work in progress!
+### Forward and reverse
 
-</alert>
+```vue[FrowardReverse.vue] import=recipes/autoplay/recipes-autoplay-forward-reverse.vue
+```
+
+### Forward and reset
+
+```vue[ForwardReset.vue] import=recipes/autoplay/recipes-autoplay-forward-reset.vue
+```
+
+## Programmatically
+
+### Tracking
+
+Track another scrollbar or vue horizontal and move it to the same position.
+In this example, B tracking the position of A.
+
+```vue[Tracking.vue] import=recipes/autoplay/recipes-autoplay-tracking.vue
+```
+
+### Mirror
+
+Mirror another vue horizontal and move it to the same index.
+A and B mirroring each other position, updated after scroll debounce.
+
+```vue[Mirror.vue] import=recipes/autoplay/recipes-autoplay-mirror.vue
+```

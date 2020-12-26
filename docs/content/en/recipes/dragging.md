@@ -30,5 +30,5 @@ Code is inspired by [Draccano](https://github.com/Draccano) with his
 This is an extremely basic example, it doesn't account for scroll acceleration, deceleration, snapping or smooth scroll.  
 
 ```vue[Dragging.vue] import=recipes/dragging/recipes-dragging.vue
-`````
+```
 
