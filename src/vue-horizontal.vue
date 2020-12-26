@@ -190,6 +190,17 @@ export default Vue.extend({
       this.debounceId = window.setTimeout(this.onScrollDebounce, 500);
     },
     onScrollDebounce(): void {
+      this.refresh();
+
+      this.$emit('scroll-debounce', {
+        left: this.left,
+        containerWidth: this.containerWidth,
+        scrollWidth: this.scrollWidth,
+        hasPrev: this.hasPrev,
+        hasNext: this.hasNext,
+      })
+    },
+    refresh(): void {
       const container = this.$refs.container as Element
       const slot0 = this.$slots?.default?.find(s => s.tag)?.elm as Element
 
@@ -212,15 +223,7 @@ export default Vue.extend({
       this.scrollWidth = container.scrollWidth
       this.hasNext = hasNext()
       this.hasPrev = hasPrev()
-
-      this.$emit('scroll-debounce', {
-        left: this.left,
-        containerWidth: this.containerWidth,
-        scrollWidth: this.scrollWidth,
-        hasPrev: this.hasPrev,
-        hasNext: this.hasNext,
-      })
-    },
+    }
   },
 });
 </script>
