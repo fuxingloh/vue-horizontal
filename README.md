@@ -2,13 +2,11 @@
 
 # [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
 
-![chrome](https://github.com/fuxingloh/vue-horizontal/workflows/chrome/badge.svg)
-![firefox](https://github.com/fuxingloh/vue-horizontal/workflows/firefox/badge.svg)
-![edge](https://github.com/fuxingloh/vue-horizontal/workflows/edge/badge.svg)
-![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)
+[![chrome](https://github.com/fuxingloh/vue-horizontal/workflows/chrome/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Achrome+branch%3Amain)
+[![firefox](https://github.com/fuxingloh/vue-horizontal/workflows/firefox/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Afirefox+branch%3Amain)
+[![edge](https://github.com/fuxingloh/vue-horizontal/workflows/edge/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Aedge+branch%3Amain)
+[![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ACI+branch%3Amain)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
-
-#### **⚠️ This library is still a work in progress, please be careful.**
 
 At its core, [Vue Horizontal](https://vue-horizontal.fuxing.dev) is an ultra simple pure vue horizontal layout for 
 modern responsive web with zero dependencies.
