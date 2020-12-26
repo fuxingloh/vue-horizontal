@@ -1,4 +1,4 @@
-[![Vue Horizontal](./vue-horizontal.svg)](https://vue-horizontal.fuxing.dev)
+[![Vue Horizontal](./docs/vue-horizontal.svg)](https://vue-horizontal.fuxing.dev)
 
 # [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
 
