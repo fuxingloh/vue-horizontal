@@ -22,7 +22,7 @@ Card recipes are still work in progress!
 
 ### Tall Rectangle 5:8
 
-## Content 
+## Content height
 
 ### Fixed Line Height
 
