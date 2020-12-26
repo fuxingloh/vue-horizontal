@@ -59,37 +59,24 @@ by [@iamdustan](https://github.com/iamdustan). Then, have it polyfill once on th
 #### Polyfill Examples
 
 The idea is to have it polyfill-ed on the client side, the examples here are not exhaustive. It must only be added on
-the client side or else your SSR/SSG will break.
+the **client side or else your SSR/SSG will break**.
 
 <code-group>
-  <code-block label="SPA" active>
+  <code-block label="app.js" active>
 
-  ```vue
+```javascript
+// The same place you might do this:
+// import Vue from 'vue';
 
-<template>
-  <vue-horizontal>
-    <!-- your code -->
-  </vue-horizontal>
-</template>
-
-<script>
-// SPA mode only.
-// Or must be wrapped in <client-only></client-only>.
 import smoothscroll from 'smoothscroll-polyfill';
-
 smoothscroll.polyfill();
-
-export default {
-  // your code
-}
-</script>
-  ```
+```
 
   </code-block>
   <code-block label="Nuxt">
 
-  ```javascript
-  // nuxt.config.js
+```javascript
+// nuxt.config.js
 module.exports = {
   plugins: [
     '~/plugins/smoothscroll.client.js',
@@ -102,13 +89,12 @@ module.exports = {
 import smoothscroll from 'smoothscroll-polyfill';
 
 smoothscroll.polyfill();
-  ```
+```
 
   </code-block>
-  <code-block label="Vue.mounted()">
+  <code-block label="mounted()">
 
-  ```vue
-
+```vue
 <template>
   <vue-horizontal>
     <!-- your code -->
@@ -118,12 +104,20 @@ smoothscroll.polyfill();
 <script>
 export default {
   mounted() {
-    // Load it only at client
+    // Load it only at client side, this is a bad example...
     require('smoothscroll-polyfill').polyfill();
   }
 }
 </script>
-  ```
+```
+
+  </code-block>
+
+  <code-block label="<script>">
+
+```html
+<script src="https://unpkg.com/smoothscroll-polyfill"></script>
+```
 
   </code-block>
 </code-group>
@@ -132,7 +126,7 @@ export default {
 
 Scroll snap align or scroll-snapping, is a CSS technique that allows customizable scrolling experiences like pagination
 of carousels by setting defined snap positions. Vue Horizontal has it enabled by default to disable you can
-set `<vue-horizontal :snap="false">`.
+set `<vue-horizontal snap="none">`. As of December 2020, there is a 94%+ cross browser compatibility.
 
 <caniuse feature="css-snappoints"></caniuse>
 
@@ -141,5 +135,6 @@ set `<vue-horizontal :snap="false">`.
 In Vue Horizontal, the x-axis scrollbar is hidden by default. 
 Although there isn't a shared specification, most browser has it implemented one way or another. 
 All available methods to hide the scrollbar is implemented in this library.
+You can expect 99%+ cross browser compatibility. 
 
 <caniuse feature="css-scrollbar"></caniuse>

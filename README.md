@@ -10,7 +10,7 @@
 
 At its core, [Vue Horizontal](https://vue-horizontal.fuxing.dev) is an ultra simple pure vue horizontal layout for 
 modern responsive web with zero dependencies.
-This is also an ultra complex code snippet dossier with over 100 SPA/SSR/SSG friendly recipes for your design needs.
+Vue Horizontal is also an ultra complex code snippet dossier with over 100 SPA/SSR/SSG friendly recipes for your design needs.
 
 [**DOCUMENTATION**](https://vue-horizontal.fuxing.dev) 
 •
@@ -20,13 +20,13 @@ This is also an ultra complex code snippet dossier with over 100 SPA/SSR/SSG fri
 
 - **SSR/SSG/SPA: all modes of rendering supported**
 - Mobile first for the responsive web
-- Customizable navigation: scroll bar, buttons or programmatic
-- Content snapping, to snap to the nearest item after scrolling
-- Small size of 3 KB
+- Customizable navigation: scroll bar, buttons or basically everything
+- UX focused, smooth scrolling, snapping for variety of use case.
+- Small size of 3 KB for CDN users
 - Highly extensible for any use case with [well documented recipes](https://vue-horizontal.fuxing.dev/design/principles).
-  - You control how to structure content with HTML
+  - You control how to structure your content with HTML
   - You control how it looks with CSS
-  - You control how to navigate it with Vue.js
+  - You control how to navigate your layout with Vue.js
 
 ## Installation
 
@@ -63,6 +63,16 @@ import Vue from 'vue';
 import VueHorizontal from "vue-horizontal";
 
 Vue.component(VueHorizontal)
+```
+
+</details>
+
+<details>
+<summary><b>Import Script</b></summary>
+
+```html
+<!-- For latest release: https://github.com/fuxingloh/vue-horizontal/releases -->
+<script src="https://unpkg.com/vue-horizontal@0.6.0"></script>
 ```
 
 </details>
@@ -110,6 +120,7 @@ section {
 - [Design: Responsive](https://vue-horizontal.fuxing.dev/design/responsive)
 - [Design: Navigation](https://vue-horizontal.fuxing.dev/design/navigation)
 - [Design: Scrollbar](https://vue-horizontal.fuxing.dev/design/scrollbar)
+- [Recipes](https://vue-horizontal.fuxing.dev/recipes/cards)
 
 ## Known Limitations
 
@@ -119,21 +130,19 @@ In Vue Horizontal, smooth scrolling is enabled by default. With scroll-behavior:
 experience when scroll event is triggered by programmatic calls. Although this is not a breaking functional feature, it
 provides a "smooth" scrolling user experience.
 
-As of December 2020, there is only a 76% cross browser compatibility. Meantime you should polyfill this feature with
-more
-[information here](https://vue-horizontal.fuxing.dev/limitations#smoothscroll-polyfill). Polyfill should be done by the
-user, there are no plans to incorporate this natively in the library.
+As of December 2020, there is only a 76% cross browser compatibility (88% if you include Safari experimental feature flag).
+Meantime you should polyfill this feature with more
+[information provided here](https://vue-horizontal.fuxing.dev/limitations#smoothscroll-polyfill). 
+Polyfill should be done by the user, there are no plans to incorporate this natively in the library.
 
 ### [CSS Scroll Snap](https://vue-horizontal.fuxing.dev/limitations#css-scroll-snap)
 
 Scroll snap align or scroll-snapping, is a CSS technique that allows customizable scrolling experiences like pagination
 of carousels by setting defined snap positions. Vue Horizontal has it enabled by default, to disable you can set 
-`<vue-horizontal :snap="false">`. As of December 2020, there is a **94%+** cross browser compatibility.
+`<vue-horizontal snap="none">`. 
 
-### [Hiding scrollbar](https://vue-horizontal.fuxing.dev/limitations#hiding-scrollbar)
-
-In Vue Horizontal, the x-axis scrollbar is hidden by default. Although there isn't a shared specification, most browser
-has it implemented one way or another. As of December 2020, there is a **99%** cross browser compatibility.
+As of December 2020, there is a **94%+** cross browser compatibility. 
+You can choose to polyfill this, but it's more of an aesthetic feature rather than a breaking functional requirement. 
 
 ## Development
 
@@ -161,7 +170,6 @@ npm run cypress:run # e2e testing
 - [Motivation](https://vue-horizontal.fuxing.dev/#motivation)
 - [vue-horizontal-list](https://github.com/fuxingloh/vue-horizontal-list)
 - [kenwheeler/slick](https://github.com/kenwheeler/slick)
-- Airbnb.com
 
 Originally, this project started out as another project
 called [vue-horizontal-list](https://github.com/fuxingloh/vue-horizontal-list). I created the origin project because I
