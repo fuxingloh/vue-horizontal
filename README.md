@@ -25,7 +25,7 @@ This is also an ultra complex code snippet dossier with over 100 SPA/SSR/SSG fri
 - Customizable navigation: scroll bar, buttons or programmatic
 - Content snapping, to snap to the nearest item after scrolling
 - Small size of 3 KB
-- Highly extensible for any use case with [well documented recipes](https://vue-horizontal.fuxing.dev/design/taxonomy).
+- Highly extensible for any use case with [well documented recipes](https://vue-horizontal.fuxing.dev/design/principles).
   - You control how to structure content with HTML
   - You control how it looks with CSS
   - You control how to navigate it with Vue.js
@@ -108,7 +108,7 @@ section {
 ### [More features and examples](https://vue-horizontal.fuxing.dev/features)
 
 - [All features demo](https://vue-horizontal.fuxing.dev/features)
-- [Design: Taxonomy](https://vue-horizontal.fuxing.dev/design/taxonomy)
+- [Design: Principles](https://vue-horizontal.fuxing.dev/design/principles)
 - [Design: Responsive](https://vue-horizontal.fuxing.dev/design/responsive)
 - [Design: Navigation](https://vue-horizontal.fuxing.dev/design/navigation)
 - [Design: Scrollbar](https://vue-horizontal.fuxing.dev/design/scrollbar)

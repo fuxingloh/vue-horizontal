@@ -1,8 +1,8 @@
 ---
 title: Autoplay
 description: 'Vue Horizontal autoplay, programmatically control the scroll position/index of content. '
-position: 902
-category: Recipes
+position: 901
+category: Others
 ---
 
 In Vue Horizontal, you can programmatically navigate horizontal content with the exposed methods. 
@@ -37,7 +37,7 @@ simplicity, you can use [vue-observe-visibility](https://www.npmjs.com/package/v
 You can programmatically move to any position of the horizontal content in Vue Horizontal.
 This allows you to easily move to preset initial position at mounted.
 
-```vue[Mounted.vue] import=recipes/autoplay/recipes-autoplay-initial.vue
+```vue[Mounted.vue] import=others/autoplay/recipes-autoplay-initial.vue
 ```
 
 ### Peeking
@@ -46,19 +46,19 @@ When Vue Horizontal is visible, move the content slightly to the right for a few
 content on the right.
 For simplicity, you can use [vue-observe-visibility](https://www.npmjs.com/package/vue-observe-visibility).
 
-```vue[Peeking.vue] import=recipes/autoplay/recipes-autoplay-peeking.vue
+```vue[Peeking.vue] import=others/autoplay/recipes-autoplay-peeking.vue
 ```
 
 ## Sequences
 
 ### Forward and reverse
 
-```vue[FrowardReverse.vue] import=recipes/autoplay/recipes-autoplay-forward-reverse.vue
+```vue[FrowardReverse.vue] import=others/autoplay/recipes-autoplay-forward-reverse.vue
 ```
 
 ### Forward and reset
 
-```vue[ForwardReset.vue] import=recipes/autoplay/recipes-autoplay-forward-reset.vue
+```vue[ForwardReset.vue] import=others/autoplay/recipes-autoplay-forward-reset.vue
 ```
 
 ## Programmatically
@@ -68,7 +68,7 @@ For simplicity, you can use [vue-observe-visibility](https://www.npmjs.com/packa
 Track another scrollbar or vue horizontal and move it to the same position.
 In this example, B tracking the position of A.
 
-```vue[Tracking.vue] import=recipes/autoplay/recipes-autoplay-tracking.vue
+```vue[Tracking.vue] import=others/autoplay/recipes-autoplay-tracking.vue
 ```
 
 ### Mirror
@@ -76,5 +76,5 @@ In this example, B tracking the position of A.
 Mirror another vue horizontal and move it to the same index.
 A and B mirroring each other position, updated after scroll debounce.
 
-```vue[Mirror.vue] import=recipes/autoplay/recipes-autoplay-mirror.vue
+```vue[Mirror.vue] import=others/autoplay/recipes-autoplay-mirror.vue
 ```

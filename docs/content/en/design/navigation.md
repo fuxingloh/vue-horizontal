@@ -20,7 +20,7 @@ category: Design
 * Should not block content.
   * Should be relative to the content height, smaller content height equals to smaller button.
   * Thus, for the benefit of mobile users, it should be hidden if view port width is low.
-  * For mobile users [peeking](/design/taxonomy#peeking) should be used to indicate that users can touch scroll to next.
+  * For mobile users [peeking](/design/principles#peeking) should be used to indicate that users can touch scroll to next.
 
 ## Customizing
 
