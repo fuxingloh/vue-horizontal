@@ -45,6 +45,7 @@ Check out [responsive 101](/design/responsive) for a detailed write-up about res
 - start (default)
 - center
 - end
+- none to turn it off
 
 ### `<vue-horizontal snap="start">`
 ```vue[ScrollSnappingStart.vue] import=features/features-scroll-snapping-start.vue
@@ -56,6 +57,10 @@ Check out [responsive 101](/design/responsive) for a detailed write-up about res
 
 ### `<vue-horizontal snap="end">`
 ```vue[ScrollSnappingEnd.vue] import=features/features-scroll-snapping-end.vue
+```
+
+### `<vue-horizontal snap="none">`
+```vue[ScrollSnappingNone.vue] import=features/features-scroll-snapping-none.vue
 ```
 
 ## Scroll bar

@@ -38,7 +38,7 @@ You can display horizontal content like you would do with just any other html co
 
 ## Motivation
 
-> TLDR: In 2017, I liked how AirBnb does their design. Couldn't find a library for Vue.  
+> TLDR: In 2017, I liked how AirBnb does their horizontal design. Couldn't find a library for Vue.  
 
 Designing your web app for a horizontal experience can tedious and overwhelming if you are new to web development.
 While a vertical design comes naturally as html is naturally vertical by design `display:block`.
