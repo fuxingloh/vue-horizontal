@@ -18,7 +18,15 @@ export default {
     }
   },
   mounted() {
-    this.interval = setInterval(this.play, 3000)
+    // Custom observe visibility is below
+    // Much easier way: https://www.npmjs.com/package/vue-observe-visibility
+    observeVisibility(this.$refs.horizontal.$el, (visible) => {
+      if (visible) {
+        this.interval = setInterval(this.play, 3000)
+      } else {
+        clearInterval(this.interval)
+      }
+    })
   },
   destroyed() {
     clearInterval(this.interval)
@@ -41,5 +49,18 @@ export default {
       }
     }
   }
+}
+
+/**
+ * Custom function, much easier way: https://www.npmjs.com/package/vue-observe-visibility
+ *
+ * @param element to track visibility
+ * @param callback: function(boolean) when visibility change
+ */
+function observeVisibility(element, callback) {
+  const observer = new IntersectionObserver((records) => {
+    callback(records.find(record => record.isIntersecting))
+  }, {rootMargin: '10% 0% 10% 0%', threshold: 1.0});
+  observer.observe(element);
 }
 </script>

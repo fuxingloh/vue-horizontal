@@ -15,13 +15,9 @@ export default {
     }
   },
   mounted() {
-    const observer = new IntersectionObserver(this.peek, {
-      root: document.querySelector('#scrollArea'),
-      rootMargin: '0px',
-      threshold: 1.0
-    });
-
-    observer.observe(this.$refs.horizontal.$el);
+    // Custom observe visibility is below
+    // Much easier way: https://www.npmjs.com/package/vue-observe-visibility
+    observeVisibility(this.$refs.horizontal.$el, this.peeking)
   },
   destroyed() {
     if (this.timeout) {
@@ -29,13 +25,12 @@ export default {
     }
   },
   methods: {
-    peek() {
+    peeking(visible) {
+      if (!visible) {
+        return
+      }
+
       this.peeked = false
-
-      // To run it only once:
-      // if (this.peeked) return
-
-      // Timeout chaining, left 48px, back to 0, show button
 
       this.timeout = setTimeout(() => {
         this.$refs.horizontal.scrollToLeft(48)
@@ -47,9 +42,22 @@ export default {
             this.peeked = true
           }, 1000)
         }, 400)
-      }, 2000)
+      }, 1000)
     },
 
   }
+}
+
+/**
+ * Custom function, much easier way: https://www.npmjs.com/package/vue-observe-visibility
+ *
+ * @param element to track visibility
+ * @param callback: function(boolean) when visibility change
+ */
+function observeVisibility(element, callback) {
+  const observer = new IntersectionObserver((records) => {
+    callback(records.find(record => record.isIntersecting))
+  }, {rootMargin: '10% 0% 10% 0%', threshold: 1.0});
+  observer.observe(element);
 }
 </script>

@@ -10,7 +10,7 @@
 
     <h3 style="margin-top: 24px">Header B</h3>
 
-    <vue-horizontal responsive ref="b" :snap="false" class="horizontal">
+    <vue-horizontal responsive ref="b" snap="none" class="horizontal">
       <placeholder-component v-for="i in items" :key="i">
         b{{ i }}
       </placeholder-component>

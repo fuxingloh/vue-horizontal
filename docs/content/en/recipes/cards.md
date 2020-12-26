@@ -1,5 +1,5 @@
 ---
-title: Card Design
+title: Cards
 description: 'Card design, also called square, rectangle, tall rectangle, various way to design content horizontally with them.'
 position: 202
 category: Recipes

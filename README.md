@@ -130,12 +130,12 @@ user, there are no plans to incorporate this natively in the library.
 
 Scroll snap align or scroll-snapping, is a CSS technique that allows customizable scrolling experiences like pagination
 of carousels by setting defined snap positions. Vue Horizontal has it enabled by default, to disable you can set 
-`<vue-horizontal :snap="false">`.
+`<vue-horizontal :snap="false">`. As of December 2020, there is a **94%+** cross browser compatibility.
 
 ### [Hiding scrollbar](https://vue-horizontal.fuxing.dev/limitations#hiding-scrollbar)
 
 In Vue Horizontal, the x-axis scrollbar is hidden by default. Although there isn't a shared specification, most browser
-has it implemented one way or another. As of December 2020, there is a 99%+ cross browser compatibility.
+has it implemented one way or another. As of December 2020, there is a **99%** cross browser compatibility.
 
 ## Development
 
