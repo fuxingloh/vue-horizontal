@@ -1,5 +1,5 @@
 ---
-title: Taxonomy
+title: Principles
 description: 'Defining the taxonomy of a horizontal layout and what you should be concerned with.'
 position: 101
 category: Design

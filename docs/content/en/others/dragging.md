@@ -1,8 +1,8 @@
 ---
 title: Dragging
 description: 'Vue Horizontal recipes for dragging horizontal content.'
-position: 901
-category: Recipes
+position: 902
+category: Others
 ---
 
 ## Why you should not implement dragging
@@ -29,6 +29,6 @@ Code is inspired by [Draccano](https://github.com/Draccano) with his
 
 This is an extremely basic example, it doesn't account for scroll acceleration, deceleration, snapping or smooth scroll.  
 
-```vue[Dragging.vue] import=recipes/dragging/recipes-dragging.vue
+```vue[Dragging.vue] import=others/dragging/recipes-dragging.vue
 ```
 

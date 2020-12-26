@@ -1,35 +1,24 @@
 ---
 title: Cards
-description: 'Card design, also called square, rectangle, tall rectangle, various way to design content horizontally with them.'
-position: 202
+description: 'Vue Horizontal card recipes, with over 100 crafted recipes of design choices and control mechanisms ready for your needs.'
+position: 402
 category: Recipes
 ---
 
-Card, the most common design pattern for a horizontal layout. 
-There are other names for it, such as square, rectangle or even tall rectangle. 
+<alert type="info">
 
-<alert type="warning">
-
-Card recipes are still work in progress! 
+Vue Horizontal is not just a library, **it's a place for everything horizontal.**
+With over 100 crafted recipes of design choices and control mechanisms ready for your needs.
 
 </alert>
 
-## Aspect ratio
+Recipes here uses Vue Horizontal and you are required to [install it](/installation).
+Thus, all recipes should follow the design language defined in the [design principle](/design/principles).
+You should be able to extract the code snippet and use it as a single file component.
+They should be enough to get you started with creating your own perfect horizontal layout in vue.
 
-Show a certain aspect ratio, cutting off any content that isn't within that aspect ratio.
+<alert type="warning">
 
-### Square 1:1
+🚧 Recipes are work in progress 🚧
 
-### Rectangle 8:5
-
-### Tall Rectangle 5:8
-
-## Content height
-
-Letting your content (usually text) determine the height of your horizontal layout.
-
-### Variable text height
-
-### Fixed Line Height
-
-### Line Clamping
+</alert>
