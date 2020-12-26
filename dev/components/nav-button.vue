@@ -29,9 +29,11 @@
         </button>
       </template>
 
-      <button slot="btn-next">
-        NEXT
-      </button>
+      <template v-slot:btn-next>
+        <button>
+          NEXT
+        </button>
+      </template>
 
       <section v-for="item in items" :key="item.i">
         <div class="header">
@@ -44,9 +46,11 @@
     </vue-horizontal>
 
     <vue-horizontal class="prevent-default">
-      <button slot="btn-next" @click.stop="nextPreventDefault">
-        NEXT
-      </button>
+      <template v-slot:btn-next>
+        <button @click.stop="nextPreventDefault">
+          NEXT
+        </button>
+      </template>
 
       <section v-for="item in items" :key="item.i">
         <div class="header">

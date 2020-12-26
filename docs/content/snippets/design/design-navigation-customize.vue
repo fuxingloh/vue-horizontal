@@ -1,8 +1,11 @@
 <template>
   <vue-horizontal responsive class="horizontal" :displacement="0.7">
-    <div slot="btn-next" class="replaced-btn">
-      <div>MORE</div>
-    </div>
+    <template v-slot:btn-next>
+      <div class="replaced-btn">
+        <div>MORE</div>
+      </div>
+    </template>
+
     <placeholder-component v-for="i in [0,1,2,3,4,5,6,7,8,9,10,11,12]" :key="i">
       {{ i }}
     </placeholder-component>

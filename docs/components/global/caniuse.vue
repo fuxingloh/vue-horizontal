@@ -50,7 +50,7 @@ export default Vue.extend({
         return;
       }
 
-      const parts = event?.data?.split(":")
+      const parts = event.data.split(":") || []
       if (parts[1] === this.feature) {
         this.height = parseInt(parts[2]) + 30
       }
