@@ -136,6 +136,38 @@ Emitted when prev or next are clicked.
 ```vue[MethodScrollLeft.vue] import=features/features-method-scroll-left.vue
 ```
 
+### `refresh()`
+
+Update Vue Horizontal internal data required for rendering update after dom changes.
+
+Vue Horizontal uses slot that can encompass any HTML passed in without parsing,
+thus you need to tell Vue Horizontal when you updated the dom. 
+This is designed to prevent cyclical event loop that causes browser to hang.
+
+```vue
+<template>
+  <vue-horizontal ref="horizontal">
+    <div v-for="i in items"></div>
+  </vue-horizontal>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      items: [0,1,2,3]
+    }
+  },
+  methods: {
+    update() {
+      this.items.push(4,5,6,7,8)
+      this.$refs.horizontal.refresh()
+    }
+  }
+}
+</script>
+```
+
 ## Displacement
 
 Displacement is a positive float number that you can override for a custom scroll displacement. Defaults to `1.0`.

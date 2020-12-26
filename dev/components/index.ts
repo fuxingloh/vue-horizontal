@@ -11,6 +11,7 @@ import Event from './event.vue';
 import Responsive from './responsive.vue';
 import Move from './move.vue';
 import ContentOverflow from './content-overflow.vue';
+import Append from './append.vue';
 
 export interface ComponentMeta {
   path: string;
@@ -97,6 +98,12 @@ const components: ComponentMeta[] = [
     name: 'content-overflow',
     description: 'Test content larger that 100vw.',
     component: ContentOverflow,
+  },
+  {
+    path: '/append',
+    name: 'append',
+    description: 'Dom manipulation',
+    component: Append,
   },
 ]
 
