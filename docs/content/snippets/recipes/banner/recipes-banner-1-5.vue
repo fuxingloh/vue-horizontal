@@ -1,26 +1,26 @@
 <template>
   <main>
     <vue-horizontal class="horizontal">
-      <div class="item" v-for="item in items" :key="item.img">
-
+      <div class="item" v-for="item in items" :key="item.id">
+        <div class="card" :style="{background: `url(${item.img})`}">
+          <div class="aspect-ratio-5-3"></div>
+          <div class="overlay">
+            <h2>{{ item.title }}</h2>
+          </div>
+        </div>
       </div>
     </vue-horizontal>
   </main>
 </template>
 
 <script>
+// For convenience sake, I import a collection of images from my album.
+import {singapore} from '../../../../assets/img'
+
 export default {
   data() {
     return {
-      // This is just a shortcut for me to effortlessly create an array of items.
-      items: [
-        ""
-      ].map(value => {
-        return {
-          title: value,
-          img: `/img/singapore/${value.replace(/ /g, '-').toLowerCase()}.jpg`,
-        }
-      })
+      items: singapore.items.map(({id, title, img}) => ({id, title, img}))
     }
   }
 }
@@ -28,7 +28,36 @@ export default {
 
 <!-- Content Design -->
 <style scoped>
+.card {
+  background-position: center;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
 
+.aspect-ratio-5-3 {
+  padding-top: 60%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #00000050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.overlay > * {
+  color: white;
+}
 </style>
 
 <!-- Responsive Design Logic -->
