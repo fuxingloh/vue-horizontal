@@ -27,7 +27,7 @@ describe('event', () => {
 
       .invoke('text')
       .should('match', /"left": 0/)
-      .should('match', /"containerWidth": [0-9]+/)
+      .should('match', /"width": [0-9]+/)
       .should('match', /"scrollWidth": [0-9]+/)
       .should('match', /"hasNext": true/)
       .should('match', /"hasPrev": false/)
@@ -41,7 +41,7 @@ describe('event', () => {
     cy.get('.scroll-debounce')
       .invoke('text')
       .should('match', /"left": [0-9]+/)
-      .should('match', /"containerWidth": [0-9]+/)
+      .should('match', /"width": [0-9]+/)
       .should('match', /"scrollWidth": [0-9]+/)
       .should('match', /"hasNext": true/)
       .should('match', /"hasPrev": true/)

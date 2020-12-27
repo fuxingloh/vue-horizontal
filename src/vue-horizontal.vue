@@ -37,7 +37,7 @@ const delta = 2.5
 
 interface VueHorizontalData {
   left: number;
-  containerWidth: number;
+  width: number;
   scrollWidth: number;
 
   hasPrev: boolean;
@@ -51,7 +51,7 @@ export default Vue.extend({
   data(): VueHorizontalData {
     return {
       left: 0,
-      containerWidth: 0,
+      width: 0,
       scrollWidth: 0,
 
       hasPrev: false,
@@ -194,7 +194,7 @@ export default Vue.extend({
 
       this.$emit('scroll-debounce', {
         left: this.left,
-        containerWidth: this.containerWidth,
+        width: this.width,
         scrollWidth: this.scrollWidth,
         hasPrev: this.hasPrev,
         hasNext: this.hasNext,
@@ -219,7 +219,7 @@ export default Vue.extend({
       }
 
       this.left = container.scrollLeft
-      this.containerWidth = container.clientWidth
+      this.width = container.clientWidth
       this.scrollWidth = container.scrollWidth
       this.hasNext = hasNext()
       this.hasPrev = hasPrev()
