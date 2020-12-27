@@ -2,6 +2,8 @@
 base = "docs/"
 publish = "dist/"
 command = "npm run generate"
+[build.environment]
+GIT_LFS_ENABLED = "true"
 
 [[headers]]
 for = "/img/*"
