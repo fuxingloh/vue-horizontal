@@ -10,6 +10,7 @@ features:
 - Snap to the nearest item when scrolling
 - Moves the responsibilities of the CSS to the user
 - Extensible for any use case with a collection of recipes.
+- End-to-end tested on all major browser at code merge with 240+ test cases.
 ---
 
 <alert type="info">

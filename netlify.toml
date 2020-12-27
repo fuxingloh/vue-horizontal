@@ -2,3 +2,8 @@
 base = "docs/"
 publish = "dist/"
 command = "npm run generate"
+
+[[headers]]
+for = "/img/*"
+[headers.values]
+Cross-Origin-Resource-Policy = "same-origin"
