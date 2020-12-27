@@ -142,6 +142,10 @@ export default {
     max-width: 1600px;
     background: white;
 
+    @media (min-width: 1280px) {
+      width: 96vw;
+    }
+
     > div {
       overflow-y: scroll;
       height: calc(100% - 32px);

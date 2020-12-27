@@ -1,9 +1,12 @@
 <template>
   <main>
     <vue-horizontal class="horizontal">
-      <div class="item">
-        <div class="content">
-
+      <div class="item" v-for="item in items" :key="item.id">
+        <div class="content" :style="{background: `url(${item.img})`}">
+          <div class="aspect-ratio"></div>
+          <div class="overlay">
+            <h4>{{ item.title }}</h4>
+          </div>
         </div>
       </div>
     </vue-horizontal>
@@ -11,9 +14,14 @@
 </template>
 
 <script>
+// For convenience sake, I import a collection of images from my album.
+import {singapore} from '../../../../assets/img'
+
 export default {
   data() {
-    return {}
+    return {
+      items: singapore.items.map(({id, title, img}) => ({id, title, img}))
+    }
   }
 }
 </script>
@@ -21,11 +29,39 @@ export default {
 <!-- Content Design -->
 <style scoped>
 .content {
+  background-position: center;
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
 
+.aspect-ratio {
+  padding-top: 50%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #00000010;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.overlay > * {
+  color: white;
+  line-height: 1.3;
 }
 </style>
 
-<!-- Parent CSS (.container) -->
+<!-- Parent CSS (Container) -->
 <style scoped>
 main {
   padding: 24px;
@@ -41,34 +77,33 @@ main {
 <!-- Responsive Breakpoints -->
 <style scoped>
 .horizontal {
-  --count: 1;
+  --count: 2;
   --gap: 16px;
   --margin: 24px;
 }
 
 @media (min-width: 640px) {
   .horizontal {
-    --count: 2;
+    --count: 3;
   }
 }
 
 @media (min-width: 768px) {
   .horizontal {
-    --count: 3;
+    --count: 4;
     --margin: 0;
   }
 }
 
 @media (min-width: 1024px) {
   .horizontal {
-    --count: 4;
+    --count: 6;
   }
 }
 
 @media (min-width: 1280px) {
   .horizontal {
-    --gap: 24px;
-    --count: 5;
+    --count: 8;
   }
 }
 </style>
@@ -120,3 +155,4 @@ main {
   }
 }
 </style>
+
