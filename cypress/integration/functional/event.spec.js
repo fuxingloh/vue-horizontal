@@ -33,7 +33,7 @@ describe('event', () => {
       .should('match', /"hasPrev": false/)
   });
 
-  it('scroll-debouce: should have event after click', () => {
+  it('scroll-debounce: should have event after click', () => {
     cy.get('.v-hl-btn-next').click()
     cy.get('.scroll-debounce')
       .should('not.have.text', 'no-event')
