@@ -98,7 +98,7 @@ Emitted when prev or next are clicked.
 
 ### @scroll
 
-> @scroll-debounce is called when mounted.
+> For convenience, @scroll-debounce is called when mounted.
 
 ```vue[EventScroll.vue] import=features/features-event-scroll.vue
 ```

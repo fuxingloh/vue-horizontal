@@ -37,13 +37,13 @@ const delta = 2.5
 
 interface VueHorizontalData {
   left: number;
-  containerWidth: number;
+  width: number;
   scrollWidth: number;
 
   hasPrev: boolean;
   hasNext: boolean;
 
-  debounceId: number | null;
+  debounceId?: number | undefined;
 }
 
 export default Vue.extend({
@@ -51,13 +51,13 @@ export default Vue.extend({
   data(): VueHorizontalData {
     return {
       left: 0,
-      containerWidth: 0,
+      width: 0,
       scrollWidth: 0,
 
       hasPrev: false,
       hasNext: false,
 
-      debounceId: null,
+      debounceId: undefined,
     }
   },
   props: {
@@ -91,12 +91,14 @@ export default Vue.extend({
   mounted() {
     this.onScrollDebounce();
   },
-  methods: {
+  computed: {
     slots(): VNode[] {
       return this.$slots?.default?.filter(s => s.tag) as VNode[]
-    },
+    }
+  },
+  methods: {
     findPrevSlot(x: number): VNode | undefined {
-      const slots = this.slots()
+      const slots = this.slots
 
       for (let i = 0; i < slots.length; i++) {
         const rect = (slots[i].elm as Element).getBoundingClientRect()
@@ -111,7 +113,7 @@ export default Vue.extend({
       }
     },
     findNextSlot(x: number): VNode | undefined {
-      const slots = this.slots()
+      const slots = this.slots
 
       for (let i = 0; i < slots.length; i++) {
         const rect = (slots[i].elm as Element).getBoundingClientRect()
@@ -164,7 +166,7 @@ export default Vue.extend({
       this.scrollToLeft(container.scrollLeft + width)
     },
     scrollToIndex(i: number): void {
-      const slots = this.slots()
+      const slots = this.slots
 
       if (slots[i]) {
         const container = this.$refs.container as Element
@@ -184,25 +186,31 @@ export default Vue.extend({
         left: container.scrollLeft,
       })
 
-      if (this.debounceId) {
-        clearTimeout(this.debounceId);
-      }
-      this.debounceId = window.setTimeout(this.onScrollDebounce, 500);
+      clearTimeout(this.debounceId);
+      // @ts-ignore
+      this.debounceId = setTimeout(this.onScrollDebounce, 500);
     },
     onScrollDebounce(): void {
-      this.refresh();
-
-      this.$emit('scroll-debounce', {
-        left: this.left,
-        containerWidth: this.containerWidth,
-        scrollWidth: this.scrollWidth,
-        hasPrev: this.hasPrev,
-        hasNext: this.hasNext,
+      this.refresh((data) => {
+        this.$emit('scroll-debounce', data)
       })
     },
-    refresh(): void {
+    refresh(callback: (data: VueHorizontalData) => void): void {
+      this.$nextTick(() => {
+        const data = this.calculate()
+
+        this.left = data.left
+        this.width = data.width
+        this.scrollWidth = data.scrollWidth
+        this.hasNext = data.hasNext
+        this.hasPrev = data.hasPrev
+
+        callback(data)
+      })
+    },
+    calculate(): VueHorizontalData {
       const container = this.$refs.container as Element
-      const slot0 = this.$slots?.default?.find(s => s.tag)?.elm as Element
+      const slot0 = this.slots[0]?.elm as Element
 
       function hasNext(): boolean {
         return container.scrollWidth > container.scrollLeft + container.clientWidth + delta
@@ -218,12 +226,14 @@ export default Vue.extend({
         return Math.abs(containerVWLeft - slot0VWLeft) >= delta;
       }
 
-      this.left = container.scrollLeft
-      this.containerWidth = container.clientWidth
-      this.scrollWidth = container.scrollWidth
-      this.hasNext = hasNext()
-      this.hasPrev = hasPrev()
-    }
+      return {
+        left: container.scrollLeft,
+        width: container.clientWidth,
+        scrollWidth: container.scrollWidth,
+        hasNext: hasNext(),
+        hasPrev: hasPrev(),
+      }
+    },
   },
 });
 </script>

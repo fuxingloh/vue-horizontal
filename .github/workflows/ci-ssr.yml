@@ -1,4 +1,4 @@
-name: "CI - SSG/SSR"
+name: "SSG"
 
 on:
   push:
@@ -15,8 +15,8 @@ on:
       - 'test/**'
 
 jobs:
-  ssg:
-    name: SSG
+  ci:
+    name: CI
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -30,22 +30,3 @@ jobs:
       - run: npm ci
       - run: npm run generate
       - run: npm run test
-
-  ssr:
-    name: SSR
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: test/ssr
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '14'
-
-      - run: npm ci
-      - run: npm run build
-      - run: |
-          npm run start &
-          sleep 10
-          npm run test

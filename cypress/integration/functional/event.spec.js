@@ -27,13 +27,13 @@ describe('event', () => {
 
       .invoke('text')
       .should('match', /"left": 0/)
-      .should('match', /"containerWidth": [0-9]+/)
+      .should('match', /"width": [0-9]+/)
       .should('match', /"scrollWidth": [0-9]+/)
       .should('match', /"hasNext": true/)
       .should('match', /"hasPrev": false/)
   });
 
-  it('scroll-debouce: should have event after click', () => {
+  it('scroll-debounce: should have event after click', () => {
     cy.get('.v-hl-btn-next').click()
     cy.get('.scroll-debounce')
       .should('not.have.text', 'no-event')
@@ -41,7 +41,7 @@ describe('event', () => {
     cy.get('.scroll-debounce')
       .invoke('text')
       .should('match', /"left": [0-9]+/)
-      .should('match', /"containerWidth": [0-9]+/)
+      .should('match', /"width": [0-9]+/)
       .should('match', /"scrollWidth": [0-9]+/)
       .should('match', /"hasNext": true/)
       .should('match', /"hasPrev": true/)

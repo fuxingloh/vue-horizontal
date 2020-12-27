@@ -5,7 +5,8 @@
 [![chrome](https://github.com/fuxingloh/vue-horizontal/workflows/chrome/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Achrome+branch%3Amain)
 [![firefox](https://github.com/fuxingloh/vue-horizontal/workflows/firefox/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Afirefox+branch%3Amain)
 [![edge](https://github.com/fuxingloh/vue-horizontal/workflows/edge/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Aedge+branch%3Amain)
-[![CI](https://github.com/fuxingloh/vue-horizontal/workflows/CI/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ACI+branch%3Amain)
+[![SSR](https://github.com/fuxingloh/vue-horizontal/workflows/SSR/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ASSR+branch%3Amain)
+[![SSG](https://github.com/fuxingloh/vue-horizontal/workflows/SSG/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ASSG+branch%3Amain)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
 
 At its core, [Vue Horizontal](https://vue-horizontal.fuxing.dev) is an ultra simple pure vue horizontal layout for 
