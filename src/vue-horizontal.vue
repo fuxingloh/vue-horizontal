@@ -99,7 +99,7 @@ export default Vue.extend({
   },
   computed: {
     slots(): VNode[] {
-      return this.$slots?.default?.filter(s => s.tag) as VNode[]
+      return this.$slots?.default?.filter(s => s.tag) as VNode[] || []
     }
   },
   methods: {
