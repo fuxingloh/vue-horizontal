@@ -25,7 +25,7 @@ export default theme({
             const component = meta.file.name
 
             return [
-              u('html', {value: `<snippet-mock-browser>`}),
+              u('html', {value: `<snippet-mock-browser ${meta.zoom ? 'zoom' : ''}>`}),
               u('html', {value: `<div style="padding: ${padding}">`}),
               u('html', {value: `<${component}>`}),
               u('html', {value: `</${component}>`}),

@@ -11,15 +11,15 @@ category: Recipes
 
 ## Banner 1 - 3
 
-```vue[] import=recipes/banner/recipes-banner-1-3.vue padding=0
+```vue[] import=recipes/banner/recipes-banner-1-3.vue padding=0 zoom
 ```
 
 ## Banner 1 - 5
 
-```vue[] import=recipes/banner/recipes-banner-1-5.vue padding=0
+```vue[] import=recipes/banner/recipes-banner-1-5.vue padding=0 zoom
 ```
 
 ## Banner 2 - 8
 
-```vue[] import=recipes/banner/recipes-banner-2-8.vue padding=0
+```vue[] import=recipes/banner/recipes-banner-2-8.vue padding=0 zoom
 ```
