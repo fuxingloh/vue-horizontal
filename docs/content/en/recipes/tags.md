@@ -1,7 +1,7 @@
 ---
-title: Tabs
+title: Tags
 description: 'Vue Horizontal recipes, over 100 crafted recipes of horizontal layout with various design choices and control mechanisms ready for your needs.'
-position: 601
+position: 600
 category: Recipes
 ---
 
@@ -9,12 +9,12 @@ category: Recipes
 
 <recipes-getting-started></recipes-getting-started>
 
-## Tabs full width
+## Full width
 
-```vue[] import=recipes/tabs/recipes-tabs-simple.vue padding=0 zoom
+```vue[] import=recipes/tags/recipes-tags-full.vue padding=0 zoom
 ```
 
-## Tabs with fixed sides
+## Tight space
 
-```vue[] import=recipes/tabs/recipes-tabs-sides.vue padding=0 zoom
+```vue[] import=recipes/tags/recipes-tags-tight.vue padding=0 zoom
 ```
