@@ -1,5 +1,10 @@
 <template>
   <main>
+    <div class="header">
+      <h2>Your Banner Header</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+
     <vue-horizontal class="horizontal">
       <div class="item" v-for="item in items" :key="item.id">
         <div class="content" :style="{background: `url(${item.img})`}">
@@ -69,6 +74,10 @@ export default {
 
 <!-- Parent CSS (Container) -->
 <style scoped>
+.header {
+  margin-bottom: 24px;
+}
+
 main {
   padding: 24px;
 }

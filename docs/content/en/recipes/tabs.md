@@ -9,7 +9,12 @@ category: Recipes
 
 <recipes-getting-started></recipes-getting-started>
 
-## Tabs
+## Tabs full width
 
 ```vue[] import=recipes/tabs/recipes-tabs-simple.vue padding=0 zoom
+```
+
+## Tabs with fixed sides
+
+```vue[] import=recipes/tabs/recipes-tabs-sides.vue padding=0 zoom
 ```

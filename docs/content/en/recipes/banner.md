@@ -9,17 +9,17 @@ category: Recipes
 
 <recipes-getting-started></recipes-getting-started>
 
-## Banner 1 - 3
+## Responsive Banner 1 to 3
 
 ```vue[] import=recipes/banner/recipes-banner-1-3.vue padding=0 zoom
 ```
 
-## Banner 1 - 5
+## Responsive Banner 1 to 5
 
 ```vue[] import=recipes/banner/recipes-banner-1-5.vue padding=0 zoom
 ```
 
-## Banner 2 - 8
+## Responsive Banner 2 to 8
 
 ```vue[] import=recipes/banner/recipes-banner-2-8.vue padding=0 zoom
 ```

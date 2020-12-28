@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div class="tabs">
+    <div class="header">
+      <div class="brand">
+        Brand
+      </div>
+
       <vue-horizontal class="horizontal" :displacement="0.5" :button-between="false">
         <template v-slot:btn-prev>
           <svg class="btn-left" viewBox="0 0 24 24">
@@ -20,6 +24,10 @@
           </div>
         </div>
       </vue-horizontal>
+
+      <div class="option">
+        Filter
+      </div>
     </div>
 
     <main>
@@ -75,6 +83,33 @@ export default {
 </script>
 
 <style scoped>
+.header {
+  display: flex;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.brand, .option {
+  flex-shrink: 0;
+  padding: 0 24px;
+  margin: 6px 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.horizontal {
+  flex-shrink: 1;
+  flex-grow: 1;
+  width: 50%;
+}
+
+.brand {
+  border-right: 1px solid #e2e8f0;
+}
+
+.option {
+  border-left: 1px solid #e2e8f0;
+}
+
 .btn-left, .btn-right {
   padding: 8px;
   height: 100%;
@@ -88,10 +123,6 @@ export default {
 .btn-right {
   background: linear-gradient(to right, #ffffff00 0, #fff 50%, #fff);
   padding-left: 16px;
-}
-
-.tabs {
-  border-bottom: 1px solid #e2e8f0;
 }
 
 .tab {
