@@ -27,7 +27,7 @@ This is also an ultra complex code snippet dossier with over 100 SPA/SSR/SSG fri
 
 ## Getting started
 
-You can display horizontal content like you would do with just any other html content vertically.
+You can display content horizontally just as you would vertically with any HTML elements.
 
 * Any HTML structure works, you can mix and match them up.
 * Use `v-for` and/or `v-if` with any `div` or `component`
@@ -51,8 +51,8 @@ There are many libraries already in open-source world, some using direct DOM man
 JavaScript or JQuery library. You don't want that. Vue already does that. This is Vue native build for Vue, and only Vue
 is the dependency required. All modes of rendering (SPA/SSR/SSG) are supported and tested with E2E tools.
 
-The actual library is only <300 LOC while there are at least 100x more LOC in the documentation, end-to-end testing and 
-a bunch of other fun stuff.
+The actual library is only about 400 LOC while there are at least 100x more LOC in the documentation, end-to-end testing 
+and a bunch of other fun stuff.
 
 Vue Horizontal is not just a library, **it's a place for everything horizontal.**
 Built for the Vue community.

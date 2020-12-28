@@ -1,5 +1,5 @@
 <template>
-  <div :class="{fullscreen}">
+  <div class="snippet-mock-browser" :class="{fullscreen}">
     <div class="overlay" @click="fullscreen = false"></div>
     <main class="mock-browser overflow-hidden rounded-md border border-pre-color">
       <header class="bg-pre-color sticky">
@@ -125,6 +125,10 @@ export default {
 
 .viewport.zoom {
   zoom: 0.5;
+}
+
+.snippet-mock-browser {
+  will-change: transform, opacity;
 }
 
 .fullscreen {

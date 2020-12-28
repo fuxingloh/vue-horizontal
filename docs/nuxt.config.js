@@ -40,6 +40,9 @@ export default theme({
       ],
     },
   },
+  generate: {
+    cache: false,
+  },
   hooks: {
     'components:dirs': async (dirs) => {
       dirs.push({
