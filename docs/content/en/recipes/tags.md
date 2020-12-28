@@ -5,10 +5,6 @@ position: 600
 category: Recipes
 ---
 
-### Getting Started
-
-<recipes-getting-started></recipes-getting-started>
-
 ## Full width
 
 ```vue[] import=recipes/tags/recipes-tags-full.vue padding=0 zoom

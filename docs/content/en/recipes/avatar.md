@@ -1,13 +1,9 @@
 ---
 title: Avatar
 description: 'Vue Horizontal recipes, over 100 crafted recipes of horizontal layout with various design choices and control mechanisms ready for your needs.'
-position: 510
+position: 599
 category: Recipes
 ---
-
-### Getting Started
-
-<recipes-getting-started></recipes-getting-started>
 
 ## Avatar Small (Stories)
 

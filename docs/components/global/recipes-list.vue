@@ -12,7 +12,7 @@ export default {
   mounted() {
     this.$content('/en/recipes')
       .only(['path', 'title'])
-      .where({title: {$ne: 'About Recipes'}})
+      .where({title: {$ne: 'About'}})
       .fetch().then((items) => {
       this.list = items
     })
