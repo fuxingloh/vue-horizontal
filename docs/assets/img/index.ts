@@ -389,23 +389,11 @@ export const shopping: Collection = {
         title: "",
       },
       {
-        file: "",
+        file: "kyler-boone-c8UArlRU9Wg-unsplash.jpg",
       },
       {
-        name: "",
-        url: "",
-      },
-    ),
-    newItem(
-      {
-        title: "",
-      },
-      {
-        file: "",
-      },
-      {
-        name: "",
-        url: "",
+        name: "Kyler Boone",
+        url: "https://unsplash.com/@kylerb",
       },
     ),
     newItem(
@@ -413,23 +401,11 @@ export const shopping: Collection = {
         title: "",
       },
       {
-        file: "",
+        file: "jon-ly-Xn7GvimQrk8-unsplash.jpg",
       },
       {
-        name: "",
-        url: "",
-      },
-    ),
-    newItem(
-      {
-        title: "",
-      },
-      {
-        file: "",
-      },
-      {
-        name: "",
-        url: "",
+        name: "Jon Ly",
+        url: "https://unsplash.com/@jonatron",
       },
     ),
     newItem(
@@ -437,23 +413,11 @@ export const shopping: Collection = {
         title: "",
       },
       {
-        file: "",
+        file: "charles-deluvio--79h5kXs6Mw-unsplash.jpg",
       },
       {
-        name: "",
-        url: "",
-      },
-    ),
-    newItem(
-      {
-        title: "",
-      },
-      {
-        file: "",
-      },
-      {
-        name: "",
-        url: "",
+        name: "Charles Deluvio",
+        url: "https://unsplash.com/@charlesdeluvio",
       },
     ),
     newItem(
@@ -461,23 +425,11 @@ export const shopping: Collection = {
         title: "",
       },
       {
-        file: "",
+        file: "david-dvoracek-QiPe0UpC0_U-unsplash.jpg",
       },
       {
-        name: "",
-        url: "",
-      },
-    ),
-    newItem(
-      {
-        title: "",
-      },
-      {
-        file: "",
-      },
-      {
-        name: "",
-        url: "",
+        name: "David Dvořáček",
+        url: "https://unsplash.com/@dafidvor",
       },
     ),
     newItem(
@@ -485,11 +437,11 @@ export const shopping: Collection = {
         title: "",
       },
       {
-        file: "",
+        file: "markus-winkler-PQmXUxmfR44-unsplash.jpg",
       },
       {
-        name: "",
-        url: "",
+        name: "Markus Winkler",
+        url: "https://unsplash.com/@markuswinkler",
       },
     ),
     newItem(
@@ -497,11 +449,59 @@ export const shopping: Collection = {
         title: "",
       },
       {
-        file: "",
+        file: "charles-deluvio-kyD7I53MEuE-unsplash.jpg",
       },
       {
-        name: "",
-        url: "",
+        name: "Charles Deluvio",
+        url: "https://unsplash.com/@charlesdeluvio",
+      },
+    ),
+    newItem(
+      {
+        title: "",
+      },
+      {
+        file: "bhawin-jagad-GQgnlIrMGII-unsplash.jpg",
+      },
+      {
+        name: "Bhawin Jagad",
+        url: "https://unsplash.com/@bhawinjagad",
+      },
+    ),
+    newItem(
+      {
+        title: "",
+      },
+      {
+        file: "syafiq-ikmal-OhTngOxx3mo-unsplash.jpg",
+      },
+      {
+        name: "Syafiq Ikmal",
+        url: "https://unsplash.com/@syapek",
+      },
+    ),
+    newItem(
+      {
+        title: "",
+      },
+      {
+        file: "lily-banse-C93HrzumjI0-unsplash.jpg",
+      },
+      {
+        name: "Lily Banse",
+        url: "https://unsplash.com/@lvnatikk",
+      },
+    ),
+    newItem(
+      {
+        title: "",
+      },
+      {
+        file: "chan-HNbo4jSxQAY-unsplash.jpg",
+      },
+      {
+        name: "Chan",
+        url: "https://unsplash.com/@chanportofolio",
       },
     ),
   ]
