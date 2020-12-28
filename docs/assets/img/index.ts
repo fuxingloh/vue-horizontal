@@ -39,9 +39,9 @@ function newItem(title: string, src: { file: string, md?: boolean, lg?: boolean 
       alt: title,
 
       srcset: {
-        sm: `/img/singapore/sm/${src.file}`,
-        md: src.md ? `/img/singapore/md/${src.file}` : undefined,
-        lg: src.lg ? `/img/singapore/lg/${src.file}` : undefined,
+        sm: `/img/sm/${src.file}`,
+        md: src.md ? `/img/md/${src.file}` : undefined,
+        lg: src.lg ? `/img/lg/${src.file}` : undefined,
       },
 
       credit: credit
@@ -105,5 +105,76 @@ export const singapore: Collection = {
 
 export const portrait: Collection = {
   name: "Portrait",
-  items: []
+  items: [
+    newItem("", {
+      file: "jessica-felicio-_cvwXhGqG-o-unsplash.jpg",
+      md: true,
+    }, {
+      name: "Jessica Felicio",
+      url: "https://unsplash.com/@jekafe"
+    }),
+    newItem("", {
+      file: "janko-ferlic-XbxQbS1NMKE-unsplash.jpg",
+      md: true,
+    }, {
+      name: "Janko Ferlič",
+      url: "https://unsplash.com/@itfeelslikefilm"
+    }),
+    newItem("", {
+      file: "alexander-krivitskiy-RQXbElUwn4Q-unsplash.jpg",
+      md: true,
+    }, {
+      name: "Alexander Krivitskiy",
+      url: "https://unsplash.com/@krivitskiy"
+    }),
+    newItem("", {
+      file: "shane-devlin-kWqT9-dNgq0-unsplash.jpg",
+      md: true,
+    }, {
+      name: "Shane Devlin",
+      url: "https://unsplash.com/@tintedprism"
+    }),
+    newItem("", {
+      file: "amir-seilsepour-Pc0ToyoR5Xo-unsplash.jpg",
+      md: true,
+    }, {
+      name: "Amir Seilsepour",
+      url: "https://unsplash.com/@amiresel"
+    }),
+    newItem("", {
+      file: "seth-doyle-BZ2PNGD5Emw-unsplash.jpg",
+      md: true,
+    }, {
+      name: "Seth Doyle",
+      url: "https://unsplash.com/@sethdoylee"
+    }),
+    newItem("", {
+      file: "qasim-sadiq-MVOI2b2nDTE-unsplash.jpg",
+      md: true,
+    }, {
+      name: "Qasim Sadiq",
+      url: "https://unsplash.com/@qasimsadiq"
+    }),
+    newItem("", {
+      file: "julian-wan-2EdIX-O2lkI-unsplash.jpg",
+      md: true,
+    }, {
+      name: "Julian Wan",
+      url: "https://unsplash.com/@julianwan"
+    }),
+    newItem("", {
+      file: "shayan-rti-jdEpyyu3dDo-unsplash.jpg",
+      md: true,
+    }, {
+      name: "Shayan Rostami",
+      url: "https://unsplash.com/@shayan_rostami"
+    }),
+    newItem("", {
+      file: "ahmadreza-najafi-0mKIh0uNcc4-unsplash.jpg",
+      md: true,
+    }, {
+      name: "Ahmadreza Najafi",
+      url: "https://unsplash.com/@ahmadreza7shot"
+    }),
+  ]
 }
