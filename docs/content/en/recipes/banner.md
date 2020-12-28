@@ -5,10 +5,6 @@ position: 501
 category: Recipes
 ---
 
-### Getting Started
-
-<recipes-getting-started></recipes-getting-started>
-
 ## Responsive Banner 1 to 3
 
 ```vue[] import=recipes/banner/recipes-banner-1-3.vue padding=0 zoom

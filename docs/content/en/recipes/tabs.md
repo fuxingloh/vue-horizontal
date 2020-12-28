@@ -1,13 +1,9 @@
 ---
 title: Tabs
 description: 'Vue Horizontal recipes, over 100 crafted recipes of horizontal layout with various design choices and control mechanisms ready for your needs.'
-position: 601
+position: 699
 category: Recipes
 ---
-
-### Getting Started
-
-<recipes-getting-started></recipes-getting-started>
 
 ## Tabs full width
 
