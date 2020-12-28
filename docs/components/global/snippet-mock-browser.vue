@@ -18,8 +18,8 @@
 
           <div class="flex items-center text-white fill-current cursor-pointer px-2"
                @click.stop="fullscreen = !fullscreen">
-            <div class="text-sm font-black" v-if="!fullscreen">
-              More accurate representation →
+            <div class="text-sm font-black" v-if="!fullscreen && zoom">
+              Zoom: 50% | 100% →
             </div>
             <svg v-if="fullscreen" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24">
               <path
@@ -35,7 +35,7 @@
       </header>
 
       <div>
-        <div class="viewport bg-white">
+        <div class="viewport bg-white" :class="{zoom}">
           <slot></slot>
         </div>
 
@@ -49,6 +49,9 @@
 
 <script>
 export default {
+  props: {
+    zoom: Boolean,
+  },
   data() {
     return {
       fullscreen: false
@@ -120,6 +123,10 @@ export default {
   font-size: 0.9em;
 }
 
+.viewport.zoom {
+  zoom: 0.5;
+}
+
 .fullscreen {
 @apply fixed inset-0;
   background: #33333344;
@@ -132,6 +139,10 @@ export default {
 
   .overlay {
   @apply absolute inset-0;
+  }
+
+  .viewport.zoom {
+    zoom: 1;
   }
 
   > main {

@@ -1,6 +1,6 @@
 ---
 title: Introduction
-description: 'Vue Horizontal is an ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.'
+description: 'At its core, Vue Horizontal is an ultra simple pure vue horizontal layout for modern responsive web with zero dependencies. SPA/SSR/SSG all modes of rendering friendly.'
 position: 1
 category: Getting Started
 features:
