@@ -14,13 +14,19 @@
 </template>
 
 <script>
-// For convenience sake, I import a collection of images from my album.
+// For convenience sake, I import a collection of images from unsplash.
 import {singapore} from '../../../../assets/img'
 
 export default {
   data() {
     return {
-      items: singapore.items.map(({id, title, img}) => ({id, title, img}))
+      items: singapore.items.map(({id, title, img: {srcset: {sm}}}) => {
+        return {
+          id: id,
+          title: title,
+          img: sm
+        };
+      })
     }
   }
 }
@@ -29,9 +35,9 @@ export default {
 <!-- Content Design -->
 <style scoped>
 .content {
-  background-position: center;
+  background-position: center !important;
   background-size: cover !important;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat !important;
   position: relative;
   border-radius: 5px;
   overflow: hidden;
