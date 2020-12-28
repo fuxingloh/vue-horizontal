@@ -74,12 +74,16 @@ The Scroll bar is disabled by default, you can enable it the `scroll` prop.
 ## Navigation button
 
 * Due to the varying nature of margins, padding, box-sizing and content-sizing, next/prev are done on best effort basis.
-  * Default implementation should work for 95% of the use cases.
+  * Default implementation should work for 95%+ of the use cases.
   * Alternatively you can use `scrollToIndex` of `scrollToLeft`.
 * Snapping might not work as expected if smoothscroll is polyfill-ed.
 
 ### `<vue-horizontal :button="false">`
 ```vue[NavButtonDisable.vue] import=features/features-nav-button-disable.vue
+```
+
+### `<vue-horizontal :button-between="false">`
+```vue[NavButtonBetween.vue] import=features/features-nav-button-between.vue
 ```
 
 ### Override with slots
