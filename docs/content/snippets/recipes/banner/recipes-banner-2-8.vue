@@ -20,7 +20,13 @@ import {singapore} from '../../../../assets/img'
 export default {
   data() {
     return {
-      items: singapore.items.map(({id, title, img}) => ({id, title, img}))
+      items: singapore.items.map(({id, title, img: {srcset: {sm}}}) => {
+        return {
+          id: id,
+          title: title,
+          img: sm
+        };
+      })
     }
   }
 }
