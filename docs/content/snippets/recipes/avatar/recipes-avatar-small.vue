@@ -29,10 +29,8 @@
 <script>
 // For convenience sake, I import a collection of images from unsplash.
 import {portrait} from '../../../../assets/img'
-import PlaceholderComponent from "../../../../components/global/placeholder-component";
 
 export default {
-  components: {PlaceholderComponent},
   data() {
     return {
       items: portrait.items.map(({id, img: {srcset: {sm}}}) => {
