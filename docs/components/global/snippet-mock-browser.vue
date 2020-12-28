@@ -139,6 +139,7 @@ export default {
 
   .overlay {
   @apply absolute inset-0;
+    z-index: -1;
   }
 
   .viewport.zoom {
