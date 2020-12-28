@@ -43,17 +43,7 @@ export default theme({
   hooks: {
     'components:dirs': async (dirs) => {
       dirs.push({
-        path: path.resolve(__dirname, 'content/snippets'),
-        global: true
-      })
-
-      dirs.push({
-        path: path.resolve(__dirname, 'content/snippets/others'),
-        global: true
-      })
-
-      dirs.push({
-        path: path.resolve(__dirname, 'content/snippets/recipes'),
+        path: path.resolve(__dirname, 'content/snippets/'),
         global: true
       })
     }
