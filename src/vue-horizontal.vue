@@ -1,16 +1,18 @@
 <template>
   <div class="vue-horizontal">
-    <div class="v-hl-btn v-hl-btn-prev" v-if="button && hasPrev" @click="prev">
+    <div class="v-hl-btn v-hl-btn-prev" v-if="button && hasPrev" @click.stop="prev" role="button"
+         :class="{'v-hl-btn-between': buttonBetween}">
       <slot name="btn-prev">
-        <svg viewBox="0 0 24 24">
+        <svg class="v-hl-svg" viewBox="0 0 24 24" aria-label="horizontal scroll area navigation to previous button">
           <path d="m9.8 12 5 5a1 1 0 1 1-1.4 1.4l-5.7-5.7a1 1 0 0 1 0-1.4l5.7-5.7a1 1 0 0 1 1.4 1.4l-5 5z"/>
         </svg>
       </slot>
     </div>
 
-    <div class="v-hl-btn v-hl-btn-next" v-if="button && hasNext" @click="next">
+    <div class="v-hl-btn v-hl-btn-next" v-if="button && hasNext" @click.stop="next" role="button"
+         :class="{'v-hl-btn-between': buttonBetween}">
       <slot name="btn-next">
-        <svg viewBox="0 0 24 24">
+        <svg class="v-hl-svg" viewBox="0 0 24 24" aria-label="horizontal scroll area navigation to next button">
           <path d="m14.3 12.1-5-5a1 1 0 0 1 1.4-1.4l5.7 5.7a1 1 0 0 1 0 1.4l-5.7 5.7a1 1 0 0 1-1.4-1.4l5-5z"/>
         </svg>
       </slot>
@@ -64,6 +66,10 @@ export default Vue.extend({
     button: {
       type: Boolean,
       default: () => true,
+    },
+    buttonBetween: {
+      type: Boolean,
+      default: () => true
     },
     scroll: {
       type: Boolean,
@@ -247,8 +253,11 @@ export default Vue.extend({
 .v-hl-btn {
   position: absolute;
   align-self: center;
-  line-height: 0;
   z-index: 1;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
 }
 
 .v-hl-btn:hover {
@@ -257,15 +266,21 @@ export default Vue.extend({
 
 .v-hl-btn-prev {
   left: 0;
+}
+
+.v-hl-btn-prev.v-hl-btn-between {
   transform: translateX(-50%);
 }
 
 .v-hl-btn-next {
   right: 0;
+}
+
+.v-hl-btn-next.v-hl-btn-between {
   transform: translateX(50%);
 }
 
-svg {
+.v-hl-svg {
   width: 40px;
   height: 40px;
   margin: 6px;

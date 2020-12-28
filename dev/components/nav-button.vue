@@ -22,7 +22,41 @@
       </section>
     </vue-horizontal>
 
+    <vue-horizontal :button-between="false" class="button-not-between">
+      <section v-for="item in items" :key="item.i">
+        <div class="header">
+          <h6>{{ item.i }}</h6>
+          <h3>{{ item.title }}</h3>
+        </div>
+        <h6>BUTTON BETWEEN: FALSE</h6>
+        <p>{{ item.content }}</p>
+      </section>
+    </vue-horizontal>
+
     <vue-horizontal class="button-replaced">
+      <template v-slot:btn-prev>
+        <button>
+          PREV
+        </button>
+      </template>
+
+      <template v-slot:btn-next>
+        <button>
+          NEXT
+        </button>
+      </template>
+
+      <section v-for="item in items" :key="item.i">
+        <div class="header">
+          <h6>{{ item.i }}</h6>
+          <h3>{{ item.title }}</h3>
+        </div>
+        <h6>BUTTON: REPLACED</h6>
+        <p>{{ item.content }}</p>
+      </section>
+    </vue-horizontal>
+
+    <vue-horizontal class="button-replaced-not-between" :button-between="false">
       <template v-slot:btn-prev>
         <button>
           PREV
@@ -47,7 +81,7 @@
 
     <vue-horizontal class="prevent-default">
       <template v-slot:btn-next>
-        <button @click.stop="nextPreventDefault">
+        <button @click.stop="nextPreventDefault" class="btn-prevent-default">
           NEXT
         </button>
       </template>
