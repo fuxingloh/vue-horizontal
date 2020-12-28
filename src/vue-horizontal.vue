@@ -194,7 +194,7 @@ export default Vue.extend({
 
       clearTimeout(this.debounceId);
       // @ts-ignore
-      this.debounceId = setTimeout(this.onScrollDebounce, 500);
+      this.debounceId = setTimeout(this.onScrollDebounce, 100);
     },
     onScrollDebounce(): void {
       this.refresh((data) => {
