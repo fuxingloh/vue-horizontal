@@ -15,3 +15,9 @@ category: Recipes
 ```vue[] import=recipes/rectangle/recipes-rectangle-tall.vue padding=0 zoom
 ```
 
+## Half Across
+
+```vue[] import=recipes/rectangle/recipes-rectangle-half.vue padding=0 zoom
+```
+
+## Slanted
