@@ -14,3 +14,9 @@ category: Recipes
 
 ```vue[] import=recipes/cards/recipes-cards-news-fixed.vue padding=0 zoom
 ```
+
+## Videos Aside
+
+```vue[] import=recipes/cards/recipes-cards-videos-aside.vue padding=0 zoom
+```
+

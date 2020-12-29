@@ -1,35 +1,50 @@
 <template>
   <main>
-    <div class="header">
-      <h3>Top Stories</h3>
-      <p>Responsive sizing, relative to the viewport. Fixed once the viewport width gets too small.</p>
-    </div>
-
-    <vue-horizontal class="horizontal">
-      <div class="item" v-for="item in items" :key="item.id">
-        <div class="card">
-          <div class="image" :style="{background: `url(${item.img.srcset.sm})`}"></div>
-          <div class="content">
-            <div>
-              <div class="brand">
-                <svg class="icon" viewBox="0 0 24 24">
-                  <path
-                    d="M19,5v14H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3L19,3z"/>
-                  <path d="M14,17H7v-2h7V17z M17,13H7v-2h10V13z M17,9H7V7h10V9z"/>
-                </svg>
-                <div class="name">{{ item.subtitle }}</div>
-              </div>
-
-              <div class="title">{{ item.description }}</div>
-            </div>
-
-            <div class="date">
-              1 week ago
-            </div>
+    <div class="layout">
+      <article>
+        <h2>Article</h2>
+        <p>Bla bla bla</p>
+        <div class="placeholders">
+          <div v-for="i in [0,1,2,3,4]" :key="i" class="placeholder">
+            <placeholder-component></placeholder-component>
           </div>
         </div>
-      </div>
-    </vue-horizontal>
+      </article>
+
+      <aside>
+        <div class="header">
+          <h3>Top Videos</h3>
+          <p>Responsive sizing, relative to the viewport on the side.
+            Fixed once the viewport width gets too small.
+          </p>
+        </div>
+
+        <vue-horizontal class="horizontal">
+          <div class="item" v-for="item in items" :key="item.id">
+            <div class="card">
+              <div class="image" :style="{background: `url(${item.img.srcset.sm})`}">
+                <div class="playback">
+                  <svg viewBox="0 0 24 24" width="24" height="24" >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 13.5v-7c0-.41.47-.65.8-.4l4.67 3.5c.27.2.27.6 0 .8l-4.67 3.5c-.33.25-.8.01-.8-.4z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="content">
+                <div>
+                  <div class="title">{{ item.description }}</div>
+                </div>
+
+                <div class="date">
+                  <b>ABC</b><br>
+                  TubeYou • Jan 9 2019
+                </div>
+              </div>
+            </div>
+          </div>
+        </vue-horizontal>
+      </aside>
+    </div>
   </main>
 </template>
 
@@ -55,6 +70,7 @@ export default {
   height: 100%;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .image {
@@ -62,6 +78,29 @@ export default {
   background-size: cover !important;
   background-repeat: no-repeat !important;
   padding-top: 50%;
+  position: relative;
+}
+
+.image .playback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image svg {
+  height: 48px;
+  width: 48px;
+  fill: currentColor;
+  color: #ffffff99;
+}
+
+.card:hover svg {
+  color: white;
 }
 
 .content {
@@ -72,31 +111,10 @@ export default {
   justify-content: space-between;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  color: #333333;
-}
-
-.brand .icon {
-  flex-shrink: 0;
-  height: 20px;
-  width: 20px;
-  fill: currentColor;
-}
-
-.brand .name {
-  margin-left: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
 .title {
   font-size: 14px;
   font-weight: 700;
   line-height: 1.6;
-  margin-top: 8px;
   margin-bottom: 8px;
 }
 
@@ -107,7 +125,7 @@ export default {
 }
 </style>
 
-<!-- Parent CSS (Container) -->
+<!-- Parent CSS (main, header, layout) -->
 <style scoped>
 .header {
   margin-bottom: 16px;
@@ -115,6 +133,16 @@ export default {
 
 main {
   padding: 24px;
+}
+
+.placeholders {
+  margin: -16px;
+  padding: 16px 0;
+}
+
+.placeholder {
+  padding: 16px;
+  opacity: 0.25;
 }
 
 @media (min-width: 768px) {
@@ -126,36 +154,58 @@ main {
 
 <!-- Responsive Breakpoints -->
 <style scoped>
+.layout {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -32px;
+}
+
+article, aside {
+  flex-grow: 1;
+  width: 100%;
+  padding: 32px;
+}
+
 .horizontal {
-  --fixed: 220px;
+  --fixed: 200px;
   --count: 1;
   --gap: 12px;
   --margin: 24px;
 }
 
 @media (min-width: 768px) {
+  .layout {
+    flex-wrap: nowrap;
+  }
+
   .horizontal {
-    --count: 3;
+    --count: 2;
     --margin: 0;
+    --gap: 16px;
+  }
+
+  aside {
+    width: 40%;
   }
 }
 
 @media (min-width: 1024px) {
   .horizontal {
-    --count: 4;
+    --count: 2;
+  }
+
+  aside {
+    width: 40%;
   }
 }
 
 @media (min-width: 1280px) {
   .horizontal {
-    --gap: 24px;
-    --count: 5;
+    --count: 3;
   }
-}
 
-@media (min-width: 1536px) {
-  .horizontal {
-    --count: 6;
+  aside {
+    width: 50%;
   }
 }
 </style>
@@ -208,8 +258,14 @@ There are 2 set of logic:
 
 @media (min-width: 768px) {
   .item {
-    width: calc((100% - ((var(--count) - 1) * var(--gap))) / var(--count));
+    width: var(--fixed);
     margin-right: var(--gap);
+  }
+}
+
+@media (min-width: 1024px) {
+  .item {
+    width: calc((100% - ((var(--count) - 1) * var(--gap))) / var(--count));
   }
 }
 </style>
