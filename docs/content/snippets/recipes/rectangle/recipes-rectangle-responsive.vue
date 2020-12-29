@@ -1,32 +1,11 @@
 <template>
   <main>
-    <div class="header">
-      <h3>Top Stories</h3>
-      <p>Responsive sizing, relative to the viewport. Fixed once the viewport width gets too small.</p>
-    </div>
-
     <vue-horizontal class="horizontal">
       <div class="item" v-for="item in items" :key="item.id">
-        <div class="card">
-          <div class="image" :style="{background: `url(${item.img.srcset.sm})`}"></div>
-          <div class="content">
-            <div>
-              <div class="brand">
-                <svg class="icon" viewBox="0 0 24 24">
-                  <path
-                    d="M19,5v14H5V5H19 M19,3H5C3.9,3,3,3.9,3,5v14c0,1.1,0.9,2,2,2h14c1.1,0,2-0.9,2-2V5C21,3.9,20.1,3,19,3L19,3z"/>
-                  <path d="M14,17H7v-2h7V17z M17,13H7v-2h10V13z M17,9H7V7h10V9z"/>
-                </svg>
-                <div class="name">{{ item.subtitle }}</div>
-              </div>
-
-              <div class="title">{{ item.description }}</div>
-            </div>
-
-            <div class="date">
-              1 week ago
-            </div>
-          </div>
+        <div class="image" :style="{background: `url(${item.img.srcset.sm})`}"></div>
+        <div class="title">
+          <div class="circle"></div>
+          <h4>{{ item.title }}</h4>
         </div>
       </div>
     </vue-horizontal>
@@ -35,12 +14,12 @@
 
 <script>
 // For convenience sake, I import a collection of images from unsplash.
-import {singapore} from '../../../../assets/img'
+import {architecture} from '../../../../assets/img'
 
 export default {
   data() {
     return {
-      items: singapore.items
+      items: architecture.items
     }
   }
 }
@@ -48,15 +27,6 @@ export default {
 
 <!-- Content Design -->
 <style scoped>
-.card {
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid #e2e8f0;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .image {
   background-position: center !important;
   background-size: cover !important;
@@ -64,55 +34,27 @@ export default {
   padding-top: 50%;
 }
 
-.content {
-  padding: 12px 16px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.brand {
+.title {
+  margin-top: 8px;
   display: flex;
   align-items: center;
-  color: #333333;
 }
 
-.brand .icon {
-  flex-shrink: 0;
-  height: 20px;
-  width: 20px;
-  fill: currentColor;
+.title h4 {
+  text-transform: capitalize;
+  color: #555;
 }
 
-.brand .name {
-  margin-left: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
-.title {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.6;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-
-.date {
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.5;
+.circle {
+  margin-right: 8px;
+  width: 10px;
+  height: 10px;
+  background: #555;
 }
 </style>
 
-<!-- Parent CSS (Container) -->
+<!-- Parent CSS (.container) -->
 <style scoped>
-.header {
-  margin-bottom: 16px;
-}
-
 main {
   padding: 24px;
 }
@@ -127,10 +69,15 @@ main {
 <!-- Responsive Breakpoints -->
 <style scoped>
 .horizontal {
-  --fixed: 220px;
   --count: 1;
-  --gap: 12px;
+  --gap: 16px;
   --margin: 24px;
+}
+
+@media (min-width: 640px) {
+  .horizontal {
+    --count: 2;
+  }
 }
 
 @media (min-width: 768px) {
@@ -152,12 +99,6 @@ main {
     --count: 5;
   }
 }
-
-@media (min-width: 1536px) {
-  .horizontal {
-    --count: 6;
-  }
-}
 </style>
 
 <!--
@@ -175,22 +116,22 @@ There are 2 set of logic:
 <style scoped>
 @media (max-width: 767.98px) {
   .item {
-    width: var(--fixed);
+    width: calc((100% - (var(--margin) * 2) + var(--gap)) / var(--count));
     padding: 0 calc(var(--gap) / 2);
   }
 
   .item:first-child {
-    width: calc(var(--fixed) + var(--margin) - (var(--gap) / 2));
+    width: calc((100% - (var(--margin) * 2) + var(--gap)) / var(--count) + var(--margin) - (var(--gap) / 2));
     padding-left: var(--margin);
   }
 
   .item:last-child {
-    width: calc(var(--fixed) + var(--margin) - (var(--gap) / 2));
+    width: calc((100% - (var(--margin) * 2) + var(--gap)) / var(--count) + var(--margin) - (var(--gap) / 2));
     padding-right: var(--margin);
   }
 
   .item:only-child {
-    width: calc(var(--fixed) + var(--margin) * 2 - var(--gap));
+    width: calc((100% - (var(--margin) * 2) + var(--gap)) / var(--count) + var(--margin) * 2 - var(--gap));
   }
 
   .horizontal {

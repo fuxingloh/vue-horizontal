@@ -230,17 +230,17 @@ There are 2 set of logic:
   }
 
   .item:first-child {
-    width: calc(var(--fixed) + var(--margin));
+    width: calc(var(--fixed) + var(--margin) - (var(--gap) / 2));
     padding-left: var(--margin);
   }
 
   .item:last-child {
-    width: calc(var(--fixed) + var(--margin));
+    width: calc(var(--fixed) + var(--margin) - (var(--gap) / 2));
     padding-right: var(--margin);
   }
 
   .item:only-child {
-    width: calc(var(--fixed) + var(--margin) * 2);
+    width: calc(var(--fixed) + var(--margin) * 2 - var(--gap));
   }
 
   .horizontal {
