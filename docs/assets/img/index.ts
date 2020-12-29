@@ -144,7 +144,9 @@ export const portrait: Collection = {
   items: [
     newItem(
       {
-        title: "",
+        title: "pink stare",
+        subtitle: "",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       }, {
         file: "jessica-felicio-_cvwXhGqG-o-unsplash.jpg",
         md: true,
@@ -155,7 +157,9 @@ export const portrait: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "brown smile",
+        subtitle: "Nunc et ante",
+        description: "Vestibulum pretium mauris sit amet sodales sagittis.",
       }, {
         file: "janko-ferlic-XbxQbS1NMKE-unsplash.jpg",
         md: true,
@@ -166,7 +170,9 @@ export const portrait: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "gray scaled",
+        subtitle: "Praesent auctor",
+        description: "Aliquam euismod nisi quis orci sodales, a tincidunt massa luctus.",
       }, {
         file: "alexander-krivitskiy-RQXbElUwn4Q-unsplash.jpg",
         md: true,
@@ -177,7 +183,9 @@ export const portrait: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "bright white",
+        subtitle: "Morbi eget tellus",
+        description: "Vestibulum eget nisi dignissim, placerat purus et, vestibulum quam.",
       }, {
         file: "shane-devlin-kWqT9-dNgq0-unsplash.jpg",
         md: true,
@@ -188,7 +196,9 @@ export const portrait: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "smiling teeth",
+        subtitle: "",
+        description: "Nam tempor nisi sodales erat facilisis, eget mattis nisl hendrerit.",
       }, {
         file: "amir-seilsepour-Pc0ToyoR5Xo-unsplash.jpg",
         md: true,
@@ -199,7 +209,9 @@ export const portrait: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "snow shade",
+        subtitle: "In facilisis nibh",
+        description: "Pellentesque malesuada lectus vitae metus sollicitudin pretium.",
       }, {
         file: "seth-doyle-BZ2PNGD5Emw-unsplash.jpg",
         md: true,
@@ -210,7 +222,9 @@ export const portrait: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "focused red",
+        subtitle: "Aenean tincidunt",
+        description: "Quisque sed nibh commodo, tincidunt magna vitae, fermentum urna.",
       }, {
         file: "qasim-sadiq-MVOI2b2nDTE-unsplash.jpg",
         md: true,
@@ -221,7 +235,9 @@ export const portrait: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "orange flower",
+        subtitle: "Integer at nisl",
+        description: "Phasellus eget ex pulvinar, commodo sapien sed, finibus risus.",
       }, {
         file: "julian-wan-2EdIX-O2lkI-unsplash.jpg",
         md: true,
@@ -232,7 +248,9 @@ export const portrait: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "crayon blue",
+        subtitle: "Morbi ut quam",
+        description: "Duis vitae mauris sagittis, vulputate dui et, volutpat tellus.",
       }, {
         file: "shayan-rti-jdEpyyu3dDo-unsplash.jpg",
         md: true,
@@ -243,7 +261,9 @@ export const portrait: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "red squid",
+        subtitle: "Aenean condimentum",
+        description: "Aliquam gravida tellus ut dui posuere suscipit.",
       }, {
         file: "ahmadreza-najafi-0mKIh0uNcc4-unsplash.jpg",
         md: true,
