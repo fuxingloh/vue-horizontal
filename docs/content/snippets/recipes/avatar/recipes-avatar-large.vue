@@ -92,8 +92,8 @@ main {
 <!-- Responsive Breakpoints -->
 <style scoped>
 .horizontal {
-  --count: 2;
-  --gap: 16px;
+  --count: 3;
+  --gap: 12px;
   --margin: 24px;
 }
 
@@ -125,31 +125,37 @@ main {
 }
 </style>
 
-<!-- Responsive Logic -->
+<!--
+## Responsive Logic
+The --margin removes the padding from the parent container and add it into vue-horizontal.
+If the gap is less than margin, this causes overflow to show and peeks into the next content for better UX.
+You can replace this section entirely for basic responsive CSS logic if you don't want this "peeking" experience
+for the mobile web.
+Note that this responsive logic is hyper sensitive to your design choices, it's not a one size fit all solution.
+
+There are 2 set of logic:
+0-768 for peeking optimized for touch scrolling.
+>768 for navigation via buttons for desktop/laptop users.
+-->
 <style scoped>
 @media (max-width: 767.98px) {
-  /* The --margin removes the padding from the parent container and add it into vue-horizontal.
-   If the gap is less than margin, this causes overflow to show and peeks into the next content for better UX.
-   You can replace this section entirely for basic responsive CSS logic if you don't want this "peeking" experience
-   for the mobile web. */
-  /* This responsive logic is hyper sensitive to your design choices, it's not a one size fit all solution. */
   .item {
-    width: calc((100% - (var(--gap) * 2)) / var(--count));
+    width: calc((100% - (var(--margin) * 2) + var(--gap)) / var(--count));
     padding: 0 calc(var(--gap) / 2);
   }
 
   .item:first-child {
-    width: calc(var(--gap) + (100% - (var(--gap) * 2)) / var(--count));
+    width: calc((100% - (var(--margin) * 2) + var(--gap)) / var(--count) + var(--margin) - (var(--gap) / 2));
     padding-left: var(--margin);
   }
 
   .item:last-child {
-    width: calc(var(--gap) + (100% - (var(--gap) * 2)) / var(--count));
+    width: calc((100% - (var(--margin) * 2) + var(--gap)) / var(--count) + var(--margin) - (var(--gap) / 2));
     padding-right: var(--margin);
   }
 
   .item:only-child {
-    width: calc((var(--gap) * 2) + (100% - (var(--gap) * 2)) / var(--count));
+    width: calc((100% - (var(--margin) * 2) + var(--gap)) / var(--count) + var(--margin) * 2 - var(--gap));
   }
 
   .horizontal {
@@ -157,8 +163,7 @@ main {
   }
 
   .horizontal >>> .v-hl-container {
-    scroll-padding-left: var(--gap);
-    scroll-padding-right: var(--gap);
+    scroll-padding: 0 calc(var(--margin) - (var(--gap) / 2));
   }
 
   .horizontal >>> .v-hl-btn {

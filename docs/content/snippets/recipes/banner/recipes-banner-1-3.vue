@@ -2,12 +2,13 @@
   <main>
     <div class="header">
       <h1>Your Banner Header</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.</p>
     </div>
 
     <vue-horizontal class="horizontal">
       <div class="item" v-for="item in items" :key="item.id">
-        <div class="content" :style="{background: `url(${item.img})`}">
+        <div class="content" :style="{background: `url(${item.img.srcset.sm})`}">
           <div class="aspect-ratio"></div>
           <div class="overlay">
             <h2>{{ item.title }}</h2>
@@ -25,13 +26,7 @@ import {singapore} from '../../../../assets/img'
 export default {
   data() {
     return {
-      items: singapore.items.map(({id, title, img: {srcset: {sm}}}) => {
-        return {
-          id: id,
-          title: title,
-          img: sm
-        };
-      })
+      items: singapore.items
     }
   }
 }
@@ -122,30 +117,37 @@ main {
 }
 </style>
 
-<!-- Responsive Logic -->
+<!--
+## Responsive Logic
+The --margin removes the padding from the parent container and add it into vue-horizontal.
+If the gap is less than margin, this causes overflow to show and peeks into the next content for better UX.
+You can replace this section entirely for basic responsive CSS logic if you don't want this "peeking" experience
+for the mobile web.
+Note that this responsive logic is hyper sensitive to your design choices, it's not a one size fit all solution.
+
+There are 2 set of logic:
+0-768 for peeking optimized for touch scrolling.
+>768 for navigation via buttons for desktop/laptop users.
+-->
 <style scoped>
 @media (max-width: 767.98px) {
-  /* The --margin removes the padding from the parent container and add it into vue-horizontal.
-   If the gap is less than margin, this causes overflow to show and peeks into the next content for better UX.
-   You can replace this section entirely for basic responsive CSS logic if you don't want this "peeking" experience
-   for the mobile web. */
   .item {
-    width: calc((100% - (var(--gap) * 2)) / var(--count));
+    width: calc((100% - (var(--margin) * 2) + var(--gap)) / var(--count));
     padding: 0 calc(var(--gap) / 2);
   }
 
   .item:first-child {
-    width: calc(var(--gap) + (100% - (var(--gap) * 2)) / var(--count));
+    width: calc((100% - (var(--margin) * 2) + var(--gap)) / var(--count) + var(--margin) - (var(--gap) / 2));
     padding-left: var(--margin);
   }
 
   .item:last-child {
-    width: calc(var(--gap) + (100% - (var(--gap) * 2)) / var(--count));
+    width: calc((100% - (var(--margin) * 2) + var(--gap)) / var(--count) + var(--margin) - (var(--gap) / 2));
     padding-right: var(--margin);
   }
 
   .item:only-child {
-    width: calc((var(--gap) * 2) + (100% - (var(--gap) * 2)) / var(--count));
+    width: calc((100% - (var(--margin) * 2) + var(--gap)) / var(--count) + var(--margin) * 2 - var(--gap));
   }
 
   .horizontal {
@@ -153,8 +155,7 @@ main {
   }
 
   .horizontal >>> .v-hl-container {
-    scroll-padding-left: var(--gap);
-    scroll-padding-right: var(--gap);
+    scroll-padding: 0 calc(var(--margin) - (var(--gap) / 2));
   }
 
   .horizontal >>> .v-hl-btn {
