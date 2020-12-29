@@ -296,7 +296,9 @@ export const architecture: Collection = {
   items: [
     newItem(
       {
-        title: "",
+        title: "pink stare",
+        subtitle: "Consectetur adipiscing",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       },
       {
         file: "danist-dqXiw7nCb9Q-unsplash.jpg",
@@ -308,7 +310,9 @@ export const architecture: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "brown smile",
+        subtitle: "Nunc et ante",
+        description: "Vestibulum pretium mauris sit amet sodales sagittis.",
       },
       {
         file: "kinshuk-bose-oXHCpSjWSqs-unsplash.jpg",
@@ -320,7 +324,9 @@ export const architecture: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "gray scaled",
+        subtitle: "Praesent auctor",
+        description: "Aliquam euismod nisi quis orci sodales, a tincidunt massa luctus.",
       },
       {
         file: "ricardo-gomez-angel-opFPVxMRpP8-unsplash.jpg",
@@ -332,7 +338,9 @@ export const architecture: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "bright white",
+        subtitle: "Morbi eget tellus",
+        description: "Vestibulum eget nisi dignissim, placerat purus et, vestibulum quam.",
       },
       {
         file: "takuya-jodai-czqLkGwTvkc-unsplash.jpg",
@@ -344,7 +352,9 @@ export const architecture: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "smiling teeth",
+        subtitle: "Eget mattis",
+        description: "Nam tempor nisi sodales erat facilisis, eget mattis nisl hendrerit.",
       },
       {
         file: "er-raj-5ZQum_bxg0g-unsplash.jpg",
@@ -356,7 +366,9 @@ export const architecture: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "snow shade",
+        subtitle: "In facilisis nibh",
+        description: "Pellentesque malesuada lectus vitae metus sollicitudin pretium.",
       },
       {
         file: "benn-mcguinness-_FKNQ9jWARU-unsplash.jpg",
@@ -368,7 +380,9 @@ export const architecture: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "focused red",
+        subtitle: "Aenean tincidunt",
+        description: "Quisque sed nibh commodo, tincidunt magna vitae, fermentum urna.",
       },
       {
         file: "hoch3media-oUo_qauFRms-unsplash.jpg",
@@ -380,7 +394,9 @@ export const architecture: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "orange flower",
+        subtitle: "Integer at nisl",
+        description: "Phasellus eget ex pulvinar, commodo sapien sed, finibus risus.",
       },
       {
         file: "jose-maria-sava-fWNJEUIWvFQ-unsplash.jpg",
@@ -392,7 +408,9 @@ export const architecture: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "crayon blue",
+        subtitle: "Morbi ut quam",
+        description: "Duis vitae mauris sagittis, vulputate dui et, volutpat tellus.",
       },
       {
         file: "jisun-han-viBh9587oNc-unsplash.jpg",
@@ -404,7 +422,9 @@ export const architecture: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "red squid",
+        subtitle: "Aenean condimentum",
+        description: "Aliquam gravida tellus ut dui posuere suscipit.",
       },
       {
         file: "david-vives-_cbdlNbWvWg-unsplash.jpg",
@@ -422,7 +442,9 @@ export const shopping: Collection = {
   items: [
     newItem(
       {
-        title: "",
+        title: "pink stare",
+        subtitle: "Consectetur adipiscing",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       },
       {
         file: "kyler-boone-c8UArlRU9Wg-unsplash.jpg",
@@ -434,7 +456,9 @@ export const shopping: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "brown smile",
+        subtitle: "Nunc et ante",
+        description: "Vestibulum pretium mauris sit amet sodales sagittis.",
       },
       {
         file: "jon-ly-Xn7GvimQrk8-unsplash.jpg",
@@ -446,7 +470,9 @@ export const shopping: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "gray scaled",
+        subtitle: "Praesent auctor",
+        description: "Aliquam euismod nisi quis orci sodales, a tincidunt massa luctus.",
       },
       {
         file: "charles-deluvio--79h5kXs6Mw-unsplash.jpg",
@@ -458,7 +484,9 @@ export const shopping: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "bright white",
+        subtitle: "Morbi eget tellus",
+        description: "Vestibulum eget nisi dignissim, placerat purus et, vestibulum quam.",
       },
       {
         file: "david-dvoracek-QiPe0UpC0_U-unsplash.jpg",
@@ -470,7 +498,9 @@ export const shopping: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "smiling teeth",
+        subtitle: "Eget mattis",
+        description: "Nam tempor nisi sodales erat facilisis, eget mattis nisl hendrerit.",
       },
       {
         file: "markus-winkler-PQmXUxmfR44-unsplash.jpg",
@@ -482,7 +512,9 @@ export const shopping: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "snow shade",
+        subtitle: "In facilisis nibh",
+        description: "Pellentesque malesuada lectus vitae metus sollicitudin pretium.",
       },
       {
         file: "charles-deluvio-kyD7I53MEuE-unsplash.jpg",
@@ -494,7 +526,9 @@ export const shopping: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "focused red",
+        subtitle: "Aenean tincidunt",
+        description: "Quisque sed nibh commodo, tincidunt magna vitae, fermentum urna.",
       },
       {
         file: "bhawin-jagad-GQgnlIrMGII-unsplash.jpg",
@@ -506,7 +540,9 @@ export const shopping: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "orange flower",
+        subtitle: "Integer at nisl",
+        description: "Phasellus eget ex pulvinar, commodo sapien sed, finibus risus.",
       },
       {
         file: "syafiq-ikmal-OhTngOxx3mo-unsplash.jpg",
@@ -518,7 +554,9 @@ export const shopping: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "crayon blue",
+        subtitle: "Morbi ut quam",
+        description: "Duis vitae mauris sagittis, vulputate dui et, volutpat tellus.",
       },
       {
         file: "lily-banse-C93HrzumjI0-unsplash.jpg",
@@ -530,7 +568,9 @@ export const shopping: Collection = {
     ),
     newItem(
       {
-        title: "",
+        title: "red squid",
+        subtitle: "Aenean condimentum",
+        description: "Aliquam gravida tellus ut dui posuere suscipit.",
       },
       {
         file: "chan-HNbo4jSxQAY-unsplash.jpg",
