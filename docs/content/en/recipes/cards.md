@@ -24,3 +24,8 @@ category: Recipes
 
 ```vue[] import=recipes/cards/recipes-cards-repository.vue padding=0 zoom
 ```
+
+## Slanted
+
+```vue[] import=recipes/cards/recipes-cards-slanted.vue padding=0 zoom
+```
