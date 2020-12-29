@@ -9,7 +9,7 @@ category: Others
 
 For the record, I am **99% against** adding drag functionality for your horizontal content.
 
-1. Touch capable already has the ability to drag (with their finger) without custom implementation.
+1. Touch capable devices already has the ability to drag (with their finger) without custom implementation.
    * Pick up a touch capable device and try it yourself.
 2. Devices that comes with trackpad can scroll (with two finger) horizontally just as you would with touch screen.
 3. Manipulation of mouse event unnatural to what the user expect might cause unwarranted side effects.

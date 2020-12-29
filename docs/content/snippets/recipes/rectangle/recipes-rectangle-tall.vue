@@ -119,6 +119,7 @@ If the gap is less than margin, this causes overflow to show and peeks into the 
 You can replace this section entirely for basic responsive CSS logic if you don't want this "peeking" experience
 for the mobile web.
 Note that this responsive logic is hyper sensitive to your design choices, it's not a one size fit all solution.
+var() has only 95% cross browser compatibility, you should convert it to fixed values.
 
 There are 2 set of logic:
 0-768 for peeking optimized for touch scrolling.

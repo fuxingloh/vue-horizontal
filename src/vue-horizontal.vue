@@ -3,7 +3,7 @@
     <div class="v-hl-btn v-hl-btn-prev" v-if="button && hasPrev" @click.stop="prev" role="button"
          :class="{'v-hl-btn-between': buttonBetween}">
       <slot name="btn-prev">
-        <svg class="v-hl-svg" viewBox="0 0 24 24" aria-label="horizontal scroll area navigation to previous button">
+        <svg class="v-hl-svg" viewBox="0 0 24 24" aria-label="horizontal scroll area navigate to previous button">
           <path d="m9.8 12 5 5a1 1 0 1 1-1.4 1.4l-5.7-5.7a1 1 0 0 1 0-1.4l5.7-5.7a1 1 0 0 1 1.4 1.4l-5 5z"/>
         </svg>
       </slot>
@@ -12,7 +12,7 @@
     <div class="v-hl-btn v-hl-btn-next" v-if="button && hasNext" @click.stop="next" role="button"
          :class="{'v-hl-btn-between': buttonBetween}">
       <slot name="btn-next">
-        <svg class="v-hl-svg" viewBox="0 0 24 24" aria-label="horizontal scroll area navigation to next button">
+        <svg class="v-hl-svg" viewBox="0 0 24 24" aria-label="horizontal scroll area navigate to next button">
           <path d="m14.3 12.1-5-5a1 1 0 0 1 1.4-1.4l5.7 5.7a1 1 0 0 1 0 1.4l-5.7 5.7a1 1 0 0 1-1.4-1.4l5-5z"/>
         </svg>
       </slot>
@@ -349,25 +349,25 @@ export default Vue.extend({
 
 @media (min-width: 640px) {
   .v-hl-responsive > * {
-    width: calc((100% - (24px)) / 2);
+    width: calc((100% - 24px) / 2);
   }
 }
 
 @media (min-width: 768px) {
   .v-hl-responsive > * {
-    width: calc((100% - (2 * 24px)) / 3);
+    width: calc((100% - 48px) / 3);
   }
 }
 
 @media (min-width: 1024px) {
   .v-hl-responsive > * {
-    width: calc((100% - (3 * 24px)) / 4);
+    width: calc((100% - 72px) / 4);
   }
 }
 
 @media (min-width: 1280px) {
   .v-hl-responsive > * {
-    width: calc((100% - (4 * 24px)) / 5);
+    width: calc((100% - 96px) / 5);
   }
 }
 </style>
