@@ -24,7 +24,7 @@
             <div class="card">
               <div class="image" :style="{background: `url(${item.img.srcset.sm})`}">
                 <div class="playback">
-                  <svg viewBox="0 0 24 24" width="24" height="24" >
+                  <svg viewBox="0 0 24 24" width="24" height="24">
                     <path
                       d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 13.5v-7c0-.41.47-.65.8-.4l4.67 3.5c.27.2.27.6 0 .8l-4.67 3.5c-.33.25-.8.01-.8-.4z"/>
                   </svg>
@@ -212,7 +212,7 @@ article, aside {
 
 <!--
 ## Responsive Logic
-The --margin removes the padding from the parent container and add it into vue-horizontal.
+The margin removes the padding from the parent container and add it into vue-horizontal.
 If the gap is less than margin, this causes overflow to show and peeks into the next content for better UX.
 You can replace this section entirely for basic responsive CSS logic if you don't want this "peeking" experience
 for the mobile web.

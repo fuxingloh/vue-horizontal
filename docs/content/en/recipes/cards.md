@@ -20,3 +20,7 @@ category: Recipes
 ```vue[] import=recipes/cards/recipes-cards-videos-aside.vue padding=0 zoom
 ```
 
+## Repository
+
+```vue[] import=recipes/cards/recipes-cards-repository.vue padding=0 zoom
+```

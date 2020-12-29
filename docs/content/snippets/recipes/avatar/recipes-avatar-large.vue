@@ -127,7 +127,7 @@ main {
 
 <!--
 ## Responsive Logic
-The --margin removes the padding from the parent container and add it into vue-horizontal.
+The margin removes the padding from the parent container and add it into vue-horizontal.
 If the gap is less than margin, this causes overflow to show and peeks into the next content for better UX.
 You can replace this section entirely for basic responsive CSS logic if you don't want this "peeking" experience
 for the mobile web.

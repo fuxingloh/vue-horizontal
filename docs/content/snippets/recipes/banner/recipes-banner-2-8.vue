@@ -2,7 +2,8 @@
   <main>
     <div class="header">
       <h2>Your Banner Header</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.</p>
     </div>
 
     <vue-horizontal class="horizontal">
@@ -125,7 +126,7 @@ main {
 
 <!--
 ## Responsive Logic
-The --margin removes the padding from the parent container and add it into vue-horizontal.
+The margin removes the padding from the parent container and add it into vue-horizontal.
 If the gap is less than margin, this causes overflow to show and peeks into the next content for better UX.
 You can replace this section entirely for basic responsive CSS logic if you don't want this "peeking" experience
 for the mobile web.
