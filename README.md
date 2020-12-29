@@ -1,7 +1,3 @@
-[![Vue Horizontal](./docs/vue-horizontal.svg)](https://vue-horizontal.fuxing.dev)
-
-# [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal)
-
 [![chrome](https://github.com/fuxingloh/vue-horizontal/workflows/chrome/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Achrome+branch%3Amain)
 [![firefox](https://github.com/fuxingloh/vue-horizontal/workflows/firefox/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Afirefox+branch%3Amain)
 [![edge](https://github.com/fuxingloh/vue-horizontal/workflows/edge/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Aedge+branch%3Amain)
@@ -9,13 +5,16 @@
 [![SSG](https://github.com/fuxingloh/vue-horizontal/workflows/SSG/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ASSG+branch%3Amain)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
 
+# [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal)
+
 At its core, [Vue Horizontal](https://vue-horizontal.fuxing.dev) is an ultra simple pure vue horizontal layout for 
 modern responsive web with zero dependencies.
 Vue Horizontal is also an ultra complex code snippet dossier with over 100 SPA/SSR/SSG friendly recipes for your design needs.
 
-[**DOCUMENTATION**](https://vue-horizontal.fuxing.dev) 
-•
-[**LIVE DEMO**](https://vue-horizontal.fuxing.dev/features)
+#### [DEMO](https://vue-horizontal.fuxing.dev/recipes/cards) • [DOCUMENTATION](https://vue-horizontal.fuxing.dev) • [FEATURES](https://vue-horizontal.fuxing.dev/features)
+
+[![Vue Horizontal](./docs/vue-horizontal.svg)](https://vue-horizontal.fuxing.dev)
+![recipes](recipes.jpg)
 
 ## Features and Design Philosophy
 
@@ -121,7 +120,7 @@ section {
 - [Design: Responsive](https://vue-horizontal.fuxing.dev/design/responsive)
 - [Design: Navigation](https://vue-horizontal.fuxing.dev/design/navigation)
 - [Design: Scrollbar](https://vue-horizontal.fuxing.dev/design/scrollbar)
-- [Recipes](https://vue-horizontal.fuxing.dev/recipes/cards)
+- [Recipes](https://vue-horizontal.fuxing.dev/recipes/about)
 
 ## Known Limitations
 
