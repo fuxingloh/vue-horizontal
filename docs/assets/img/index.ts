@@ -56,7 +56,9 @@ export const singapore: Collection = {
   items: [
     newItem(
       {
-        title: "Marina Bay Sands"
+        title: "Marina Bay Sands",
+        subtitle: "Consectetur adipiscing",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       },
       {
         file: "hu-chen-__cBlRzLSTg-unsplash.jpg",
@@ -69,6 +71,8 @@ export const singapore: Collection = {
     newItem(
       {
         title: "Gardens by the Bay",
+        subtitle: "Nunc et ante",
+        description: "Vestibulum pretium mauris sit amet sodales sagittis.",
       }, {
         file: "sergio-sala-VbB6HYunm04-unsplash.jpg",
       }, {
@@ -79,6 +83,8 @@ export const singapore: Collection = {
     newItem(
       {
         title: "Fireworks",
+        subtitle: "Praesent auctor",
+        description: "Aliquam euismod nisi quis orci sodales, a tincidunt massa luctus.",
       }, {
         file: "k8-KqkSoXWabJ8-unsplash.jpg",
       }, {
@@ -89,6 +95,8 @@ export const singapore: Collection = {
     newItem(
       {
         title: "Cloud Forest",
+        subtitle: "Integer at nisl",
+        description: "Phasellus eget ex pulvinar, commodo sapien sed, finibus risus.",
       }, {
         file: "yuiizaa-september-BvG0I_bv4BI-unsplash.jpg",
       }, {
@@ -99,6 +107,8 @@ export const singapore: Collection = {
     newItem(
       {
         title: "Jewel",
+        subtitle: "Aenean condimentum",
+        description: "Aliquam gravida tellus ut dui posuere suscipit.",
       }, {
         file: "joe-green-9yoPzIns9G4-unsplash.jpg",
       }, {
@@ -109,6 +119,8 @@ export const singapore: Collection = {
     newItem(
       {
         title: "Chinatown",
+        subtitle: "Sollicitudin tincidunt",
+        description: "Morbi eget tellus vitae eros ultrices condimentum eget at libero.",
       }, {
         file: "lily-banse-e1Rc28R4qoA-unsplash.jpg",
       }, {
@@ -119,6 +131,8 @@ export const singapore: Collection = {
     newItem(
       {
         title: "Urban",
+        subtitle: "Fermentum efficitur",
+        description: "Suspendisse quis ante molestie, dictum purus at, ultrices orci.",
       }, {
         file: "hanson-lu-ShUDNP6EV-I-unsplash.jpg",
       }, {
@@ -129,6 +143,8 @@ export const singapore: Collection = {
     newItem(
       {
         title: "Town",
+        subtitle: "Ligula laoreet gravida",
+        description: "Aliquam tristique purus in odio blandit, id aliquet leo consectetur.",
       }, {
         file: "zhu-hongzhi-tzFVsg6nWtM-unsplash.jpg",
       }, {
@@ -145,7 +161,7 @@ export const portrait: Collection = {
     newItem(
       {
         title: "pink stare",
-        subtitle: "",
+        subtitle: "Consectetur adipiscing",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       }, {
         file: "jessica-felicio-_cvwXhGqG-o-unsplash.jpg",
@@ -197,7 +213,7 @@ export const portrait: Collection = {
     newItem(
       {
         title: "smiling teeth",
-        subtitle: "",
+        subtitle: "Eget mattis",
         description: "Nam tempor nisi sodales erat facilisis, eget mattis nisl hendrerit.",
       }, {
         file: "amir-seilsepour-Pc0ToyoR5Xo-unsplash.jpg",

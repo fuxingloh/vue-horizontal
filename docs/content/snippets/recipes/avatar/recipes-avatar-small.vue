@@ -2,7 +2,7 @@
   <main>
     <div class="header">
       <h1>Stories</h1>
-      <p>Seems to be trending to add stories on top of your feed these few days.</p>
+      <p>Stories on top of your feed!</p>
     </div>
 
     <div class="feed">
