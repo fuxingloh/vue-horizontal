@@ -1,7 +1,7 @@
 ---
 title: Banner
 description: 'Vue Horizontal recipes, over 100 crafted recipes of horizontal layout with various design choices and control mechanisms ready for your needs.'
-position: 501
+position: 599
 category: Recipes
 ---
 
