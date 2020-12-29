@@ -1,7 +1,7 @@
 ---
 title: Tags
 description: 'Vue Horizontal recipes, over 100 crafted recipes of horizontal layout with various design choices and control mechanisms ready for your needs.'
-position: 600
+position: 650
 category: Recipes
 ---
 
