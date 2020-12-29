@@ -17,6 +17,8 @@ Vue Horizontal is also an ultra complex code snippet dossier with over 100 SPA/S
 •
 [**LIVE DEMO**](https://vue-horizontal.fuxing.dev/features)
 
+![recipes](recipes.jpg)
+
 ## Features and Design Philosophy
 
 - **SSR/SSG/SPA: all modes of rendering supported**
@@ -121,7 +123,7 @@ section {
 - [Design: Responsive](https://vue-horizontal.fuxing.dev/design/responsive)
 - [Design: Navigation](https://vue-horizontal.fuxing.dev/design/navigation)
 - [Design: Scrollbar](https://vue-horizontal.fuxing.dev/design/scrollbar)
-- [Recipes](https://vue-horizontal.fuxing.dev/recipes/cards)
+- [Recipes](https://vue-horizontal.fuxing.dev/recipes/about)
 
 ## Known Limitations
 
