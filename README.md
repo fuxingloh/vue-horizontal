@@ -1,6 +1,6 @@
 [![Vue Horizontal](./docs/vue-horizontal.svg)](https://vue-horizontal.fuxing.dev)
 
-# [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal) [![status-beta](https://img.shields.io/badge/status-beta-red)](https://www.npmjs.com/package/vue-horizontal)
+# [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal)
 
 [![chrome](https://github.com/fuxingloh/vue-horizontal/workflows/chrome/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Achrome+branch%3Amain)
 [![firefox](https://github.com/fuxingloh/vue-horizontal/workflows/firefox/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Afirefox+branch%3Amain)

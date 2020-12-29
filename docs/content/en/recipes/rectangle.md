@@ -19,5 +19,3 @@ category: Recipes
 
 ```vue[] import=recipes/rectangle/recipes-rectangle-half.vue padding=0 zoom
 ```
-
-## Slanted
