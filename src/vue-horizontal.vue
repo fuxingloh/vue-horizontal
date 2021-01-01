@@ -333,7 +333,6 @@ export default Vue.extend({
   box-sizing: content-box;
   overflow-x: scroll;
   overflow-y: hidden;
-  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
