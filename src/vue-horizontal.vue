@@ -63,18 +63,30 @@ export default Vue.extend({
     }
   },
   props: {
+    /**
+     * Navigation button visibility
+     */
     button: {
       type: Boolean,
       default: () => true,
     },
+    /**
+     * Navigation button alignment, default to between the edge of the horizontal axis.
+     */
     buttonBetween: {
       type: Boolean,
       default: () => true
     },
+    /**
+     * Scrollbar visibility
+     */
     scroll: {
       type: Boolean,
       default: () => false,
     },
+    /**
+     * Use default responsive breakpoint.
+     */
     responsive: {
       type: Boolean,
       default: () => false,
@@ -135,6 +147,9 @@ export default Vue.extend({
         }
       }
     },
+    /**
+     * Toggle and scroll to the previous set of horizontal content.
+     */
     prev(): void {
       this.$emit('prev')
 
@@ -152,6 +167,9 @@ export default Vue.extend({
       const width = container.clientWidth * this.displacement
       this.scrollToLeft(container.scrollLeft - width)
     },
+    /**
+     * Toggle and scroll to the next set of horizontal content.
+     */
     next(): void {
       this.$emit('next')
 
@@ -171,6 +189,10 @@ export default Vue.extend({
       const width = container.clientWidth * this.displacement
       this.scrollToLeft(container.scrollLeft + width)
     },
+    /**
+     * Index of the slots to scroll to.
+     * @param i index
+     */
     scrollToIndex(i: number): void {
       const slots = this.slots
 
@@ -182,6 +204,11 @@ export default Vue.extend({
         this.scrollToLeft(container.scrollLeft + left)
       }
     },
+    /**
+     * Amount of pixel to scroll to on the left.
+     * @param left of the horizontal
+     * @param behavior smooth|auto
+     */
     scrollToLeft(left: number, behavior: "smooth" | "auto" = "smooth"): void {
       const element = this.$refs.container as Element
       element.scrollTo({left: left, behavior: behavior});
@@ -201,6 +228,10 @@ export default Vue.extend({
         this.$emit('scroll-debounce', data)
       })
     },
+    /**
+     * Manually refresh vue-horizontal
+     * @param callback after refreshed, optional
+     */
     refresh(callback: (data: VueHorizontalData) => void): void {
       this.$nextTick(() => {
         const data = this.calculate()
@@ -302,7 +333,6 @@ export default Vue.extend({
   box-sizing: content-box;
   overflow-x: scroll;
   overflow-y: hidden;
-  scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 }
