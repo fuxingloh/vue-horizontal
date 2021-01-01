@@ -14,3 +14,10 @@ category: Recipes
 
 ```vue[] import=recipes/tags/recipes-tags-tight.vue padding=0 zoom
 ```
+
+## Mouse Wheel Event
+
+Vertical scroll trigger horizontal scroll.
+
+```vue[] import=recipes/tags/recipes-tags-scroll-wheel.vue padding=0 zoom
+```

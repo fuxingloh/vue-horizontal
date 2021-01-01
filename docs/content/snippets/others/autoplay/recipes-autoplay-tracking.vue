@@ -32,9 +32,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.horizontal >>> .v-hl-container {
-  scroll-behavior: initial;
-}
-</style>

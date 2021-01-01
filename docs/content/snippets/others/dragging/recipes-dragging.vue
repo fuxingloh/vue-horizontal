@@ -50,8 +50,4 @@ export default {
   cursor: move;
   user-select: none;
 }
-
-.horizontal >>> .v-hl-container {
-  scroll-behavior: initial;
-}
 </style>
