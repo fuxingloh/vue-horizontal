@@ -340,6 +340,9 @@ export default Vue.extend({
 .v-hl-container > * {
   flex-shrink: 0;
   box-sizing: border-box;
+
+  /* Prevent content from collapsing when empty. E.g. image while loading height=0. */
+  min-height: 1px;
 }
 
 .v-hl-snap-start > * {
