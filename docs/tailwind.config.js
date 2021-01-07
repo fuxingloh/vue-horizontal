@@ -11,5 +11,11 @@ module.exports = {
         '4xl': "1920px",
       }
     }
-  }
+  },
+  purge: {
+    content: [
+      'content/**/*.md',
+      'content/snippets/**/*.vue',
+    ]
+  },
 }
