@@ -29,3 +29,8 @@ category: Recipes
 
 ```vue[] import=recipes/cards/recipes-cards-slanted.vue padding=0 zoom
 ```
+
+## Dark Theme
+
+```vue[] import=recipes/cards/recipes-cards-dark.vue padding=0 zoom
+```
