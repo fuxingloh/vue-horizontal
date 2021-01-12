@@ -380,6 +380,10 @@ export default Vue.extend({
   margin-right: 24px;
 }
 
+.vue-horizontal > *:last-child {
+  margin-right: 0;
+}
+
 @media (min-width: 640px) {
   .v-hl-responsive > * {
     width: calc((100% - 24px) / 2);
