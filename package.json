@@ -97,5 +97,9 @@
   },
   "engines": {
     "node": ">=10"
-  }
+  },
+  "browserslist": [
+    "current node",
+    "> 1%"
+  ]
 }
