@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: kentaro-m/auto-assign-action@v1.1.2
-      - uses: fuxingloh/multi-labeler@v1.2
+      - uses: fuxingloh/multi-labeler@v1
 
       - uses: amannn/action-semantic-pull-request@v2.1.0
         name: Semantic Pull Request
