@@ -1,20 +1,22 @@
-version: 1
-labels:
-  - label: "WIP"
-    title: "^WIP:.*"
-    mergeable: false
+version: v1
 
+labels:
   - label: "feat"
-    title: "^feat:.*"
+    matcher:
+      title: "^feat:.*"
+      commits: "^feat:.*"
 
   - label: "fix"
-    title: "^fix:.*"
+    matcher:
+      title: "^fix:.*"
+      commits: "^fix:.*"
 
   - label: "chore"
-    title: "^chore:.*"
+    matcher:
+      title: "^chore:.*"
+      commits: "^chore:.*"
 
   - label: "docs"
-    title: "^docs:.*"
-
-  - label: "chore"
-    title: "^[ImgBot] .*"
+    matcher:
+      title: "^docs:.*"
+      commits: "^docs:.*"
