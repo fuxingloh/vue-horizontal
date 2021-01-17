@@ -20,3 +20,16 @@ labels:
     matcher:
       title: "^docs:.*"
       commits: "^docs:.*"
+
+checks:
+  - context: "Release Drafter"
+    url: "https://github.com/fuxingloh/vue-horizontal/blob/main/.github/labeler.yml"
+    description:
+      success: Ready for review & merge.
+      failure: Missing semantic label for merge.
+    labels:
+      any:
+        - feat
+        - fix
+        - chore
+        - docs
