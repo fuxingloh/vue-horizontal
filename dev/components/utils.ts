@@ -1,9 +1,9 @@
-import {LoremIpsum} from "lorem-ipsum";
-const generator = require('random-seed');
+import * as lorem from "lorem-ipsum";
+import * as generator from "random-seed";
 
 export function Lorem(seed = "1") {
-  return new LoremIpsum({
-    random: generator(seed).random,
+  return new lorem.LoremIpsum({
+    random: generator.create(seed).random,
     sentencesPerParagraph: {
       max: 8,
       min: 4

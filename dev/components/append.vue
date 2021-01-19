@@ -25,13 +25,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import VueHorizontal from '@/vue-horizontal.vue';
+import {defineComponent} from 'vue';
+import VueHorizontal from '@/VueHorizontal.vue';
 import {Lorem} from './utils'
 
 const lorem = Lorem("append")
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     VueHorizontal
   },

@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "types": [
       "node",
-      "vue"
+      "vite/client"
     ],
     "paths": {
       "@/*": [
@@ -25,15 +25,19 @@
     },
     "lib": [
       "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
+      "dom"
+    ],
+    "plugins": [
+      {
+        "name": "@vuedx/typescript-plugin-vue"
+      }
     ]
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "docs",
-    "test"
+  "include": [
+    "dev/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue"
   ]
 }

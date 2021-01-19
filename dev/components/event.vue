@@ -1,10 +1,10 @@
 <template>
   <div>
     <vue-horizontal
-        @scroll="(data) => scroll = data"
-        @scroll-debounce="(data) => scrollDebounce = data"
-        @prev="() => prev = 'prev'"
-        @next="() => next = 'next'"
+      @scroll="(data) => scroll = data"
+      @scroll-debounce="(data) => scrollDebounce = data"
+      @prev="() => prev = 'prev'"
+      @next="() => next = 'next'"
     >
       <section v-for="item in items" :key="item.i">
         <div class="header">
@@ -23,11 +23,11 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import VueHorizontal from '@/vue-horizontal.vue';
+import {defineComponent} from 'vue';
+import VueHorizontal from '@/VueHorizontal.vue';
 import {Lorem} from './utils'
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     VueHorizontal
   },

@@ -8,10 +8,10 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import VueHorizontal from '@/vue-horizontal.vue';
+import {defineComponent} from 'vue';
+import VueHorizontal from '@/VueHorizontal.vue';
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     VueHorizontal
   },

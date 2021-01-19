@@ -31,8 +31,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import {VNode} from "vue/types/vnode";
+import {defineComponent} from 'vue'
 
 // Compatibility delta due to rounding issues
 const delta = 2.5
@@ -48,7 +47,7 @@ interface VueHorizontalData {
   debounceId?: number | undefined;
 }
 
-export default Vue.extend({
+export default defineComponent({
   name: 'VueHorizontal',
   data(): VueHorizontalData {
     return {
@@ -111,7 +110,10 @@ export default Vue.extend({
   },
   computed: {
     slots(): VNode[] {
-      return this.$slots?.default?.filter(s => s.tag) as VNode[] || []
+      this.$slots.default().filter(value => {
+
+      })
+      // return this.$slots.default().filter(s => s.tag) as VNode[] || []
     }
   },
   methods: {
