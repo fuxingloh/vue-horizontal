@@ -4,29 +4,25 @@ labels:
   - label: "feat"
     matcher:
       title: "^feat:.*"
-      commits: "^feat:.*"
 
   - label: "fix"
     matcher:
       title: "^fix:.*"
-      commits: "^fix:.*"
 
   - label: "chore"
     matcher:
       title: "^chore:.*"
-      commits: "^chore:.*"
 
   - label: "docs"
     matcher:
       title: "^docs:.*"
-      commits: "^docs:.*"
 
 checks:
   - context: "Release Drafter"
     url: "https://github.com/fuxingloh/vue-horizontal/blob/main/.github/labeler.yml"
     description:
       success: Ready for review & merge.
-      failure: Missing semantic label for merge.
+      failure: Missing semantic label for release drafting.
     labels:
       any:
         - feat
