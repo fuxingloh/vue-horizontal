@@ -67,6 +67,10 @@ a:hover > * {
   margin: 48px 0;
 }
 
+h1 {
+  margin-bottom: 24px;
+}
+
 .vue-horizontal {
   margin-bottom: 24px;
 }

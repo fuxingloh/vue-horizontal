@@ -5,7 +5,7 @@
 [![SSG](https://github.com/fuxingloh/vue-horizontal/workflows/SSG/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ASSG+branch%3Amain)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
 
-# [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal)
+# [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal/next)](https://www.npmjs.com/package/vue-horizontal)
 
 At its core, [Vue Horizontal](https://vue-horizontal.fuxing.dev) is an ultra simple pure vue horizontal layout for 
 modern responsive web with zero dependencies.
