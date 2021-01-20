@@ -1,28 +1,15 @@
 <template>
   <div>
-    <section v-for="component in components" :key="component.name">
-      <router-link :to="component.path">
-        <h2>{{ component.name }}</h2>
-        <p>{{ component.description }}</p>
-      </router-link>
-      <component :is="component.name"/>
-    </section>
+    <h1>Index</h1>
+    <!--    <section v-for="component in components" :key="component.name">-->
+    <!--      <router-link :to="component.path">-->
+    <!--        <h2>{{ component.name }}</h2>-->
+    <!--        <p>{{ component.description }}</p>-->
+    <!--      </router-link>-->
+    <!--      <component :is="component.name"/>-->
+    <!--    </section>-->
   </div>
 </template>
-
-<script lang="ts">
-import components from './components';
-
-export default {
-  data() {
-    return {
-      components: components.map(({name, description, path}) => {
-        return {name, description, path}
-      })
-    }
-  }
-}
-</script>
 
 <style scoped>
 h2 {

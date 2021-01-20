@@ -2,31 +2,24 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "strict": true,
-    "declaration": true,
-    "declarationDir": "dist",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "importHelpers": true,
     "moduleResolution": "node",
-    "experimentalDecorators": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "jsx": "preserve",
     "sourceMap": true,
-    "baseUrl": ".",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "types": [
       "node",
       "vite/client"
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "src/*"
       ]
     },
-    "lib": [
-      "esnext",
-      "dom"
-    ],
     "plugins": [
       {
         "name": "@vuedx/typescript-plugin-vue"
@@ -35,9 +28,9 @@
   },
   "include": [
     "dev/**/*.ts",
+    "dev/**/*.vue",
     "src/**/*.ts",
     "src/**/*.d.ts",
-    "src/**/*.tsx",
     "src/**/*.vue"
   ]
 }

@@ -19,61 +19,44 @@
   ],
   "license": "MIT",
   "private": false,
-  "main": "dist/vue-horizontal.ssr.js",
-  "browser": "dist/vue-horizontal.esm.js",
-  "module": "dist/vue-horizontal.esm.js",
-  "unpkg": "dist/vue-horizontal.min.js",
   "files": [
     "dist/*",
     "src/**/*.vue"
   ],
   "size-limit": [
     {
-      "path": "dist/vue-horizontal.esm.js"
+      "path": "./dist/vue-horizontal.umd.js"
     },
     {
-      "path": "dist/vue-horizontal.min.js"
-    },
-    {
-      "path": "dist/vue-horizontal.ssr.js"
+      "path": "./dist/vue-horizontal.es.js"
     }
   ],
+  "main": "./dist/vue-horizontal.umd.js",
+  "module": "./dist/vue-horizontal.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-horizontal.es.js",
+      "require": "./dist/vue-horizontal.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "size": "size-limit",
     "build": "vuedx-typecheck . && vite build",
+    "size": "size-limit",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
     "lint": "npm run lint:js && npm run lint:style"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^17.0.0",
-    "@size-limit/preset-small-lib": "^4.9.1",
-    "@types/lodash": "^4.14.165",
-    "@types/node": "^14.14.21",
-    "@types/random-seed": "^0.3.3",
-    "@typescript-eslint/eslint-plugin": "^4.9.1",
-    "@typescript-eslint/parser": "^4.9.1",
+    "vue": "^3.0.5",
     "@vitejs/plugin-vue": "^1.0.4",
     "@vue/compiler-sfc": "^3.0.5",
     "@vuedx/typecheck": "^0.4.1",
     "@vuedx/typescript-plugin-vue": "^0.4.1",
-    "cypress": "^6.2.0",
-    "cypress-image-snapshot": "^4.0.0",
-    "eslint": "^7.15.0",
-    "eslint-plugin-vue": "^7.2.0",
-    "lodash": "^4.17.20",
-    "lorem-ipsum": "^2.0.3",
-    "random-seed": "^0.3.0",
-    "size-limit": "^4.9.1",
-    "stylelint": "^13.8.0",
-    "stylelint-config-standard": "^20.0.0",
     "typescript": "^4.1.3",
     "vite": "^2.0.0-beta.12",
-    "vue": "^3.0.5",
     "vue-router": "^4.0.3"
   },
   "peerDependencies": {
@@ -82,5 +65,8 @@
   "browserslist": [
     "current node",
     "> 1%"
-  ]
+  ],
+  "dependencies": {
+    "@types/node": "^14.14.22"
+  }
 }

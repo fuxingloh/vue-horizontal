@@ -1,10 +1,9 @@
 import {resolve} from "path";
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
-import commonjs from '@rollup/plugin-commonjs'
 
 export default defineConfig({
-  plugins: [vue(), commonjs()],
+  plugins: [vue()],
   root: 'dev',
   alias: {
     '@': resolve(__dirname, 'src')
@@ -12,7 +11,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/entry.ts'),
-      name: 'VueHorizontal'
+      name: 'MyComponent'
     },
     rollupOptions: {
       external: ['vue']
