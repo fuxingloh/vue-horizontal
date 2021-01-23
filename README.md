@@ -7,13 +7,22 @@
 
 # [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal/next)](https://www.npmjs.com/package/vue-horizontal)
 
-## Vue2/Vue3
+## Vue 3 Goals & Objective
 
-- [ ] Update Documentations on Vue 3 Support, @next & v1 will be for Vue 3
+- [ ] Setup basic workflow, CI for code quality
+- [ ] Baseline support for Vue 3, e2e tested
+- [ ] Update Documentations on Vue 3 Support 
+- [ ] @next & v1 will be for Vue 3
 - [ ] CSS should be inlined with js for a single export experience
+
+### Extended Improvements
+
+- [ ] Composition API
 - [ ] RTS Arabic scripts
 - [ ] Chinese Characters
-- [ ] Other than SSG/SSR, unpkg and library pull should be tested
+- [ ] Automate SSG/SSR testing
+- [ ] Automate unpkg and npm install testing
+- [ ] Migrate documentation to Vue 3 based SSG
 
 At its core, [Vue Horizontal](https://vue-horizontal.fuxing.dev) is an ultra simple pure vue horizontal layout for 
 modern responsive web with zero dependencies.
