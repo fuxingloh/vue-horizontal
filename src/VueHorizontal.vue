@@ -44,7 +44,7 @@ interface VueHorizontalData {
   hasPrev: boolean;
   hasNext: boolean;
 
-  debounceId?: number | undefined;
+  debounceId?: any;
 }
 
 export default defineComponent({

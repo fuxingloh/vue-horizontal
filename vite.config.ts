@@ -11,10 +11,17 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/entry.ts'),
-      name: 'MyComponent'
+      name: 'VueHorizontal'
     },
+    emptyOutDir: true,
     rollupOptions: {
-      external: ['vue']
+      external: ['vue'],
+      output: {
+        dir: './dist',
+        globals: {
+          vue: 'Vue'
+        }
+      }
     }
   }
 })

@@ -9,11 +9,11 @@
 
 ## Vue 3 Goals & Objective
 
-- [ ] Setup basic workflow, CI for code quality
-- [ ] Baseline support for Vue 3, e2e tested
-- [ ] Update Documentations on Vue 3 Support 
-- [ ] @next & v1 will be for Vue 3
+- [x] Baseline support for Vue 3, e2e tested
 - [ ] CSS should be inlined with js for a single export experience
+- [ ] Setup basic workflow, CI for code quality
+- [ ] @next & v1 will be for Vue 3
+- [ ] Update Documentations on Vue 3 Support
 
 ### Extended Improvements
 
