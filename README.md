@@ -10,19 +10,19 @@
 ## Vue 3 Goals & Objective
 
 - [x] Baseline support for Vue 3, e2e tested
+- [x] Update Documentations on Vue 3 Support
 - [ ] CSS should be inlined with js for a single export experience
 - [ ] Setup basic workflow, CI for code quality
 - [ ] @next & v1 will be for Vue 3
-- [ ] Update Documentations on Vue 3 Support
 
 ### Extended Improvements
 
-- [ ] Composition API
+- [ ] Use Composition API
 - [ ] RTS Arabic scripts
 - [ ] Chinese Characters
-- [ ] Automate SSG/SSR testing
-- [ ] Automate unpkg and npm install testing
-- [ ] Migrate documentation to Vue 3 based SSG
+- [ ] Test SSG & SSR
+- [ ] Use dist version to test
+- [ ] Migrate docs to use Vue 3 based SSG 
 
 At its core, [Vue Horizontal](https://vue-horizontal.fuxing.dev) is an ultra simple pure vue horizontal layout for 
 modern responsive web with zero dependencies.
