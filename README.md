@@ -7,7 +7,8 @@
 
 # [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal/next)](https://www.npmjs.com/package/vue-horizontal)
 
-## Vue 3 Goals & Objective
+<details>
+<summary><b>Vue 3 Goals & Objective</b></summary>
 
 - [x] Baseline support for Vue 3, e2e tested
 - [x] Update Documentations on Vue 3 Support
@@ -22,7 +23,10 @@
 - [ ] Chinese Characters
 - [ ] Test SSG & SSR
 - [ ] Use dist version to test
-- [ ] Migrate docs to use Vue 3 based SSG 
+- [ ] Migrate docs to use Vue 3 based SSG
+- [ ] Merge next into main once everything is completed
+
+</details>
 
 At its core, [Vue Horizontal](https://vue-horizontal.fuxing.dev) is an ultra simple pure vue horizontal layout for 
 modern responsive web with zero dependencies.
