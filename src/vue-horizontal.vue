@@ -380,7 +380,7 @@ export default Vue.extend({
   margin-right: 24px;
 }
 
-.vue-horizontal > *:last-child {
+.v-hl-responsive > *:last-child {
   margin-right: 0;
 }
 
