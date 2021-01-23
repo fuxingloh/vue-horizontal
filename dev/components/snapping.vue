@@ -1,7 +1,7 @@
 <template>
   <div>
-    <vue-horizontal v-for="snap in ['start', 'center', 'end', 'none']"
-                    :class="`snap-${snap}`" :snap="snap" ref="horizontal" :key="snap">
+    <vue-horizontal v-for="(snap, i) in ['start', 'center', 'end', 'none']" :key="snap"
+                    :class="`snap-${snap}`" :snap="snap" :ref="el => { horizontals[i] = el }">
       <section v-for="item in items" :key="item.i">
         <div class="header">
           <h6>{{ item.i }}</h6>
@@ -21,32 +21,26 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, ref} from 'vue';
 import VueHorizontal from '@/VueHorizontal.vue';
-import {Lorem} from './utils'
+import {loremItems} from './utils'
 
 export default defineComponent({
   components: {
     VueHorizontal
   },
-  data() {
-    const lorem = Lorem("snapping")
+  setup() {
+    const items = loremItems("snapping", 20);
+    const horizontals = ref([])
+
     return {
-      items: [...Array(20).keys()].map((i) => {
-        return {
-          i,
-          title: lorem.generateWords(2),
-          content: lorem.generateWords(4),
-        };
-      }),
-    }
-  },
-  methods: {
-    scrollTo(left: number): void {
-      // @ts-ignore
-      this.$refs.horizontal.forEach(ref => {
-        ref.scrollToLeft(left)
-      })
+      items,
+      horizontals,
+      scrollTo(left: number) {
+        horizontals.value.forEach(ref => {
+          ref.scrollToLeft(left)
+        })
+      }
     }
   }
 });

@@ -3,7 +3,7 @@
 describe('move', () => {
   beforeEach(() => {
     cy.viewport(1600, 800)
-    cy.visit('http://localhost:8080/move')
+    cy.visit('http://localhost:3000/move')
   })
 
   it('0.8: next should move 3, prev should move 4', function () {

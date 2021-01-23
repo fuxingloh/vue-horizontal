@@ -54,14 +54,12 @@ export default defineComponent({
         };
       }))
 
-      const horizontal = this.$refs.horizontal as any
       this.$nextTick(() => {
-        horizontal.refresh()
+        this.$refs.horizontal.refresh()
       })
     },
     goIndex(index: number) {
-      const horizontal = this.$refs.horizontal as any
-      horizontal.scrollToIndex(index)
+      this.$refs.horizontal.scrollToIndex(index)
     }
   }
 });

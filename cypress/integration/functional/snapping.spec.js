@@ -3,7 +3,7 @@
 describe('snapping', () => {
   beforeEach(() => {
     cy.viewport(1600, 1600)
-    cy.visit('http://localhost:8080/snapping')
+    cy.visit('http://localhost:3000/snapping')
   });
 
   ['start', 'end'].forEach(snap => {

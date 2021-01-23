@@ -3,7 +3,7 @@
 describe('event', () => {
   beforeEach(() => {
     cy.viewport(1200, 800)
-    cy.visit('http://localhost:8080/event')
+    cy.visit('http://localhost:3000/event')
   })
 
   it('scroll: should have no event', () => {

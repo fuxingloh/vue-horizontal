@@ -16,7 +16,7 @@ function beSameWidth(select) {
 describe('fixed-width', () => {
   beforeEach(() => {
     cy.viewport(1200, 800)
-    cy.visit('http://localhost:8080/fixed-width')
+    cy.visit('http://localhost:3000/fixed-width')
   })
 
   it('should be all same width', function () {

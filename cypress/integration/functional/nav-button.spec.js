@@ -3,7 +3,7 @@
 describe('nav-button', () => {
   beforeEach(() => {
     cy.viewport(1200, 1600)
-    cy.visit('http://localhost:8080/nav-button')
+    cy.visit('http://localhost:3000/nav-button')
   })
 
   it('button-true: should have next but not prev but later have next', () => {

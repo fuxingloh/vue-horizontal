@@ -2,7 +2,7 @@
 
 describe('responsive', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/responsive')
+    cy.visit('http://localhost:3000/responsive')
   })
 
   it('should have 1 for width: 480px', () => {

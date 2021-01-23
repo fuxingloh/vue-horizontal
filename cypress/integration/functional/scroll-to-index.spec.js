@@ -3,7 +3,7 @@
 describe('scroll-to-index', () => {
   beforeEach(() => {
     cy.viewport(1600, 800)
-    cy.visit('http://localhost:8080/scroll-to-index')
+    cy.visit('http://localhost:3000/scroll-to-index')
   })
 
   it('.normal should scroll to index', function () {

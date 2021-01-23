@@ -16,7 +16,7 @@ function toBeDifferentWidth(select) {
 describe('content-width', () => {
   beforeEach(() => {
     cy.viewport(1200, 800)
-    cy.visit('http://localhost:8080/content-width')
+    cy.visit('http://localhost:3000/content-width')
   })
 
   it('20-items: should have different width', function () {
@@ -41,7 +41,7 @@ describe('content-width', () => {
   })
 
   it('20-items: should not overscroll items that are not fully visible', function () {
-    [3, 6, 9, 12, 14].forEach(index => {
+    [2, 4, 7, 10, 13, 15, 17].forEach(index => {
       cy.get('.20-items .v-hl-btn-next').click()
       cy.get(`.20-items .v-hl-container > :nth-child(${index + 1})`)
         .should('to.be.left', 80)

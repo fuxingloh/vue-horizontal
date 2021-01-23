@@ -53,10 +53,9 @@ export default defineComponent({
   },
   methods: {
     goIndex(index: number) {
-      const normal = this.$refs.normal as any
-      const padded = this.$refs.padded as any
-      normal.scrollToIndex(index)
-      padded.scrollToIndex(index)
+      [this.$refs.normal, this.$refs.padded].forEach(vhl => {
+        vhl.scrollToIndex(index)
+      })
     }
   }
 });
@@ -74,6 +73,7 @@ section {
 
 .header {
   display: flex;
+  word-break: break-all;
 }
 
 .header h6 {

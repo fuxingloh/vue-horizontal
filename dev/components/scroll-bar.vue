@@ -74,22 +74,22 @@ section {
   flex-shrink: 0;
 }
 
-div > div >>> .v-hl-container {
+div > div ::v-deep(.v-hl-container) {
   background: purple;
 }
 
-div > div >>> .v-hl-container::-webkit-scrollbar {
+div > div ::v-deep(.v-hl-container::-webkit-scrollbar) {
   width: 8px;
   height: 8px;
   background: transparent;
 }
 
-div > div >>> .v-hl-container::-webkit-scrollbar-thumb {
+div > div ::v-deep(.v-hl-container::-webkit-scrollbar-thumb) {
   border-radius: 10px;
   background: blue;
 }
 
-div > div >>> .v-hl-container::-webkit-scrollbar-thumb:hover {
+div > div ::v-deep(.v-hl-container::-webkit-scrollbar-thumb:hover) {
   background: red;
 }
 </style>

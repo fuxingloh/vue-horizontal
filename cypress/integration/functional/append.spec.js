@@ -3,7 +3,7 @@
 describe('append', () => {
   beforeEach(() => {
     cy.viewport(1600, 1000)
-    cy.visit('http://localhost:8080/append')
+    cy.visit('http://localhost:3000/append')
   })
 
   it('should not exist before append', function () {

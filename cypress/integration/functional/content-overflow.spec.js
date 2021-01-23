@@ -3,7 +3,7 @@
 describe('content-overflow', () => {
   beforeEach(() => {
     cy.viewport(1600, 800)
-    cy.visit('http://localhost:8080/content-overflow')
+    cy.visit('http://localhost:3000/content-overflow')
   })
 
   it('next: should not jump item should half scroll', function () {

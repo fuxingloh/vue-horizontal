@@ -4,7 +4,7 @@
 describe('simple', () => {
   beforeEach(() => {
     cy.viewport(1200, 800)
-    cy.visit('http://localhost:8080/simple')
+    cy.visit('http://localhost:3000/simple')
   })
 
   it('root: should contain container and next', () => {

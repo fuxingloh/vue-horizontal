@@ -2,7 +2,7 @@
 
 describe('empty', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/empty')
+    cy.visit('http://localhost:3000/empty')
   })
 
   it('should contain only slotted container', () => {

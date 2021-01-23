@@ -109,7 +109,7 @@ export default defineComponent({
     this.onScrollDebounce();
   },
   methods: {
-    children(): Element[] {
+    children(): HTMLCollection {
       const container = this.$refs.container as Element
       return container.children
     },
@@ -196,7 +196,7 @@ export default defineComponent({
 
       if (children[i]) {
         const container = this.$refs.container as Element
-        const rect = (children[i].elm as Element).getBoundingClientRect()
+        const rect = children[i].getBoundingClientRect()
 
         const left = rect.left - container.getBoundingClientRect().left
         this.scrollToLeft(container.scrollLeft + left)
@@ -218,7 +218,6 @@ export default defineComponent({
       })
 
       clearTimeout(this.debounceId);
-      // @ts-ignore
       this.debounceId = setTimeout(this.onScrollDebounce, 100);
     },
     onScrollDebounce(): void {
@@ -335,7 +334,7 @@ export default defineComponent({
   -webkit-overflow-scrolling: touch;
 }
 
-::v-slotted(.v-hl-container > * ) {
+::v-slotted(.v-hl-container > *) {
   flex-shrink: 0;
   box-sizing: border-box;
 
