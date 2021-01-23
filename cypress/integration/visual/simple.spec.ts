@@ -1,5 +1,4 @@
 /// <reference types="cypress" />
-// aka generic test cases
 
 describe('simple', () => {
   beforeEach(() => {

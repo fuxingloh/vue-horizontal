@@ -50,6 +50,7 @@
     "lint": "npm run lint:js && npm run lint:style"
   },
   "devDependencies": {
+    "@types/cypress-image-snapshot": "^3.1.4",
     "@types/node": "^14.14.22",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",
