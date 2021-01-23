@@ -2,22 +2,20 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, next ]
     paths:
       - 'src/**'
       - 'dev/**'
-      - 'build/**'
       - '*.json'
       - '*.js'
       - '*.ts'
 
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
-    branches: [ main ]
+    branches: [ main, next ]
     paths:
       - 'src/**'
       - 'dev/**'
-      - 'build/**'
       - '*.json'
       - '*.js'
       - '*.ts'

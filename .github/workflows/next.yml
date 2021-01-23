@@ -1,0 +1,21 @@
+name: Next
+
+on:
+  pull_request:
+    types: [ opened ]
+    branches: [ next ]
+
+jobs:
+  next:
+    name: Next
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v3
+        with:
+          script: |
+            github.issues.addLabels({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              labels: ['next']
+            })

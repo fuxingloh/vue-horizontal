@@ -2,7 +2,7 @@ name: chrome
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, next ]
     paths:
       - 'cypress/**'
       - 'src/**'
@@ -10,7 +10,7 @@ on:
 
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
-    branches: [ main ]
+    branches: [ main, next ]
     paths:
       - 'cypress/**'
       - 'src/**'
