@@ -25,21 +25,17 @@
 <script lang="ts">
 import {defineComponent} from 'vue';
 import VueHorizontal from '@/VueHorizontal.vue';
-import {Lorem} from './utils'
+import {loremItems} from './utils'
 
 export default defineComponent({
   components: {
     VueHorizontal
   },
   data() {
-    const lorem = Lorem("event")
     return {
-      items: [...Array(20).keys()].map((i) => {
-        return {
-          i,
-          title: lorem.generateWords(1),
-          content: lorem.generateWords(6),
-        };
+      items: loremItems("event", 20, {
+        title: (lorem) => lorem.generateWords(1),
+        content: (lorem) => lorem.generateWords(6),
       }),
       scroll: 'no-event',
       scrollDebounce: 'no-event',

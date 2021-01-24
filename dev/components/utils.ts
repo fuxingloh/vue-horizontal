@@ -21,12 +21,17 @@ export function loremItems(seed: string, count: number, options = {
   content: (lorem: LoremIpsum) => lorem.generateSentences(1),
 }) {
   const lorem = Lorem(seed)
-
-  return [...Array(count).keys()].map((i) => {
+  return items(count, i => {
     return {
       i,
       title: options.title(lorem),
       content: options.content(lorem),
     };
+  })
+}
+
+export function items<T>(count: number, func: (i: number) => T): T[] {
+  return [...Array(count).keys()].map((i) => {
+    return func(i);
   })
 }

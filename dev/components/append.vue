@@ -25,7 +25,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, nextTick} from 'vue';
+import {defineComponent, ref} from 'vue';
 import VueHorizontal from '@/VueHorizontal.vue';
 import {Lorem} from './utils'
 

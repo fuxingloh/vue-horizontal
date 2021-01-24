@@ -50,21 +50,17 @@
 <script lang="ts">
 import {defineComponent} from 'vue';
 import VueHorizontal from '@/VueHorizontal.vue';
-import {Lorem} from './utils'
+import {loremItems} from './utils'
 
 export default defineComponent({
   components: {
     VueHorizontal
   },
-  data() {
-    const lorem = Lorem("content-width")
+  setup() {
     return {
-      items: [...Array(20).keys()].map((i) => {
-        return {
-          i,
-          title: lorem.generateWords(2),
-          content: lorem.generateWords(6),
-        };
+      items: loremItems("content-width", 20, {
+        title: (lorem) => lorem.generateWords(2),
+        content: (lorem) => lorem.generateWords(6),
       }),
     }
   },
