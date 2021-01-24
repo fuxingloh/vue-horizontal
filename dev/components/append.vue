@@ -47,6 +47,7 @@ export default defineComponent({
 
     return {
       items,
+      horizontal,
       append(count: number) {
         items.value.push(...[...Array(count).keys()].map((i) => {
           return {
@@ -56,12 +57,10 @@ export default defineComponent({
           };
         }))
 
-        nextTick(() => {
-          horizontal.refresh()
-        })
+        horizontal.value.refresh()
       },
       goIndex(index: number) {
-        horizontal.scrollToIndex(index)
+        horizontal.value.scrollToIndex(index)
       }
     }
   },

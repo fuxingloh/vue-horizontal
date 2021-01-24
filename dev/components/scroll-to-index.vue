@@ -53,8 +53,8 @@ export default defineComponent({
       normal,
       padded,
       goIndex(index: number) {
-        normal.scrollToIndex(index)
-        padded.scrollToIndex(index)
+        normal.value.scrollToIndex(index)
+        padded.value.scrollToIndex(index)
       }
     }
   },

@@ -31,7 +31,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+import {defineComponent, nextTick} from 'vue'
 
 // Compatibility delta due to rounding issues
 const delta = 2.5
@@ -230,7 +230,7 @@ export default defineComponent({
      * @param callback after refreshed, optional
      */
     refresh(callback: (data: VueHorizontalData) => void): void {
-      this.$nextTick(() => {
+      nextTick(() => {
         const data = this.calculate()
 
         this.left = data.left
