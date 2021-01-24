@@ -36,20 +36,9 @@ import {defineComponent, nextTick} from 'vue'
 // Compatibility delta due to rounding issues
 const delta = 2.5
 
-interface VueHorizontalData {
-  left: number;
-  width: number;
-  scrollWidth: number;
-
-  hasPrev: boolean;
-  hasNext: boolean;
-
-  debounceId?: any;
-}
-
 export default defineComponent({
   name: 'VueHorizontal',
-  data(): VueHorizontalData {
+  data() {
     return {
       left: 0,
       width: 0,
