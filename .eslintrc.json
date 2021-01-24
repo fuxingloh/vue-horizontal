@@ -26,5 +26,7 @@
     "test/**"
   ],
   "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "vue/no-ref-as-operand": "off"
   }
 }

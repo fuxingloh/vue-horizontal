@@ -32,7 +32,7 @@ jobs:
         with:
           record: true
           build: npm ci
-          start: npm run serve
+          start: npm run dev
           browser: firefox
           spec: cypress/integration/functional/*
         env:
