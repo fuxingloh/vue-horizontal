@@ -17,16 +17,16 @@ export function Lorem(seed = "1") {
 }
 
 export function loremItems(seed: string, count: number, options = {
-  title: 2,
-  content: 4,
+  title: (lorem: LoremIpsum) => lorem.generateWords(2),
+  content: (lorem: LoremIpsum) => lorem.generateSentences(1),
 }) {
   const lorem = Lorem(seed)
 
   return [...Array(count).keys()].map((i) => {
     return {
       i,
-      title: lorem.generateWords(options.title),
-      content: lorem.generateWords(options.content),
+      title: options.title(lorem),
+      content: options.content(lorem),
     };
   })
 }

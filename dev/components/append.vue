@@ -25,43 +25,46 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, ref, nextTick} from 'vue';
 import VueHorizontal from '@/VueHorizontal.vue';
 import {Lorem} from './utils'
 
-const lorem = Lorem("append")
 
 export default defineComponent({
   components: {
     VueHorizontal
   },
-  data() {
-    return {
-      items: [{
+  setup() {
+    const horizontal = ref<any>(null)
+    const lorem = Lorem("append")
+    const items = ref([
+      {
         i: 0,
         title: lorem.generateWords(1),
         content: lorem.generateWords(4),
-      }],
+      }
+    ])
+
+    return {
+      items,
+      append(count: number) {
+        items.value.push(...[...Array(count).keys()].map((i) => {
+          return {
+            i: i + items.value.length,
+            title: lorem.generateWords(1),
+            content: lorem.generateWords(4),
+          };
+        }))
+
+        nextTick(() => {
+          horizontal.refresh()
+        })
+      },
+      goIndex(index: number) {
+        horizontal.scrollToIndex(index)
+      }
     }
   },
-  methods: {
-    append(count: number) {
-      this.items.push(...[...Array(count).keys()].map((i) => {
-        return {
-          i: i + this.items.length,
-          title: lorem.generateWords(1),
-          content: lorem.generateWords(4),
-        };
-      }))
-
-      this.$nextTick(() => {
-        this.$refs.horizontal.refresh()
-      })
-    },
-    goIndex(index: number) {
-      this.$refs.horizontal.scrollToIndex(index)
-    }
-  }
 });
 </script>
 

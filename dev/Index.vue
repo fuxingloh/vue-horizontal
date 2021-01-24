@@ -18,7 +18,7 @@ export default defineComponent({
   components: components.reduce((map, {name, component}) => {
     map[name] = component
     return map
-  }, {}),
+  }, {} as {[id: string]: any}),
   data() {
     return {
       components: components.map(({name, description, path}) => {

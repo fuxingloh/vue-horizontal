@@ -30,8 +30,11 @@ export default defineComponent({
     VueHorizontal
   },
   setup() {
-    const items = loremItems("snapping", 20);
-    const horizontals = ref([])
+    const items = loremItems("snapping", 20, {
+      title: (lorem) => lorem.generateWords(2),
+      content: (lorem) => lorem.generateWords(4),
+    });
+    const horizontals = ref<any[]>([])
 
     return {
       items,

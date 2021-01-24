@@ -7,7 +7,7 @@ addMatchImageSnapshotCommand({
   failureThresholdType: 'percent',
 });
 
-const left = (_chai, utils) => {
+chai.use((_chai, utils) => {
   _chai.Assertion.addMethod('left', function (left) {
     const $el = utils.flag(this, 'object');
     const elLeft = $el[0].getBoundingClientRect().left
@@ -21,6 +21,4 @@ const left = (_chai, utils) => {
       , elLeft, left
     );
   });
-}
-
-chai.use(left)
+})

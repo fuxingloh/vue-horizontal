@@ -31,33 +31,33 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue';
+import {defineComponent, ref} from 'vue';
 import VueHorizontal from '@/VueHorizontal.vue';
-import {Lorem} from './utils'
+import {loremItems} from './utils'
 
 export default defineComponent({
   components: {
     VueHorizontal
   },
-  data() {
-    const lorem = Lorem("scroll-to-index")
+  setup() {
+    const normal = ref<any>(null)
+    const padded = ref<any>(null)
+
+    const items = loremItems("scroll-to-index", 20, {
+      title: (lorem) => lorem.generateWords(2),
+      content: (lorem) => lorem.generateSentences(1),
+    });
+
     return {
-      items: [...Array(20).keys()].map((i) => {
-        return {
-          i,
-          title: lorem.generateWords(2),
-          content: lorem.generateSentences(1),
-        };
-      }),
+      items,
+      normal,
+      padded,
+      goIndex(index: number) {
+        normal.scrollToIndex(index)
+        padded.scrollToIndex(index)
+      }
     }
   },
-  methods: {
-    goIndex(index: number) {
-      [this.$refs.normal, this.$refs.padded].forEach(vhl => {
-        vhl.scrollToIndex(index)
-      })
-    }
-  }
 });
 </script>
 
