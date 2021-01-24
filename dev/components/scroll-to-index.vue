@@ -77,6 +77,7 @@ section {
 }
 
 .header h6 {
+  flex-shrink: 0;
   background: #0000db;
   font-size: 14px;
   color: white;
@@ -86,7 +87,6 @@ section {
   line-height: 24px;
   border-radius: 12px;
   margin-right: 12px;
-  flex-shrink: 0;
 }
 
 button {

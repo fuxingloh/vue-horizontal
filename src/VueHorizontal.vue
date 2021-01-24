@@ -154,7 +154,7 @@ export default defineComponent({
       const container = this.$refs.container as Element
       const left = container.getBoundingClientRect().left
       const x = left + (container.clientWidth * -this.displacement) - delta
-      const element = this.findNextSlot(x)
+      const element = this.findPrevSlot(x)
 
       if (element) {
         const width = element.getBoundingClientRect().left - left

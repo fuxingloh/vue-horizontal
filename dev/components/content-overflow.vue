@@ -27,8 +27,10 @@ section {
 }
 
 .item {
+  color: white;
   padding: 16px 24px;
   border-radius: 4px;
-  background: #f5f5f5;
+  background-color: #20bf55;
+  background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
 }
 </style>
