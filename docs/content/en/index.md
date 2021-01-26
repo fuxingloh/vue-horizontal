@@ -15,9 +15,9 @@ features:
 
 <alert type="info">
 
-At its core, Vue Horizontal is an ultra simple pure vue horizontal layout for modern responsive web with zero 
-dependencies.
-This is also an ultra complex code snippet dossier with over 100 SPA/SSR/SSG friendly recipes for your design needs.
+At its core, Vue Horizontal is an ultra simple pure vue horizontal layout for modern responsive web with zero
+dependencies. This is also an ultra complex code snippet dossier with over 100 SPA/SSR/SSG friendly recipes for your
+design needs.
 
 </alert>
 
@@ -39,24 +39,24 @@ You can display content horizontally just as you would vertically with any HTML 
 
 ## Motivation
 
-> TLDR: In 2017, I liked how AirBnb does their horizontal design. Couldn't find a library for Vue.  
+> TLDR: In 2017, I liked how AirBnb does their horizontal design. Couldn't find a library for Vue.
 
-Designing your web app for a horizontal experience can tedious and overwhelming if you are new to web development.
-While a vertical design comes naturally as html is naturally vertical by design `display:block`.
-With `display:flex`, aligning your content horizontally becomes nature and initiative but it doesn't support overflow or 
-navigation. You start to add more hacks and tricks to get the design you wanted, but those hacks are not consistent and 
-cross-browser tested, SSG or SEO friendly. You get the idea.
+Designing your web app for a horizontal experience can tedious and overwhelming if you are new to web development. While
+a vertical design comes naturally as html is naturally vertical by design `display:block`. With `display:flex`, aligning
+your content horizontally becomes natural and intuitive but it doesn't support overflow or navigation. You start to add
+more hacks and tricks to get the design you wanted, but those hacks are not consistent and cross-browser tested, SSG or
+SEO friendly. You get the idea.
 
 There are many libraries already in open-source world, some using direct DOM manipulation, some importing another legacy
-JavaScript or JQuery library. You don't want that. Vue already does that. This is Vue native build for Vue, and only Vue
-is the dependency required. All modes of rendering (SPA/SSR/SSG) are supported and tested with E2E tools.
+JavaScript or JQuery library. You don't want that. Vue already does that. This is Vue native created for Vue, and only
+Vue is the peer dependency required. All modes of rendering (SPA/SSR/SSG) are supported and tested with E2E tools.
 
-The actual library is only about 400 LOC while there are at least 100x more LOC in the documentation, end-to-end testing 
+The actual library is only about 400 LOC while there are at least 100x more LOC in the documentation, end-to-end testing
 and a bunch of other fun stuff.
 
 Vue Horizontal is not just a library, **it's a place for everything horizontal.**
-Built for the Vue community.
-With over 100 crafted recipes of design choices and control mechanisms ready for your needs.
+Built for the Vue community. With over 100 crafted recipes of design choices and control mechanisms ready for your
+needs.
 
 
 > Also, originally this project started out as another project
