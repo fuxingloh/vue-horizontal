@@ -1,15 +1,14 @@
 /// <reference types="cypress" />
 
-function toBeDifferentWidth(select) {
+function toBeDifferentWidth(select: string) {
   cy.get(`${select} .v-hl-container > :nth-child(1)`)
     .invoke('outerWidth')
     .then(lhs => {
       cy.get(`${select} .v-hl-container > :nth-child(2)`)
         .invoke('outerWidth')
-        .then(rhs => {
-          expect(lhs).to.be.not.closeTo(rhs, 1);
+        .then((rhs: any) => {
+          expect(lhs).to.be.not.closeTo(rhs as number, 1);
         })
-
     })
 }
 
