@@ -2,9 +2,7 @@
   <main>
     <vue-horizontal ref="horizontal" class="horizontal" :button-between="false" @scroll-debounce="onScrollDebounce">
       <div class="item" v-for="(item, index) in items" :key="index">
-        <div class="content" :style="{background: `url(${item.img})`}">
-          <div class="aspect-ratio"></div>
-        </div>
+        <div class="content" :style="{background: `url(${item.img})`}"></div>
 
         <div class="title">
           <h2>{{ item.title }}</h2>
@@ -13,9 +11,7 @@
     </vue-horizontal>
 
     <div class="pagination">
-      <div class="dot" :class="{current: i - 1 === index}"
-           v-for="i in pages" :key="i"
-           @click="onPageClick(i - 1)">
+      <div class="dot" :class="{current: i - 1 === index}" v-for="i in pages" :key="i" @click="onPageClick(i - 1)">
         <div></div>
       </div>
     </div>
@@ -48,7 +44,8 @@ export default {
     },
     onPageClick(i) {
       if (i === this.pages - 1) {
-        this.$refs.horizontal.scrollToLeft((i + 1) * this.width)
+        // If last page, always scroll to last item
+        this.$refs.horizontal.scrollToIndex(this.items.length - 1)
       } else {
         this.$refs.horizontal.scrollToLeft(i * this.width)
       }
@@ -73,9 +70,6 @@ export default {
   position: relative;
   border-radius: 5px;
   overflow: hidden;
-}
-
-.aspect-ratio {
   padding-top: 60%;
 }
 
@@ -86,6 +80,7 @@ export default {
 }
 </style>
 
+<!-- Pagination CSS -->
 <style scoped>
 .pagination {
   margin-top: 12px;
@@ -106,8 +101,8 @@ export default {
 }
 
 .dot:hover > div {
-  background: white;
   border: 1px solid black;
+  background: white;
 }
 
 .dot.current > div {
