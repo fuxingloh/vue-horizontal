@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-horizontal">
+  <div class="vue-horizontal" style="position: relative; display: flex;">
     <div class="v-hl-btn v-hl-btn-prev" v-if="button && hasPrev" @click.stop="prev" role="button"
          :class="{'v-hl-btn-between': buttonBetween}">
       <slot name="btn-prev">
@@ -32,7 +32,6 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import {VNode} from "vue/types/vnode";
 
 // Compatibility delta due to rounding issues
 const delta = 2.5
@@ -109,41 +108,40 @@ export default Vue.extend({
   mounted() {
     this.onScrollDebounce();
   },
-  computed: {
-    slots(): VNode[] {
-      return this.$slots?.default?.filter(s => s.tag) as VNode[] || []
-    }
-  },
   methods: {
-    findPrevSlot(x: number): VNode | undefined {
-      const slots = this.slots
+    children(): HTMLCollection {
+      const container = this.$refs.container as Element
+      return container.children
+    },
+    findPrevSlot(x: number): Element | undefined {
+      const children = this.children()
 
-      for (let i = 0; i < slots.length; i++) {
-        const rect = (slots[i].elm as Element).getBoundingClientRect()
+      for (let i = 0; i < children.length; i++) {
+        const rect = children[i].getBoundingClientRect()
 
         if (rect.left <= x && x <= rect.right) {
-          return slots[i]
+          return children[i]
         }
 
         if (x <= rect.left) {
-          return slots[i]
+          return children[i]
         }
       }
     },
-    findNextSlot(x: number): VNode | undefined {
-      const slots = this.slots
+    findNextSlot(x: number): Element | undefined {
+      const children = this.children()
 
-      for (let i = 0; i < slots.length; i++) {
-        const rect = (slots[i].elm as Element).getBoundingClientRect()
+      for (let i = 0; i < children.length; i++) {
+        const rect = children[i].getBoundingClientRect()
 
         if (rect.right <= x) {
           continue;
         } else if (rect.left <= x) {
-          return slots[i];
+          return children[i];
         }
 
         if (x <= rect.left) {
-          return slots[i];
+          return children[i];
         }
       }
     },
@@ -156,10 +154,10 @@ export default Vue.extend({
       const container = this.$refs.container as Element
       const left = container.getBoundingClientRect().left
       const x = left + (container.clientWidth * -this.displacement) - delta
-      const slot = this.findPrevSlot(x)
+      const element = this.findPrevSlot(x)
 
-      if (slot) {
-        const width = (slot.elm as Element).getBoundingClientRect().left - left
+      if (element) {
+        const width = element.getBoundingClientRect().left - left
         this.scrollToLeft(container.scrollLeft + width)
         return
       }
@@ -176,10 +174,10 @@ export default Vue.extend({
       const container = this.$refs.container as Element
       const left = container.getBoundingClientRect().left
       const x = left + (container.clientWidth * this.displacement) + delta
-      const slot = this.findNextSlot(x)
+      const element = this.findNextSlot(x)
 
-      if (slot) {
-        const width = (slot.elm as Element).getBoundingClientRect().left - left
+      if (element) {
+        const width = element.getBoundingClientRect().left - left
         if (width > delta) {
           this.scrollToLeft(container.scrollLeft + width)
           return
@@ -194,11 +192,11 @@ export default Vue.extend({
      * @param i index
      */
     scrollToIndex(i: number): void {
-      const slots = this.slots
+      const children = this.children()
 
-      if (slots[i]) {
+      if (children[i]) {
         const container = this.$refs.container as Element
-        const rect = (slots[i].elm as Element).getBoundingClientRect()
+        const rect = children[i].getBoundingClientRect()
 
         const left = rect.left - container.getBoundingClientRect().left
         this.scrollToLeft(container.scrollLeft + left)
@@ -247,7 +245,7 @@ export default Vue.extend({
     },
     calculate(): VueHorizontalData {
       const container = this.$refs.container as Element
-      const slot0 = this.slots[0]?.elm as Element
+      const firstChild = this.children()[0]
 
       function hasNext(): boolean {
         return container.scrollWidth > container.scrollLeft + container.clientWidth + delta
@@ -259,8 +257,8 @@ export default Vue.extend({
         }
 
         const containerVWLeft = container.getBoundingClientRect().left
-        const slot0VWLeft = slot0?.getBoundingClientRect()?.left ?? 0
-        return Math.abs(containerVWLeft - slot0VWLeft) >= delta;
+        const firstChildLeft = firstChild?.getBoundingClientRect()?.left ?? 0
+        return Math.abs(containerVWLeft - firstChildLeft) >= delta;
       }
 
       return {
@@ -276,11 +274,6 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.vue-horizontal {
-  position: relative;
-  display: flex;
-}
-
 .v-hl-btn {
   position: absolute;
   align-self: center;
