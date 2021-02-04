@@ -43,7 +43,8 @@ and a bunch of other fun stuff.
 # for Vue 2
 npm i vue-horizontal
 # for Vue 3
-npm i vue-horizontal@next
+# migration notes: https://github.com/fuxingloh/vue-horizontal/pull/87
+npm i vue-horizontal@next 
 # or
 yarn add vue-horizontal
 # or via <script>
