@@ -282,9 +282,6 @@ export default Vue.extend({
   bottom: 0;
   display: flex;
   align-items: center;
-}
-
-.v-hl-btn:hover {
   cursor: pointer;
 }
 
