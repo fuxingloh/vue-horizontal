@@ -23,11 +23,11 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import VueHorizontal from '@/vue-horizontal.vue';
+import {defineComponent} from 'vue';
+import VueHorizontal from '@/VueHorizontal';
 import {Lorem} from './utils'
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     VueHorizontal
   },
@@ -62,6 +62,7 @@ section {
 }
 
 .header h6 {
+  flex-shrink: 0;
   background: #0000db;
   font-size: 14px;
   color: white;
@@ -71,25 +72,24 @@ section {
   line-height: 24px;
   border-radius: 12px;
   margin-right: 12px;
-  flex-shrink: 0;
 }
 
-div > div >>> .v-hl-container {
+div > div ::v-deep(.v-hl-container) {
   background: purple;
 }
 
-div > div >>> .v-hl-container::-webkit-scrollbar {
+div > div ::v-deep(.v-hl-container::-webkit-scrollbar) {
   width: 8px;
   height: 8px;
   background: transparent;
 }
 
-div > div >>> .v-hl-container::-webkit-scrollbar-thumb {
+div > div ::v-deep(.v-hl-container::-webkit-scrollbar-thumb) {
   border-radius: 10px;
   background: blue;
 }
 
-div > div >>> .v-hl-container::-webkit-scrollbar-thumb:hover {
+div > div ::v-deep(.v-hl-container::-webkit-scrollbar-thumb:hover) {
   background: red;
 }
 </style>

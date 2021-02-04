@@ -1,10 +1,10 @@
 <template>
   <div>
     <vue-horizontal
-        @scroll="(data) => scroll = data"
-        @scroll-debounce="(data) => scrollDebounce = data"
-        @prev="() => prev = 'prev'"
-        @next="() => next = 'next'"
+      @scroll="(data) => scroll = data"
+      @scroll-debounce="(data) => scrollDebounce = data"
+      @prev="() => prev = 'prev'"
+      @next="() => next = 'next'"
     >
       <section v-for="item in items" :key="item.i">
         <div class="header">
@@ -23,23 +23,19 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import VueHorizontal from '@/vue-horizontal.vue';
-import {Lorem} from './utils'
+import {defineComponent} from 'vue';
+import VueHorizontal from '@/VueHorizontal';
+import {loremItems} from './utils'
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     VueHorizontal
   },
   data() {
-    const lorem = Lorem("event")
     return {
-      items: [...Array(20).keys()].map((i) => {
-        return {
-          i,
-          title: lorem.generateWords(1),
-          content: lorem.generateWords(6),
-        };
+      items: loremItems("event", 20, {
+        title: (lorem) => lorem.generateWords(1),
+        content: (lorem) => lorem.generateWords(6),
       }),
       scroll: 'no-event',
       scrollDebounce: 'no-event',
@@ -65,6 +61,7 @@ section {
 }
 
 .header h6 {
+  flex-shrink: 0;
   background: #0000db;
   font-size: 14px;
   color: white;

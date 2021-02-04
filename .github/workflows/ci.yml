@@ -2,22 +2,20 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, next ]
     paths:
       - 'src/**'
       - 'dev/**'
-      - 'build/**'
       - '*.json'
       - '*.js'
       - '*.ts'
 
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
-    branches: [ main ]
+    branches: [ main, next ]
     paths:
       - 'src/**'
       - 'dev/**'
-      - 'build/**'
       - '*.json'
       - '*.js'
       - '*.ts'
@@ -32,13 +30,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
-
-      - uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            npm-
 
       - run: npm ci
 
@@ -59,13 +50,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
-
-      - uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: npm-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            npm-
 
       - run: npm ci
 

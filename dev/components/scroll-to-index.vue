@@ -31,34 +31,33 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import VueHorizontal from '@/vue-horizontal.vue';
-import {Lorem} from './utils'
+import {defineComponent, ref} from 'vue';
+import VueHorizontal from '@/VueHorizontal';
+import {loremItems} from './utils'
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     VueHorizontal
   },
-  data() {
-    const lorem = Lorem("scroll-to-index")
+  setup() {
+    const normal = ref<any>(null)
+    const padded = ref<any>(null)
+
+    const items = loremItems("scroll-to-index", 20, {
+      title: (lorem) => lorem.generateWords(2),
+      content: (lorem) => lorem.generateSentences(1),
+    });
+
     return {
-      items: [...Array(20).keys()].map((i) => {
-        return {
-          i,
-          title: lorem.generateWords(2),
-          content: lorem.generateSentences(1),
-        };
-      }),
+      items,
+      normal,
+      padded,
+      goIndex(index: number) {
+        normal.value.scrollToIndex(index)
+        padded.value.scrollToIndex(index)
+      }
     }
   },
-  methods: {
-    goIndex(index: number) {
-      const normal = this.$refs.normal as any
-      const padded = this.$refs.padded as any
-      normal.scrollToIndex(index)
-      padded.scrollToIndex(index)
-    }
-  }
 });
 </script>
 
@@ -74,9 +73,11 @@ section {
 
 .header {
   display: flex;
+  word-break: break-all;
 }
 
 .header h6 {
+  flex-shrink: 0;
   background: #0000db;
   font-size: 14px;
   color: white;
@@ -86,7 +87,6 @@ section {
   line-height: 24px;
   border-radius: 12px;
   margin-right: 12px;
-  flex-shrink: 0;
 }
 
 button {

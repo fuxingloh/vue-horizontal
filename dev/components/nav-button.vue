@@ -35,13 +35,13 @@
 
     <vue-horizontal class="button-replaced">
       <template v-slot:btn-prev>
-        <button>
+        <button class="replaced-prev">
           PREV
         </button>
       </template>
 
       <template v-slot:btn-next>
-        <button>
+        <button class="replaced-next">
           NEXT
         </button>
       </template>
@@ -99,11 +99,11 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import VueHorizontal from '@/vue-horizontal.vue';
+import {defineComponent} from 'vue';
+import VueHorizontal from '@/VueHorizontal';
 import {Lorem} from './utils'
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     VueHorizontal
   },
@@ -120,6 +120,7 @@ export default Vue.extend({
     }
   },
   methods: {
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     nextPreventDefault() {
 
     }
@@ -142,6 +143,7 @@ section {
 }
 
 .header h6 {
+  flex-shrink: 0;
   background: #0000db;
   font-size: 14px;
   color: white;

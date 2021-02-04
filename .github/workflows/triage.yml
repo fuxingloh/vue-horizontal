@@ -3,7 +3,7 @@ name: Triage
 on:
   pull_request:
     types: [ opened, reopened, edited, synchronize, ready_for_review ]
-    branches: [ main ]
+    branches: [ main, next ]
 
 jobs:
   main:

@@ -1,14 +1,14 @@
 <template>
   <div>
-    <vue-horizontal responsive ref="horizontal">
-      <section v-for="item in items" :key="item.i">
+    <VueHorizontal ref="horizontal">
+      <section v-for="item in items" :key="item.i" class="responsive">
         <div class="header">
           <h6>{{ item.i }}</h6>
           <h3>{{ item.title }}</h3>
         </div>
         <p>{{ item.content }}</p>
       </section>
-    </vue-horizontal>
+    </VueHorizontal>
 
     <div>
       <button @click="append(i)" v-for="i in [1,5,10,20,50,100,1000]" :key="i" :class="`append-${i}`">
@@ -25,45 +25,45 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import VueHorizontal from '@/vue-horizontal.vue';
+import {defineComponent, ref} from 'vue';
+import VueHorizontal from '@/VueHorizontal';
 import {Lorem} from './utils'
 
-const lorem = Lorem("append")
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     VueHorizontal
   },
-  data() {
-    return {
-      items: [{
+  setup() {
+    const horizontal = ref<any>(null)
+    const lorem = Lorem("append")
+    const items = ref([
+      {
         i: 0,
         title: lorem.generateWords(1),
         content: lorem.generateWords(4),
-      }],
+      }
+    ])
+
+    return {
+      items,
+      horizontal,
+      append(count: number) {
+        items.value.push(...[...Array(count).keys()].map((i) => {
+          return {
+            i: i + items.value.length,
+            title: lorem.generateWords(1),
+            content: lorem.generateWords(4),
+          };
+        }))
+
+        horizontal.value.refresh()
+      },
+      goIndex(index: number) {
+        horizontal.value.scrollToIndex(index)
+      }
     }
   },
-  methods: {
-    append(count: number) {
-      this.items.push(...[...Array(count).keys()].map((i) => {
-        return {
-          i: i + this.items.length,
-          title: lorem.generateWords(1),
-          content: lorem.generateWords(4),
-        };
-      }))
-
-      const horizontal = this.$refs.horizontal as any
-      this.$nextTick(() => {
-        horizontal.refresh()
-      })
-    },
-    goIndex(index: number) {
-      const horizontal = this.$refs.horizontal as any
-      horizontal.scrollToIndex(index)
-    }
-  }
 });
 </script>
 
@@ -79,8 +79,8 @@ section {
 }
 
 .header h6 {
-  background: #0000db;
   flex-shrink: 0;
+  background: #0000db;
   font-size: 14px;
   color: white;
   width: 24px;
@@ -94,5 +94,40 @@ section {
 button {
   margin-top: 24px;
   margin-right: 12px;
+}
+</style>
+
+<style scoped>
+.responsive {
+  width: 100%;
+  margin-right: 24px;
+}
+
+.responsive:last-child {
+  margin-right: 0;
+}
+
+@media (min-width: 640px) {
+  .responsive {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive {
+    width: calc((100% - 48px) / 3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive {
+    width: calc((100% - 72px) / 4);
+  }
+}
+
+@media (min-width: 1280px) {
+  .responsive {
+    width: calc((100% - 96px) / 5);
+  }
 }
 </style>
