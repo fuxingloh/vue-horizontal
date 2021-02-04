@@ -1,6 +1,6 @@
 {
   "name": "vue-horizontal",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.",
   "author": "Fuxing Loh",
   "repository": {
