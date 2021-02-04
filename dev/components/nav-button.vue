@@ -35,13 +35,13 @@
 
     <vue-horizontal class="button-replaced">
       <template v-slot:btn-prev>
-        <button>
+        <button class="replaced-prev">
           PREV
         </button>
       </template>
 
       <template v-slot:btn-next>
-        <button>
+        <button class="replaced-next">
           NEXT
         </button>
       </template>

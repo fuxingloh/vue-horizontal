@@ -33,11 +33,11 @@ describe('nav-button', () => {
     cy.get('.button-replaced .v-hl-btn-prev').should('not.exist');
     cy.get('.button-replaced .v-hl-btn-next').should('exist');
 
-    cy.get('.button-replaced .v-hl-btn-next').click()
+    cy.get('.button-replaced .replaced-next').click()
     cy.get('.button-replaced .v-hl-btn-prev').should('exist');
     cy.get('.button-replaced .v-hl-btn-next').should('exist');
 
-    cy.get('.button-replaced .v-hl-btn-prev').click()
+    cy.get('.button-replaced .replaced-prev').click()
     cy.get('.button-replaced .v-hl-btn-prev').should('not.exist');
     cy.get('.button-replaced .v-hl-btn-next').should('exist');
   });

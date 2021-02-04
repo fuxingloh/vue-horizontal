@@ -72,6 +72,6 @@ h1 {
 }
 
 .vue-horizontal {
-  //margin-bottom: 24px;
+  margin-bottom: 24px;
 }
 </style>

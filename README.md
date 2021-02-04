@@ -81,7 +81,7 @@ Vue.component(VueHorizontal)
 
 ```vue
 <template>
-  <vue-horizontal responsive>
+  <vue-horizontal>
     <section v-for="item in items" :key="item.title">
       <h3>{{ item.title }}</h3>
       <p>{{ item.content }}</p>

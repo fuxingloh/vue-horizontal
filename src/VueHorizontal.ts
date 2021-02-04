@@ -293,8 +293,8 @@ export default defineComponent({
         }
       }, [
         direction === 'prev' ?
-          this.$slots.prev ? this.$slots.prev() : svgButton('prev') :
-          this.$slots.next ? this.$slots.next() : svgButton('next')
+          this.$slots['btn-prev'] ? this.$slots['btn-prev']() : svgButton('prev') :
+          this.$slots['btn-next'] ? this.$slots['btn-next']() : svgButton('next')
       ])
     };
 
