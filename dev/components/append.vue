@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import {defineComponent, ref} from 'vue';
-import VueHorizontal from '@/VueHorizontal.vue';
+import VueHorizontal from '@/VueHorizontal';
 import {Lorem} from './utils'
 
 

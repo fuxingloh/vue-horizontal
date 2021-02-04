@@ -12,7 +12,7 @@
 <script lang="ts">
 import {defineComponent} from 'vue';
 import {items} from './utils'
-import VueHorizontal from '@/VueHorizontal.vue';
+import VueHorizontal from '@/VueHorizontal';
 
 export default defineComponent({
   components: {

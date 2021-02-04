@@ -10,7 +10,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/entry.ts'),
+      entry: resolve(__dirname, 'src/VueHorizontal.ts'),
       name: 'VueHorizontal'
     },
     emptyOutDir: true,

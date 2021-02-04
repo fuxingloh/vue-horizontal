@@ -1,113 +1,4 @@
-<template>
-  <div class="vue-horizontal"
-       :style="{
-        'position': 'relative',
-        'display': 'flex',
-       }"
-  >
-    <div class="v-hl-btn v-hl-btn-prev" v-if="button && hasPrev" @click.stop="prev" role="button"
-         :style="{
-          'left': 0,
-          'cursor': 'pointer',
-          'position': 'absolute',
-          'align-self': 'center',
-          'z-index': 1,
-          'top': 0,
-          'bottom': 0,
-          'display': 'flex',
-          'align-items': 'center',
-          'transform': buttonBetween ? 'translateX(-50%)': 'none',
-         }"
-    >
-      <slot name="btn-prev">
-        <svg class="v-hl-svg" viewBox="0 0 24 24" aria-label="horizontal scroll area navigate to previous button"
-             :style="{
-              'width': '40px',
-              'height': '40px',
-              'margin': '6px',
-              'padding': '6px',
-              'border-radius': '20px',
-              'box-sizing': 'border-box',
-              'background': 'white',
-              'color': 'black',
-              'fill': 'currentColor',
-              'box-shadow': '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
-             }"
-        >
-          <path d="m9.8 12 5 5a1 1 0 1 1-1.4 1.4l-5.7-5.7a1 1 0 0 1 0-1.4l5.7-5.7a1 1 0 0 1 1.4 1.4l-5 5z"/>
-        </svg>
-      </slot>
-    </div>
-
-    <div class="v-hl-btn v-hl-btn-next" v-if="button && hasNext" @click.stop="next" role="button"
-         :style="{
-          'right': 0,
-          'cursor': 'pointer',
-          'position': 'absolute',
-          'align-self': 'center',
-          'z-index': 1,
-          'top': 0,
-          'bottom': 0,
-          'display': 'flex',
-          'align-items': 'center',
-          'transform': buttonBetween ? 'translateX(50%)': 'none',
-         }"
-    >
-      <slot name="btn-next">
-        <svg class="v-hl-svg" viewBox="0 0 24 24" aria-label="horizontal scroll area navigate to next button"
-             :style="{
-              'width': '40px',
-              'height': '40px',
-              'margin': '6px',
-              'padding': '6px',
-              'border-radius': '20px',
-              'box-sizing': 'border-box',
-              'background': 'white',
-              'color': 'black',
-              'fill': 'currentColor',
-              'box-shadow': '0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)',
-             }"
-        >
-          <path d="m14.3 12.1-5-5a1 1 0 0 1 1.4-1.4l5.7 5.7a1 1 0 0 1 0 1.4l-5.7 5.7a1 1 0 0 1-1.4-1.4l5-5z"/>
-        </svg>
-      </slot>
-    </div>
-
-    <div class="v-hl-container" ref="container" @scroll.passive="onScroll"
-         :class="{
-          'v-hl-scroll': scroll,
-          'v-hl-snap-start': snap === 'start',
-          'v-hl-snap-center': snap === 'center',
-          'v-hl-snap-end': snap === 'end',
-          }"
-         :style="{
-          'display': 'flex',
-          'width': '100%',
-          'margin': 0,
-          'padding': 0,
-          'border': 'none',
-          'box-sizing': 'content-box',
-          'overflow-x': 'scroll',
-          'overflow-y': 'hidden',
-          'scroll-snap-type': 'x mandatory',
-          '-webkit-overflow-scrolling': 'touch',
-
-          /* Hiding scrollbar */
-          'scrollbar-width': 'none',
-          '-ms-overflow-style': 'none',
-          /* To effectively hide scrollbar for iOS Safari. 10% of the users. */
-          'padding-bottom': '30px',
-          'margin-bottom': '-30px',
-          'clip-path': 'inset(0 0 30px 0)',
-         }"
-    >
-      <slot></slot>
-    </div>
-  </div>
-</template>
-
-<script lang="ts">
-import {defineComponent, nextTick} from 'vue'
+import {defineComponent, nextTick, h, VNode, createCommentVNode} from 'vue'
 
 // Compatibility delta due to rounding issues
 const delta = 2.5
@@ -123,7 +14,7 @@ export default defineComponent({
       hasPrev: false,
       hasNext: false,
 
-      debounceId: undefined,
+      debounceId: undefined as any,
     }
   },
   props: {
@@ -206,7 +97,8 @@ export default defineComponent({
     /**
      * Toggle and scroll to the previous set of horizontal content.
      */
-    prev(): void {
+    prev(e: Event): void {
+      e.stopPropagation()
       this.$emit('prev')
 
       const container = this.$refs.container as Element
@@ -226,7 +118,9 @@ export default defineComponent({
     /**
      * Toggle and scroll to the next set of horizontal content.
      */
-    next(): void {
+    next(e: Event): void {
+      // TODO(fuxing): test stop stopPropagation
+      e.stopPropagation()
       this.$emit('next')
 
       const container = this.$refs.container as Element
@@ -278,8 +172,8 @@ export default defineComponent({
       clearTimeout(this.debounceId);
       this.debounceId = setTimeout(this.onScrollDebounce, 100);
     },
-    onScrollDebounce(): void {
-      this.refresh((data) => {
+    onScrollDebounce(): Promise<void> {
+      return this.refresh((data) => {
         this.$emit('scroll-debounce', data)
       })
     },
@@ -287,8 +181,8 @@ export default defineComponent({
      * Manually refresh vue-horizontal
      * @param callback after refreshed, optional
      */
-    refresh(callback: (data: VueHorizontalData) => void): void {
-      nextTick(() => {
+    refresh(callback: (data: any) => void): Promise<void> {
+      return nextTick(() => {
         const data = this.calculate()
 
         this.left = data.left
@@ -300,7 +194,7 @@ export default defineComponent({
         callback(data)
       })
     },
-    calculate(): VueHorizontalData {
+    calculate() {
       const container = this.$refs.container as Element
       const firstChild = this.children()[0]
 
@@ -327,27 +221,149 @@ export default defineComponent({
       }
     },
   },
+  render() {
+    const svgButton = (direction: 'prev' | 'next') => {
+      const previous = h("path", {d: "m9.8 12 5 5a1 1 0 1 1-1.4 1.4l-5.7-5.7a1 1 0 0 1 0-1.4l5.7-5.7a1 1 0 0 1 1.4 1.4l-5 5z"})
+      const next = h('path', {d: "m14.3 12.1-5-5a1 1 0 0 1 1.4-1.4l5.7 5.7a1 1 0 0 1 0 1.4l-5.7 5.7a1 1 0 0 1-1.4-1.4l5-5z"})
+
+      return h('svg', {
+        class: "v-hl-svg",
+        viewBox: "0 0 24 24",
+        "aria-label": `horizontal scroll area button for navigation to ${direction === 'prev' ? 'previous' : 'next'} section`,
+        style: {
+          width: "40px",
+          height: "40px",
+          margin: "6px",
+          padding: "6px",
+          "border-radius": "20px",
+          "box-sizing": "border-box",
+          background: "white",
+          color: "black",
+          fill: "currentColor",
+          "box-shadow": "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)"
+        }
+      }, [
+        direction === 'prev' ? previous : next
+      ])
+    };
+
+    const slotButton = (direction: 'prev' | 'next') => {
+      if (!this.button) {
+        return createCommentVNode('', true)
+      }
+
+      if (direction === 'prev' && !this.hasPrev) {
+        return createCommentVNode('', true)
+      }
+
+      if (direction === 'next' && !this.hasNext) {
+        return createCommentVNode('', true)
+      }
+
+      return h('div', {
+        key: direction === 'prev' ? 0 : 1,
+        class: `v-hl-btn v-hl-btn-${direction}`,
+        onClick: direction === 'prev' ? this.prev : this.next,
+        role: "button",
+        style: {
+          ...direction === 'prev' ? {
+            left: 0,
+            transform: this.buttonBetween ? "translateX(-50%)" : "none"
+          } : {
+            right: 0,
+            transform: this.buttonBetween ? "translateX(50%)" : "none"
+          },
+          cursor: "pointer",
+          position: "absolute",
+          top: 0,
+          bottom: 0,
+          display: "flex",
+          "align-self": "center",
+          "z-index": 1,
+          "align-items": "center",
+          // container scroll overflow mirroring/fix
+          ...this.scroll ? {} : {
+            "overflow-x": "scroll",
+            "scrollbar-width": "none",
+            "-ms-overflow-style": "none",
+            "padding-bottom": "30px",
+            "margin-bottom": "-30px",
+            "clip-path": "inset(0 0 30px 0)",
+          }
+        }
+      }, [
+        direction === 'prev' ?
+          this.$slots.prev ? this.$slots.prev() : svgButton('prev') :
+          this.$slots.next ? this.$slots.next() : svgButton('next')
+      ])
+    };
+
+    const slotItems = () => {
+      if (!this.$slots.default) {
+        return []
+      }
+
+      const injectStyle = (slot: VNode) => {
+        slot.props = slot.props || {}
+        slot.props.style = slot.props.style || {}
+        slot.props.style = {
+          'flex-shrink': 0,
+          'box-sizing': 'border-box',
+          /* Prevent content from collapsing when empty. E.g. image while loading height=0. */
+          'min-height': '1px',
+          'scroll-snap-align': this.snap,
+        }
+      }
+
+      const slots = this.$slots.default()
+      slots.forEach(slot => {
+        if (slot.el) {
+          return injectStyle(slot)
+        }
+
+        if (slot.children && Array.isArray(slot.children)) {
+          slot.children.forEach(slot => {
+            injectStyle(slot as VNode)
+          })
+        }
+      })
+      return slots
+    }
+
+    return h('div', {
+      class: 'vue-horizontal',
+      style: {
+        position: 'relative',
+        display: 'flex',
+      }
+    }, [
+      slotButton('prev'),
+      slotButton('next'),
+      h('div', {
+        class: "v-hl-container",
+        ref: "container",
+        onScrollPassive: this.onScroll,
+        style: {
+          display: "flex",
+          width: "100%",
+          margin: 0,
+          padding: 0,
+          border: "none",
+          "box-sizing": "content-box",
+          "overflow-x": "scroll",
+          "overflow-y": "hidden",
+          "scroll-snap-type": "x mandatory",
+          "-webkit-overflow-scrolling": "touch",
+          ...this.scroll ? {} : {
+            // container scroll overflow mirroring/fix
+            "scrollbar-width": "none",
+            "-ms-overflow-style": "none",
+            "padding-bottom": "30px",
+            "margin-bottom": "-30px",
+            "clip-path": "inset(0 0 30px 0)",
+          },
+        }
+      }, slotItems()),
+    ])
+  }
 });
-</script>
-
-<style scoped>
-::v-slotted(.v-hl-container > *) {
-  flex-shrink: 0;
-  box-sizing: border-box;
-
-  /* Prevent content from collapsing when empty. E.g. image while loading height=0. */
-  min-height: 1px;
-}
-
-::v-slotted(.v-hl-snap-start > *) {
-  scroll-snap-align: start;
-}
-
-::v-slotted(.v-hl-snap-center > *) {
-  scroll-snap-align: center;
-}
-
-::v-slotted(.v-hl-snap-end > *) {
-  scroll-snap-align: end;
-}
-</style>
