@@ -5,7 +5,7 @@
 [![SSG](https://github.com/fuxingloh/vue-horizontal/workflows/SSG/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ASSG+branch%3Amain)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
 
-# [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal.svg)](https://www.npmjs.com/package/vue-horizontal)
+# [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal/latest)](https://www.npmjs.com/package/vue-horizontal) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal/next)](https://www.npmjs.com/package/vue-horizontal)
 
 Designing your web app for a horizontal experience can tedious and overwhelming if you are new to web development. While
 a vertical design comes naturally as html is naturally vertical by design `display:block`. With `display:flex`, aligning
@@ -40,7 +40,11 @@ and a bunch of other fun stuff.
 ## Installation
 
 ```shell
+# for Vue 2
 npm i vue-horizontal
+# for Vue 3
+# migration notes: https://github.com/fuxingloh/vue-horizontal/pull/87
+npm i vue-horizontal@next 
 # or
 yarn add vue-horizontal
 # or via <script>
