@@ -4,9 +4,9 @@
 [![SSR](https://github.com/fuxingloh/vue-horizontal/workflows/SSR/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ASSR+branch%3Amain)
 [![SSG](https://github.com/fuxingloh/vue-horizontal/workflows/SSG/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ASSG+branch%3Amain)
 [![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffuxingloh%2Fvue-horizontal.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffuxingloh%2Fvue-horizontal?ref=badge_shield)
 
 # [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal/latest)](https://www.npmjs.com/package/vue-horizontal) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal/next)](https://www.npmjs.com/package/vue-horizontal)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffuxingloh%2Fvue-horizontal.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffuxingloh%2Fvue-horizontal?ref=badge_shield)
 
 Designing your web app for a horizontal experience can tedious and overwhelming if you are new to web development. While
 a vertical design comes naturally as html is naturally vertical by design `display:block`. With `display:flex`, aligning
