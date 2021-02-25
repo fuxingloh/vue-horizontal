@@ -193,6 +193,5 @@ on a legacy js/jquery dependency.
 This project is another take on it with an ultra simple implementation that is extensible and moves the responsibility
 to the user rather than the library.
 
-
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffuxingloh%2Fvue-horizontal.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffuxingloh%2Fvue-horizontal?ref=badge_large)
