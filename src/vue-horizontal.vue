@@ -108,6 +108,9 @@ export default Vue.extend({
   mounted() {
     this.onScrollDebounce();
   },
+  beforeDestroy() {
+    clearTimeout(this.debounceId)
+  },
   methods: {
     children(): HTMLCollection {
       const container = this.$refs.container as Element
