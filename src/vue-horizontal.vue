@@ -216,10 +216,9 @@ export default Vue.extend({
     },
     onScroll(): void {
       const container = this.$refs.container as Element
-      
-      //Temporary resolves
-      //https://github.com/fuxingloh/vue-horizontal/issues/99#issue-862691647
-      if(container == null) return;
+
+      // Resolves https://github.com/fuxingloh/vue-horizontal/issues/99#issue-862691647
+      if (!container) return;
 
       this.$emit('scroll', {
         left: container.scrollLeft,
