@@ -5,13 +5,6 @@ position: 500
 category: Recipes
 ---
 
-<alert type="warning">
-
-  Keep a look out on this space. Constantly adding more recipes over the next few months.
-  [Give this repo a star, it will help out greatly!](https://github.com/fuxingloh/vue-horizontal)
-
-</alert>
-
 ## What is recipes?
 
 * Vue Horizontal is required, and you need to [install it](/installation).
