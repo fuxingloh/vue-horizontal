@@ -192,7 +192,7 @@ export default Vue.extend({
     },
     /**
      * Index of the slots to scroll to.
-     * @param i index
+     * @param {number} i index
      */
     scrollToIndex(i: number): void {
       const children = this.children()
@@ -207,8 +207,8 @@ export default Vue.extend({
     },
     /**
      * Amount of pixel to scroll to on the left.
-     * @param left of the horizontal
-     * @param behavior smooth|auto
+     * @param {number} left of the horizontal
+     * @param {'smooth' | 'auto} [behavior='smooth']
      */
     scrollToLeft(left: number, behavior: "smooth" | "auto" = "smooth"): void {
       const element = this.$refs.container as Element
@@ -235,9 +235,9 @@ export default Vue.extend({
     },
     /**
      * Manually refresh vue-horizontal
-     * @param callback after refreshed, optional
+     * @param {(data: VueHorizontalData) => void} [callback] after refreshed, optional
      */
-    refresh(callback: (data: VueHorizontalData) => void): void {
+    refresh(callback?: (data: VueHorizontalData) => void): void {
       this.$nextTick(() => {
         const data = this.calculate()
 
@@ -247,7 +247,7 @@ export default Vue.extend({
         this.hasNext = data.hasNext
         this.hasPrev = data.hasPrev
 
-        callback(data)
+        callback?.(data)
       })
     },
     calculate(): VueHorizontalData {
