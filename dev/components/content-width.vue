@@ -48,23 +48,19 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import VueHorizontal from '@/vue-horizontal.vue';
-import {Lorem} from './utils'
+import {defineComponent} from 'vue';
+import VueHorizontal from '@/VueHorizontal';
+import {loremItems} from './utils'
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     VueHorizontal
   },
-  data() {
-    const lorem = Lorem("content-width")
+  setup() {
     return {
-      items: [...Array(20).keys()].map((i) => {
-        return {
-          i,
-          title: lorem.generateWords(2),
-          content: lorem.generateWords(6),
-        };
+      items: loremItems("content-width", 20, {
+        title: (lorem) => lorem.generateWords(2),
+        content: (lorem) => lorem.generateWords(6),
       }),
     }
   },
@@ -84,6 +80,7 @@ section {
 }
 
 .header h6 {
+  flex-shrink: 0;
   background: #0000db;
   font-size: 14px;
   color: white;

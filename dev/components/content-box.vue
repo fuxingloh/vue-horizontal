@@ -10,14 +10,14 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import VueHorizontal from '@/vue-horizontal.vue';
+import {defineComponent} from 'vue';
+import VueHorizontal from '@/VueHorizontal';
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     VueHorizontal
   },
-  data() {
+  setup() {
     return {
       items: [...Array(20).keys()].map((i) => {
         return {i, title: `Item ${i}`, content: `Content box ${i}`};

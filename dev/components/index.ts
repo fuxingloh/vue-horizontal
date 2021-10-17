@@ -12,6 +12,7 @@ import Responsive from './responsive.vue';
 import Move from './move.vue';
 import ContentOverflow from './content-overflow.vue';
 import Append from './append.vue';
+import Chinese from './chinese.vue';
 
 export interface ComponentMeta {
   path: string;
@@ -104,6 +105,12 @@ const components: ComponentMeta[] = [
     name: 'append',
     description: 'Dom manipulation',
     component: Append,
+  },
+  {
+    path: '/chinese',
+    name: 'chinese',
+    description: 'To test compatibility with all languages and check for oddities.',
+    component: Chinese,
   },
 ]
 

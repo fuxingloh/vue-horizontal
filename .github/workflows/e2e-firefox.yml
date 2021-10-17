@@ -2,7 +2,7 @@ name: firefox
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, next ]
     paths:
       - 'cypress/**'
       - 'src/**'
@@ -10,7 +10,7 @@ on:
 
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
-    branches: [ main ]
+    branches: [ main, next ]
     paths:
       - 'cypress/**'
       - 'src/**'
@@ -32,9 +32,9 @@ jobs:
         with:
           record: true
           build: npm ci
-          start: npm run serve
+          start: npm run dev
           browser: firefox
-          spec: cypress/integration/functional/*
+#          spec: cypress/integration/functional/*
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

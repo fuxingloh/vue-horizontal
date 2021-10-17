@@ -1,23 +1,23 @@
 <template>
   <div>
-    <vue-horizontal responsive>
-      <section v-for="item in items" :key="item.i">
+    <VueHorizontal>
+      <section v-for="item in items" :key="item.i" class="responsive">
         <div class="header">
           <h6>{{ item.i }}</h6>
           <h3>{{ item.title }}</h3>
         </div>
         <p>{{ item.content }}</p>
       </section>
-    </vue-horizontal>
+    </VueHorizontal>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
-import VueHorizontal from '@/vue-horizontal.vue';
+import {defineComponent} from 'vue';
+import VueHorizontal from '@/VueHorizontal';
 import {Lorem} from './utils'
 
-export default Vue.extend({
+export default defineComponent({
   components: {
     VueHorizontal
   },
@@ -48,6 +48,7 @@ section {
 }
 
 .header h6 {
+  flex-shrink: 0;
   background: #0000db;
   font-size: 14px;
   color: white;
@@ -59,3 +60,39 @@ section {
   margin-right: 12px;
 }
 </style>
+
+<style scoped>
+.responsive {
+  width: 100%;
+  margin-right: 24px;
+}
+
+.responsive:last-child {
+  margin-right: 0;
+}
+
+@media (min-width: 640px) {
+  .responsive {
+    width: calc((100% - 24px) / 2);
+  }
+}
+
+@media (min-width: 768px) {
+  .responsive {
+    width: calc((100% - 48px) / 3);
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive {
+    width: calc((100% - 72px) / 4);
+  }
+}
+
+@media (min-width: 1280px) {
+  .responsive {
+    width: calc((100% - 96px) / 5);
+  }
+}
+</style>
+
