@@ -1,6 +1,6 @@
 {
   "name": "vue-horizontal",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "An ultra simple pure vue horizontal layout for modern responsive web with zero dependencies.",
   "author": "Fuxing Loh",
   "repository": {
@@ -58,7 +58,7 @@
     "@vitejs/plugin-vue": "^1.0.4",
     "@vue/compiler-sfc": "^3.0.5",
     "@vuedx/typescript-plugin-vue": "^0.6.0",
-    "cypress": "^6.3.0",
+    "cypress": "^8.6.0",
     "cypress-image-snapshot": "^4.0.1",
     "eslint": "^7.18.0",
     "eslint-plugin-vue": "^7.5.0",
