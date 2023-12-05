@@ -114,7 +114,7 @@ export default Vue.extend({
   methods: {
     children(): HTMLCollection {
       const container = this.$refs.container as Element
-      return container.children
+      return container?.children ?? []
     },
     findPrevSlot(x: number): Element | undefined {
       const children = this.children()
