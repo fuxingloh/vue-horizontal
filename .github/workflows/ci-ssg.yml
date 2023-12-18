@@ -3,16 +3,9 @@ name: "SSR"
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'src/**'
-      - 'test/**'
-
   pull_request:
     types: [ opened, reopened, synchronize, ready_for_review ]
     branches: [ main ]
-    paths:
-      - 'src/**'
-      - 'test/**'
 
 jobs:
   ci:
@@ -23,6 +16,7 @@ jobs:
         working-directory: test/ssr
     steps:
       - uses: actions/checkout@v2
+
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
