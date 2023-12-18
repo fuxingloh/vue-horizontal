@@ -1,22 +1,19 @@
-[![chrome](https://github.com/fuxingloh/vue-horizontal/workflows/chrome/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Achrome+branch%3Amain)
-[![firefox](https://github.com/fuxingloh/vue-horizontal/workflows/firefox/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Afirefox+branch%3Amain)
-[![edge](https://github.com/fuxingloh/vue-horizontal/workflows/edge/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3Aedge+branch%3Amain)
-[![SSR](https://github.com/fuxingloh/vue-horizontal/workflows/SSR/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ASSR+branch%3Amain)
-[![SSG](https://github.com/fuxingloh/vue-horizontal/workflows/SSG/badge.svg)](https://github.com/fuxingloh/vue-horizontal/actions?query=workflow%3ASSG+branch%3Amain)
-[![License MIT](https://img.shields.io/github/license/fuxingloh/vue-horizontal)](https://github.com/fuxingloh/vue-horizontal/blob/main/LICENSE)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffuxingloh%2Fvue-horizontal.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffuxingloh%2Fvue-horizontal?ref=badge_shield)
-
 # [Vue Horizontal](https://vue-horizontal.fuxing.dev) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal/latest)](https://www.npmjs.com/package/vue-horizontal) [![vue-horizontal](https://img.shields.io/npm/v/vue-horizontal/next)](https://www.npmjs.com/package/vue-horizontal)
 
-Designing your web app for a horizontal experience can tedious and overwhelming if you are new to web development. While
-a vertical design comes naturally as html is naturally vertical by design `display:block`. With `display:flex`, aligning
-your content horizontally becomes natural and intuitive but it doesn't support overflow or navigation. You start to add
-more hacks and tricks to get the design you wanted, but those hacks are not consistent and cross-browser tested, SSG or
-SEO friendly. You get the idea.
+Designing your web app for a horizontal experience can be tedious and overwhelming if you are new to web development.
+While a vertical design comes naturally as html is naturally vertical by design `display:block`.
+With `display:flex`, aligning your content horizontally becomes natural and intuitive,
+but it doesn't support overflow or navigation.
+You start to add more hacks and tricks to get the design you wanted, but those hacks are not consistent and
+cross-browser tested, SSG or SEO friendly.
+You get the idea.
 
-There are many libraries already in open-source world, some using direct DOM manipulation, some importing another legacy
-JavaScript or JQuery library. You don't want that. Vue already does that. This is Vue native created for Vue, and only
-Vue is the peer dependency required. All modes of rendering (SPA/SSR/SSG) are supported and tested with E2E tools.
+There are many libraries already in an open-source world, some using direct DOM manipulation, some importing another
+legacy JavaScript or JQuery library.
+You don't want that.
+Vue already does that.
+This is Vue native created for Vue, and only Vue is the peer dependency required.
+All modes of rendering (SPA/SSR/SSG) are supported and tested with E2E tools.
 
 The actual library is only about 400 LOC while there are at least 100x more LOC in the documentation, end-to-end testing
 and a bunch of other fun stuff.
@@ -31,9 +28,10 @@ and a bunch of other fun stuff.
 - **SSR/SSG/SPA: all modes of rendering supported**
 - Mobile first for the responsive web
 - Customizable navigation: scroll bar, buttons or basically everything
-- UX focused, smooth scrolling, snapping for variety of use case.
+- UX focused, smooth scrolling, snapping for a variety of use cases.
 - Small size of 3 KB for CDN users
-- Highly extensible for any use case with [well documented recipes](https://vue-horizontal.fuxing.dev/design/principles).
+- Highly extensible for any use case
+  with [well documented recipes](https://vue-horizontal.fuxing.dev/design/principles).
   - You control how to structure your content with HTML
   - You control how it looks with CSS
   - You control how to navigate your layout with Vue.js
@@ -140,23 +138,19 @@ section {
 
 ### [CSS Scroll Behavior: Smooth](https://vue-horizontal.fuxing.dev/limitations#css-scroll-behavior-smooth)
 
-In Vue Horizontal, smooth scrolling is enabled by default. With scroll-behavior: smooth, it enables smooth scrolling
+In Vue Horizontal, smooth scrolling is enabled by default. With `scroll-behavior: smooth`, it enables smooth scrolling
 experience when scroll event is triggered by programmatic calls. Although this is not a breaking functional feature, it
-provides a "smooth" scrolling user experience.
+provides a **"smooth"** scrolling user experience.
 
-As of December 2020, there is only a 76% cross browser compatibility (88% if you include Safari experimental feature
-flag). Meantime you should polyfill this feature with more
-[information provided here](https://vue-horizontal.fuxing.dev/limitations#smoothscroll-polyfill). Polyfill should be
-done by the user, there are no plans to incorporate this natively in the library.
+As of December 2023, there is a 96% cross-browser compatibility.
 
 ### [CSS Scroll Snap](https://vue-horizontal.fuxing.dev/limitations#css-scroll-snap)
 
 Scroll snap align or scroll-snapping, is a CSS technique that allows customizable scrolling experiences like pagination
-of carousels by setting defined snap positions. Vue Horizontal has it enabled by default, to disable you can set
-`<vue-horizontal snap="none">`.
+of carousels by setting defined snap positions. Vue Horizontal has it enabled by default to disable you can
+set `<vue-horizontal snap="none">`.
 
-As of December 2020, there is a **94%+** cross browser compatibility. You can choose to polyfill this, but it's more of
-an aesthetic feature rather than a breaking functional requirement.
+As of December 2023, there is a 98% cross-browser compatibility.
 
 ## Development
 
@@ -170,11 +164,11 @@ npm run cypress:run # e2e testing
 
 - End-to-end test cases are also written because of the UI nature of this framework.
   [Cypress](https://www.cypress.io/) is used under the hood.
-- There are also additional integration testing done to ensure SSR and SSG works.
+- There is also additional integration testing done to ensure SSR and SSG works.
 
 ## Contributions
 
-- For any question or feature request please feel free to create
+- For any question or feature request, please feel free to create
   an [issue](https://github.com/fuxingloh/vue-horizontal/issues/new)
   or [pull request](https://github.com/fuxingloh/vue-horizontal/pulls).
 - For feature request, do check out the examples as some of them might have been implemented.
@@ -194,4 +188,5 @@ This project is another take on it with an ultra simple implementation that is e
 to the user rather than the library.
 
 ## License
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffuxingloh%2Fvue-horizontal.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffuxingloh%2Fvue-horizontal?ref=badge_large)
