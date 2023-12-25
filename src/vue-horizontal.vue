@@ -116,37 +116,8 @@ export default Vue.extend({
       const container = this.$refs.container as Element
       return container?.children ?? []
     },
-    findPrevSlot(x: number): Element | undefined {
-      const children = this.children()
-
-      for (let i = 0; i < children.length; i++) {
-        const rect = children[i].getBoundingClientRect()
-
-        if (rect.left <= x && x <= rect.right) {
-          return children[i]
-        }
-
-        if (x <= rect.left) {
-          return children[i]
-        }
-      }
-    },
-    findNextSlot(x: number): Element | undefined {
-      const children = this.children()
-
-      for (let i = 0; i < children.length; i++) {
-        const rect = children[i].getBoundingClientRect()
-
-        if (rect.right <= x) {
-          continue;
-        } else if (rect.left <= x) {
-          return children[i];
-        }
-
-        if (x <= rect.left) {
-          return children[i];
-        }
-      }
+    findTargetSlot(targetPos: number): Element | undefined {
+      return [...this.children()].find((element) => targetPos <= element.getBoundingClientRect().right)
     },
     /**
      * Toggle and scroll to the previous set of horizontal content.
@@ -157,7 +128,7 @@ export default Vue.extend({
       const container = this.$refs.container as Element
       const left = container.getBoundingClientRect().left
       const x = left + (container.clientWidth * -this.displacement) - delta
-      const element = this.findPrevSlot(x)
+      const element = this.findTargetSlot(x)
 
       if (element) {
         const width = element.getBoundingClientRect().left - left
@@ -177,7 +148,7 @@ export default Vue.extend({
       const container = this.$refs.container as Element
       const left = container.getBoundingClientRect().left
       const x = left + (container.clientWidth * this.displacement) + delta
-      const element = this.findNextSlot(x)
+      const element = this.findTargetSlot(x)
 
       if (element) {
         const width = element.getBoundingClientRect().left - left
